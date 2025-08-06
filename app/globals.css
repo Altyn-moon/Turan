@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "../tailwind.theme.css";
+
+@layer utilities {
+  .title-clamp {
+    font-size: clamp(32px, calc(32px + 16 * ((100vw - 1024px) / 1536)), 48px);
+    line-height: clamp(
+      1.08,
+      calc(1.08 + 0.09 * ((100vw - 1024px) / 1536)),
+      1.17
+    );
+    font-weight: 800;
+  }
+
+  .text-clamp {
+    font-size: clamp(16px, calc(16px + 4 * ((100vw - 1024px) / 1536)), 20px);
+    line-height: clamp(
+      1.35,
+      calc(1.35 + 0.07 * ((100vw - 1024px) / 1536)),
+      1.42
+    );
+    font-weight: 400;
+  }
+
+  .blur-blue {
+    border-radius: 10px;
+    background-color: rgba(0, 160, 223, 0.2);
+    backdrop-filter: blur(6px);
+  }
+
+  .blur-gray {
+    border-radius: 10px;
+    background-color: rgba(119, 119, 119, 0.2);
+    backdrop-filter: blur(6px);
+  }
+
+  .bg-awards {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.41) 0%,
+      rgba(0, 0, 0, 0.27) 26.91%,
+      rgba(0, 0, 0, 0) 57.71%
+    );
+  }
+
+  .bg-nature {
+    background-image: url("../public/nature/bg-nature.webp");
+  }
+
+  .bg-cave-water-bird {
+    background-image: url("../public/cave-water-bird/bg-without-bird.webp");
+  }
+
+  .bg-cave {
+    background-image: url("../public/cave-water-bird/cave.webp");
+  }
+  .bg-water {
+    background-image: url("../public/cave-water-bird/water.webp");
+  }
+  .bg-bird {
+    background-image: url("../public/cave-water-bird/bg-bird.webp");
+  }
+}
