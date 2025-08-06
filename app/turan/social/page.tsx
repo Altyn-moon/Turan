@@ -9,14 +9,9 @@ export default function SocialPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section
-        className="hero"
-        
-      >
+      <section className="hero">
         <div className="useful-hero">
-          <div className="hero-text">
             <h1 className="useful-text">СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</h1>
-          </div>
         </div>
       </section>
 

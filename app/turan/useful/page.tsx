@@ -12,9 +12,7 @@ export default function UsefulPage() {
       {/* Hero Секция */}
       <section className="hero">
         <div className="useful-hero">
-          <div className="hero-text">
             <h1 className="useful-text">ПОЛЕЗНО ЗНАТЬ</h1>
-          </div>
         </div>
       </section>
 

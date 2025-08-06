@@ -32,38 +32,9 @@ export default function SocialPage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="useful-hero">
-          <div className="hero-text">
             <h1 className="useful-text">АССОРТИМЕНТ</h1>
-          </div>
         </div>
       </section>
-
-     {/* <section className="assortment">
-  <div className="container">
-    <h2>Негазированная</h2>
-    <div className="bottle-grid">
-      <img src="/images/still-0.5.png" alt="0.5 л" />
-      <img src="/images/still-1.png" alt="1 л" />
-      <img src="/images/still-1.5.png" alt="1.5 л" />
-      <img src="/images/still-5.png" alt="5 л" />
-    </div>
-
-    <h2>Газированная</h2>
-    <div className="bottle-grid">
-      <img src="/images/sparkling-0.5.png" alt="0.5 л" />
-      <img src="/images/sparkling-1.png" alt="1 л" />
-      <img src="/images/sparkling-1.5.png" alt="1.5 л" />
-    </div>
-
-    <h2>Стеклянная</h2>
-    <div className="bottle-grid">
-      <img src="/images/glass-still-0.25.png" alt="0.25 л негаз." />
-      <img src="/images/glass-still-0.5.png" alt="0.5 л негаз." />
-      <img src="/images/glass-sparkling-0.25.png" alt="0.25 л газ." />
-      <img src="/images/glass-sparkling-0.5.png" alt="0.5 л газ." />
-    </div>
-  </div>
-</section>*/}
       
     {/* Assortment Section */}
 <section className="assortment-section">
