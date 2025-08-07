@@ -16,15 +16,14 @@ function BottleCard({
 }) {
   return (
     <div className="bottle-card">
-      <div className="bottle-image-wrapper">
-        <Image src={src} alt={label} width={150} height={300} />
+        <div className="bottle-inner">
+            <Image className="bottle-img" src={src} alt={label} width={100} height={200} />
         <div className="bottle-label">{subLabel || label}</div>
-        {subLabel && <div className="bottle-top-label">{label}</div>}
-      </div>
+    </div>
+    {subLabel && <div className="bottle-top-label">{label}</div>}
     </div>
   );
 }
-
 
 export default function SocialPage() {
   return (
@@ -69,7 +68,27 @@ export default function SocialPage() {
       <BottleCard src="/images/glass-sparkling-0.5.png" label="Газированная" subLabel="0.5 л" />
     </div>
   </div>
+
+
+{/* Фруктовые */}
+  <div className="assortment-group">
+    <h2 className="assortment-title">Вкусовая линейка</h2>
+    <div className="bottle-grid">
+      <BottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" />
+      <BottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" />
+      <BottleCard src="/images/mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" />
+      <BottleCard src="/images/lemon-0.5.png" label="Лимон и мята" subLabel="0.5 л" />
+    </div>
+
+    <div className="bottle-grid">
+      <BottleCard src="/images/strawberry-1.png" label="Клубника" subLabel="1 л" />
+      <BottleCard src="/images/raspberry-1.png" label="Малина" subLabel="1 л" />
+      <BottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" />
+      <BottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" />
+    </div>
+  </div>
 </section>
+
 
 <footer className="footer">
   <div className="footer-top">
