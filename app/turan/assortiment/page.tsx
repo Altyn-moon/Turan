@@ -5,19 +5,24 @@ import Image from "next/image";
 
 import "./style.css";
 
+// Обычные бутылки
 function BottleCard({
   src,
   label,
   subLabel,
+  width = 120,
+  height = 300,
 }: {
   src: string;
   label: string;
   subLabel?: string;
+  width?: number;
+  height?: number;
 }) {
   return (
     <div className="bottle-card">
         <div className="bottle-inner">
-            <Image className="bottle-img" src={src} alt={label} width={100} height={200} />
+            <Image className="bottle-img" src={src} alt={label} width={width} height={height} />
         <div className="bottle-label">{subLabel || label}</div>
     </div>
     {subLabel && <div className="bottle-top-label">{label}</div>}
@@ -25,6 +30,34 @@ function BottleCard({
   );
 }
 
+// Фруктовые бутылки
+function FlavoredBottleCard({
+  src,
+  label,
+  subLabel,
+  flavor,
+  width = 120,
+  height = 300,
+}: {
+  src: string;
+  label: string;
+  subLabel: string;
+  flavor: "strawberry" | "raspberry" | "mango" | "lemon";
+  width?: number;
+  height?: number;
+}) {
+  return (
+    <div className={`flavored-card ${flavor}`}>
+      <div className="flavored-bg">
+        <Image className="bottle-img" src={src} alt={label} width={width} height={height} />
+        <div className="flavored-sub">{subLabel}</div>
+      </div>
+      <div className={`flavored-top ${flavor}`}>{label}</div>
+    </div>
+  );
+}
+
+// Главная страница
 export default function SocialPage() {
   return (
     <main>
@@ -41,10 +74,10 @@ export default function SocialPage() {
   <div className="assortment-group">
     <h2 className="assortment-title">Негазированная</h2>
     <div className="bottle-grid">
-      <BottleCard src="/images/still-0.5.png" label="0.5 л" />
-      <BottleCard src="/images/still-1.png" label="1 л" />
-      <BottleCard src="/images/still-1.5.png" label="1.5 л" />
-      <BottleCard src="/images/still-5.png" label="5 л" />
+      <BottleCard src="/images/still-0.5.png" label="0.5 л" width={90} height={300}/>
+      <BottleCard src="/images/still-1.png" label="1 л" width={92} height={314}/>
+      <BottleCard src="/images/still-1.5.png" label="1.5 л" width={106} height={356}/>
+      <BottleCard src="/images/still-5.png" label="5 л" width={126} height={327}/>
     </div>
   </div>
 
@@ -52,9 +85,9 @@ export default function SocialPage() {
   <div className="assortment-group">
     <h2 className="assortment-title">Газированная</h2>
     <div className="bottle-grid">
-      <BottleCard src="/images/sparkling-0.5.png" label="0.5 л" />
-      <BottleCard src="/images/sparkling-1.png" label="1 л" />
-      <BottleCard src="/images/sparkling-1.5.png" label="1.5 л" />
+      <BottleCard src="/images/sparkling-0.5.png" label="0.5 л" width={136} height={358}/>
+      <BottleCard src="/images/sparkling-1.png" label="1 л" width={131} height={344}/>
+      <BottleCard src="/images/sparkling-1.5.png" label="1.5 л" width={137} height={378}/>
     </div>
   </div>
 
@@ -62,15 +95,31 @@ export default function SocialPage() {
   <div className="assortment-group">
     <h2 className="assortment-title">Стеклянная</h2>
     <div className="bottle-grid">
-      <BottleCard src="/images/glass-still-0.25.png" label="Негазированная" subLabel="0.25 л" />
-      <BottleCard src="/images/glass-still-0.5.png" label="Негазированная" subLabel="0.5 л" />
-      <BottleCard src="/images/glass-sparkling-0.25.png" label="Газированная" subLabel="0.25 л" />
-      <BottleCard src="/images/glass-sparkling-0.5.png" label="Газированная" subLabel="0.5 л" />
+      <BottleCard src="/images/glass-still-0.25.png" label="Негазированная" subLabel="0.25 л" width={75} height={258}/>
+      <BottleCard src="/images/glass-still-0.5.png" label="Негазированная" subLabel="0.5 л" width={91} height={323}/>
+      <BottleCard src="/images/glass-sparkling-0.25.png" label="Газированная" subLabel="0.25 л" width={102} height={379}/>
+      <BottleCard src="/images/glass-sparkling-0.5.png" label="Газированная" subLabel="0.5 л" width={121} height={379}/>
     </div>
   </div>
 
+{/* Вкусовая линейка */}
+        <div className="assortment-group">
+          <h2 className="assortment-title">Вкусовая линейка</h2>
+          <div className="bottle-grid">
+            <FlavoredBottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" flavor="strawberry" width={126} height={318}/>
+            <FlavoredBottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" flavor="raspberry" width={126} height={318}/>
+            <FlavoredBottleCard src="/images/mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" flavor="mango" width={126} height={318}/>
+            <FlavoredBottleCard src="/images/lemon-0.5.png" label="Лимон и мята" subLabel="0.5 л" flavor="lemon" width={126} height={318}/>
+          </div>
+          <div className="bottle-grid">
+            <FlavoredBottleCard src="/images/strawberry-1.png" label="Клубника" subLabel="1 л" flavor="strawberry" width={125} height={350}/>
+            <FlavoredBottleCard src="/images/raspberry-1.png" label="Малина" subLabel="1 л" flavor="raspberry" width={125} height={350}/>
+            <FlavoredBottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" flavor="mango" width={125} height={350}/>
+            <FlavoredBottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" flavor="lemon" width={125} height={350}/>
+          </div>
+        </div>
 
-{/* Фруктовые */}
+{/* Фруктовые 
   <div className="assortment-group">
     <h2 className="assortment-title">Вкусовая линейка</h2>
     <div className="bottle-grid">
@@ -86,7 +135,7 @@ export default function SocialPage() {
       <BottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" />
       <BottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" />
     </div>
-  </div>
+  </div>*/}
 </section>
 
 
