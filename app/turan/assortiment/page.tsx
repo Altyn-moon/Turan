@@ -1,9 +1,12 @@
 "use client";
 
+import { useRef } from "react";
+import { useScroll } from "framer-motion";
+import Header from "@/app/components/layout/header";
+import "./style.css";
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
-
-import "./style.css";
 
 // Обычные бутылки
 function BottleCard({
@@ -59,84 +62,75 @@ function FlavoredBottleCard({
 
 // Главная страница
 export default function SocialPage() {
+    // создаём ref и scrollYProgress для Header
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
   return (
-    <main>
+    <main ref={ref} className="font-rubik">
+      {/* Шапка с анимацией скролла */}
+      <Header scrollYProgress={scrollYProgress} />
+      
       {/* Hero Section */}
-      <section className="hero">
-        <div className="useful-hero">
-            <h1 className="useful-text">АССОРТИМЕНТ</h1>
-        </div>
+      <section className="assortiment-hero hero--with-header">
+          <h1 className="assortiment-text">АССОРТИМЕНТ</h1>
       </section>
       
     {/* Assortment Section */}
-<section className="assortment-section">
-  {/* Негазированная */}
-  <div className="assortment-group">
-    <h2 className="assortment-title">Негазированная</h2>
-    <div className="bottle-grid">
-      <BottleCard src="/images/still-0.5.png" label="0.5 л" width={90} height={300}/>
-      <BottleCard src="/images/still-1.png" label="1 л" width={92} height={314}/>
-      <BottleCard src="/images/still-1.5.png" label="1.5 л" width={106} height={356}/>
-      <BottleCard src="/images/still-5.png" label="5 л" width={126} height={327}/>
-    </div>
-  </div>
+    <section className="assortment-section">
 
-  {/* Газированная */}
-  <div className="assortment-group">
-    <h2 className="assortment-title">Газированная</h2>
-    <div className="bottle-grid">
-      <BottleCard src="/images/sparkling-0.5.png" label="0.5 л" width={136} height={358}/>
-      <BottleCard src="/images/sparkling-1.png" label="1 л" width={131} height={344}/>
-      <BottleCard src="/images/sparkling-1.5.png" label="1.5 л" width={137} height={378}/>
+    {/* Негазированная */}
+    <div className="assortment-group">
+      <h2 className="assortment-title">Негазированная</h2>
+      <div className="bottle-grid">
+        <BottleCard src="/images/still-0.5.png" label="0.5 л" width={90} height={300}/>
+        <BottleCard src="/images/still-1.png" label="1 л" width={92} height={314}/>
+        <BottleCard src="/images/still-1.5.png" label="1.5 л" width={106} height={356}/>
+        <BottleCard src="/images/still-5.png" label="5 л" width={126} height={327}/>
+      </div>
     </div>
-  </div>
 
-  {/* Стеклянная */}
-  <div className="assortment-group">
-    <h2 className="assortment-title">Стеклянная</h2>
-    <div className="bottle-grid">
-      <BottleCard src="/images/glass-still-0.25.png" label="Негазированная" subLabel="0.25 л" width={75} height={258}/>
-      <BottleCard src="/images/glass-still-0.5.png" label="Негазированная" subLabel="0.5 л" width={91} height={323}/>
-      <BottleCard src="/images/glass-sparkling-0.25.png" label="Газированная" subLabel="0.25 л" width={102} height={379}/>
-      <BottleCard src="/images/glass-sparkling-0.5.png" label="Газированная" subLabel="0.5 л" width={121} height={379}/>
+    {/* Газированная */}
+    <div className="assortment-group">
+      <h2 className="assortment-title">Газированная</h2>
+      <div className="bottle-grid">
+        <BottleCard src="/images/sparkling-0.5.png" label="0.5 л" width={136} height={358}/>
+        <BottleCard src="/images/sparkling-1.png" label="1 л" width={131} height={344}/>
+        <BottleCard src="/images/sparkling-1.5.png" label="1.5 л" width={137} height={378}/>
+      </div>
     </div>
-  </div>
 
-{/* Вкусовая линейка */}
-        <div className="assortment-group">
-          <h2 className="assortment-title">Вкусовая линейка</h2>
-          <div className="bottle-grid">
-            <FlavoredBottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" flavor="strawberry" width={126} height={318}/>
-            <FlavoredBottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" flavor="raspberry" width={126} height={318}/>
-            <FlavoredBottleCard src="/images/mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" flavor="mango" width={126} height={318}/>
-            <FlavoredBottleCard src="/images/lemon-0.5.png" label="Лимон и мята" subLabel="0.5 л" flavor="lemon" width={126} height={318}/>
+    {/* Стеклянная */}
+    <div className="assortment-group">
+      <h2 className="assortment-title">Стеклянная</h2>
+      <div className="bottle-grid">
+        <BottleCard src="/images/glass-still-0.25.png" label="Негазированная" subLabel="0.25 л" width={75} height={258}/>
+        <BottleCard src="/images/glass-still-0.5.png" label="Негазированная" subLabel="0.5 л" width={91} height={323}/>
+        <BottleCard src="/images/glass-sparkling-0.25.png" label="Газированная" subLabel="0.25 л" width={102} height={379}/>
+        <BottleCard src="/images/glass-sparkling-0.5.png" label="Газированная" subLabel="0.5 л" width={121} height={379}/>
+      </div>
+    </div>
+
+  {/* Вкусовая линейка */}
+          <div className="assortment-group">
+            <h2 className="assortment-title">Вкусовая линейка</h2>
+            <div className="bottle-grid">
+              <FlavoredBottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" flavor="strawberry" width={126} height={318}/>
+              <FlavoredBottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" flavor="raspberry" width={126} height={318}/>
+              <FlavoredBottleCard src="/images/mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" flavor="mango" width={126} height={318}/>
+              <FlavoredBottleCard src="/images/lemon-0.5.png" label="Лимон и мята" subLabel="0.5 л" flavor="lemon" width={126} height={318}/>
+            </div>
+            <div className="bottle-grid">
+              <FlavoredBottleCard src="/images/strawberry-1.png" label="Клубника" subLabel="1 л" flavor="strawberry" width={125} height={350}/>
+              <FlavoredBottleCard src="/images/raspberry-1.png" label="Малина" subLabel="1 л" flavor="raspberry" width={125} height={350}/>
+              <FlavoredBottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" flavor="mango" width={125} height={350}/>
+              <FlavoredBottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" flavor="lemon" width={125} height={350}/>
+            </div>
           </div>
-          <div className="bottle-grid">
-            <FlavoredBottleCard src="/images/strawberry-1.png" label="Клубника" subLabel="1 л" flavor="strawberry" width={125} height={350}/>
-            <FlavoredBottleCard src="/images/raspberry-1.png" label="Малина" subLabel="1 л" flavor="raspberry" width={125} height={350}/>
-            <FlavoredBottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" flavor="mango" width={125} height={350}/>
-            <FlavoredBottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" flavor="lemon" width={125} height={350}/>
-          </div>
-        </div>
-
-{/* Фруктовые 
-  <div className="assortment-group">
-    <h2 className="assortment-title">Вкусовая линейка</h2>
-    <div className="bottle-grid">
-      <BottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" />
-      <BottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" />
-      <BottleCard src="/images/mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" />
-      <BottleCard src="/images/lemon-0.5.png" label="Лимон и мята" subLabel="0.5 л" />
-    </div>
-
-    <div className="bottle-grid">
-      <BottleCard src="/images/strawberry-1.png" label="Клубника" subLabel="1 л" />
-      <BottleCard src="/images/raspberry-1.png" label="Малина" subLabel="1 л" />
-      <BottleCard src="/images/mango-1.png" label="Манго-ананас" subLabel="1 л" />
-      <BottleCard src="/images/lemon-1.png" label="Лимон и мята" subLabel="1 л" />
-    </div>
-  </div>*/}
-</section>
+  </section>
 
 
 <footer className="footer">
@@ -149,7 +143,7 @@ export default function SocialPage() {
       <h4>МЕНЮ</h4>
       <ul>
         <li><a href="/turan/useful">Полезно знать</a></li>
-        <li><a href="/turan/assortment">Ассортимент</a></li>
+        <li><a href="/turan/assortiment">Ассортимент</a></li>
         <li><a href="/turan/social">Социальная ответственность</a></li>
         <li><a href="/turan/delivery">Доставка</a></li>
       </ul>
@@ -205,7 +199,6 @@ export default function SocialPage() {
     <img src="/images/logo_color.svg.png" alt="TURAN" />
   </div>
 </footer>
-
     </main>
   );
 }

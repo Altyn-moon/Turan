@@ -4,9 +4,10 @@ import Logo from "../ui/logo";
 import ArrowIcon from "../ui/icons/arrow-top-right";
 
 const NAV_ITEMS = [
-  { label: "ПОЛЕЗНО ЗНАТЬ", href: "/turan/useful" },
-  { label: "АССОРТИМЕНТ", href: "/turan/assortiment" },
-  { label: "СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ", href: "/turan/social" },
+  { label: "О воде", href: "/" },
+  { label: "Полезно знать", href: "/turan/useful" },
+  { label: "Ассортимент", href: "/turan/assortiment" },
+  { label: "Социальная ответственность", href: "/turan/social" },
 ];
 
 interface HeaderProps {
@@ -18,35 +19,45 @@ export default function Header({ scrollYProgress }: HeaderProps) {
 
   return (
     <motion.header
-      className="w-full bg-white shadow z-50 fixed top-0 left-0"
+      className="fixed top-0 left-0 z-50 w-full bg-white shadow font-rubik"
       style={{ y }}
       initial={false}
     >
-      <nav className="container mx-auto flex items-center justify-between px-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo />
-        </Link>
+      <div className="flex items-stretch justify-between w-full">
+        
+        {/* Логотип + меню (внутри контейнера, центрировано) */}
+        <nav className="container mx-auto flex items-center justify-between px-4 lg:px-8">
+          {/* Логотип слева */}
+          <Link href="/" className="flex items-center gap-2">
+            <Logo />
+          </Link>
 
-        <ul className="hidden md:flex gap-12 tracking-wider font-medium text-[#153A51]">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.label}>
-              <Link href={item.href} className="hover:text-cyan-700 transition">
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Меню по центру */}
+          <ul className="hidden md:flex gap-12 tracking-wider font-medium text-[#153A51] mx-auto">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="hover:text-cyan-700 transition">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
+        {/* Кнопка справа */}
         <Link
-          href="#"
-          className="group flex items-center justify-center gap-2 bg-[#05A8E2] hover:bg-[#039cd2] transition px-12 py-7 text-white font-light rounded-none text-base"
+          href="/turan/delivery"
+          className="group flex items-center justify-center gap-2 bg-[#05A8E2] hover:bg-[#039cd2] transition 
+                     px-12 text-white font-light rounded-none text-base
+                     h-[86px] self-stretch"
         >
           ДОСТАВКА
           <span className="ml-2 transition-transform group-hover:translate-x-1">
             <ArrowIcon />
           </span>
         </Link>
-      </nav>
+      </div>
     </motion.header>
   );
 }
+

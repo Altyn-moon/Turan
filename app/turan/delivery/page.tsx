@@ -5,9 +5,6 @@ import { useScroll } from "framer-motion";
 import Header from "@/app/components/layout/header";
 import "./style.css";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Image from "next/image";
-
 import "./style.css";
 
 export default function SocialPage() {
@@ -23,26 +20,40 @@ export default function SocialPage() {
     <main ref={ref} className="font-rubik">
       {/* Шапка с анимацией скролла */}
       <Header scrollYProgress={scrollYProgress} />
+
       {/* Hero Section */}
-      <section className="social-hero">
-          <h1 className="social-text">СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</h1>
+      <section className="hero-delivery">
+            <h1 className="text-delivery">ДОСТАВКА</h1>
       </section>
 
-      {/* Water Section */}
-      <section className="social-block">
-        <p>
-          Turan Water придерживается принципов устойчивого развития, заботясь об
-          окружающей среде и благополучии общества. Компания внедряет экологически
-          чистые технологии, минимизирует влияние производства на природу и активно
-          поддерживает благотворительные инициативы.
-        </p>
-        <p>
-          Особое внимание уделяется доступу к чистой воде, а также проектам,
-          направленным на поддержку образования, спорта и здравоохранения. Мы
-          стремимся не только производить качественную воду, но и вносить вклад в
-          развитие общества, создавая лучшее будущее для следующих поколений.
-        </p>
-      </section>
+      {/* Section */}
+      <section className="delivery-block delivery-card">
+  <p className="delivery-lead">
+    Теперь приобрести чистую и натуральную воду Turan стало еще проще! Вы можете заказать нашу продукцию на популярных маркетплейсах, не выходя из дома. Это удобный способ получить любимую воду с быстрой доставкой и выгодными предложениями.
+  </p>
+
+  <div className="market-grid">
+    <a className="market-card" href="#" aria-label="Wolt">
+      <img src="/images/wolt.png" alt="Wolt" />
+    </a>
+
+    <a className="market-card" href="#" aria-label="Aiqrbafresh">
+      <img src="/images/AIRBA-FRESH.png" alt="airba fresh" />
+    </a>
+
+    <a className="market-card" href="#" aria-label="Magnum GO">
+      <img src="/images/AIRBA-FRESH-Photoroom copy.png" alt="magnum GO" />
+    </a>
+
+    <a className="market-card" href="#" aria-label="Arbuz">
+      <img src="/images/arbuz.png" alt="arbuz" />
+    </a>
+
+    <a className="market-card" href="#" aria-label="Choco">
+      <img src="/images/choco.png" alt="Choco" />
+    </a>
+  </div>
+</section>
 
       
 <footer className="footer">

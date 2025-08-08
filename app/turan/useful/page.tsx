@@ -1,19 +1,32 @@
-'use client';
+"use client";
+
+import { useRef } from "react";
+import { useScroll } from "framer-motion";
+import Header from "@/app/components/layout/header";
+import "./style.css";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 
-import './style.css';
+import "./style.css";
 
-export default function UsefulPage() {
+export default function SocialPage() {
+    // создаём ref и scrollYProgress для Header
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
   return (
-    <main>
+
+    <main ref={ref} className="font-rubik">
+      {/* Шапка с анимацией скролла */}
+      <Header scrollYProgress={scrollYProgress} />
 
       {/* Hero Секция */}
-      <section className="hero">
-        <div className="useful-hero">
+      <section className="useful-hero">
             <h1 className="useful-text">ПОЛЕЗНО ЗНАТЬ</h1>
-        </div>
       </section>
 
       {/* Water */}
@@ -232,7 +245,7 @@ export default function UsefulPage() {
       <h4>МЕНЮ</h4>
       <ul>
         <li><a href="/turan/useful">Полезно знать</a></li>
-        <li><a href="/turan/assortment">Ассортимент</a></li>
+        <li><a href="/turan/assortiment">Ассортимент</a></li>
         <li><a href="/turan/social">Социальная ответственность</a></li>
         <li><a href="/turan/delivery">Доставка</a></li>
       </ul>

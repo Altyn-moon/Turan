@@ -25,7 +25,7 @@ export default function AnimatedSections() {
     <div
       ref={ref}
       style={{ height: `${scrollLength}vh` }}
-      className="relative w-full overflow-hidden snap-y snap-mandatory"
+      className="relative w-full overflow-hidden snap-y snap-mandatory font-engravers"
     >
       <Header scrollYProgress={scrollYProgress} />
       <HeroSection scrollYProgress={scrollYProgress} />
