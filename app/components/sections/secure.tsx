@@ -112,7 +112,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
               style={{ opacity }}
               className="text-white leading-tight"
             >
-              <p className="title-clamp font-bold mb-2 1xl:max-w-2/3 blur-gray px-6 py-5">
+              <p className="title-clamp font-bold mb-2 1xl:max-w-2/3 px-6 py-5">
                 Вода TURAN не просто «соответствует нормам». Она подтверждает
                 свою чистоту и стабильность каждый день, каждый месяц, каждый
                 год.
@@ -125,7 +125,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
               className="w-full h-full flex flex-col justify-end"
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 2xl:gap-8 text-white leading-tight">
-                <div className="blur-gray text-center px-6 py-5">
+                <div className=" text-center px-6 py-5">
                   <p className="title-clamp font-bold mb-2">
                     Автоматизированный контроль
                   </p>
@@ -136,7 +136,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                     исключая человеческий фактор в критичных зонах
                   </p>
                 </div>
-                <div className="blur-gray text-center px-6 py-5">
+                <div className=" text-center px-6 py-5">
                   <p className="title-clamp font-bold mb-2">
                     Ежегодная верификация независимыми НИИ
                   </p>
@@ -148,7 +148,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                     данных и полное соответствие мировым стандартам
                   </p>
                 </div>
-                <div className="blur-gray text-center px-6 py-5">
+                <div className="text-center px-6 py-5">
                   <p className="title-clamp font-bold mb-2">
                     Ежедневная проверка качества
                   </p>
@@ -168,7 +168,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
               style={{ opacity: opacityText2, y: moveTextY2 }}
               className="w-full h-full flex flex-col justify-end items-center gap-8"
             >
-              <p className="text-white text-center text-clamp blur-gray px-6 py-5 leading-tight w-5/6">
+              <p className="text-white text-center text-clamp px-6 py-5 leading-tight w-5/6">
                 Мы не зависим от импорта, не ждём поставок из-за границы и не
                 ищем подрядчиков за рубежом. Это не жест маркетинга, а
                 стратегия: полный контроль над каждым звеном позволяет сохранять

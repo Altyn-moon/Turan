@@ -110,7 +110,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
             <div className="w-full relative z-20">
               <FamilyText />
             </div>
-            <p className="text-white title-clamp blur-gray px-6 py-5 w-1/2 1xl:w-1/2 self-end text-right leading-8 relative z-10">
+            <p className="text-white title-clamp  px-6 py-5 w-1/2 1xl:w-1/2 self-end text-right leading-8 relative z-10">
               Вода TURAN отмечена более чем 20 республиканскими и международными
               наградами за безупречное качество,природный состав и высокие
               производственные стандарты
@@ -152,7 +152,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
               </motion.div>
               <motion.p
                 style={{ opacity: opacityText1, y: moveTextY1 }}
-                className="text-clamp blur-gray px-6 py-5 self-end text-right w-1/2 relative z-20 leading-tight"
+                className="text-clamp px-6 py-5 self-end text-right w-1/2 relative z-20 leading-tight"
               >
                 Вот уже несколько лет подряд TURAN получает высшую награду от
                 Monde Selection — одного из самых авторитетных европейских
@@ -182,7 +182,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
               </motion.div>
               <motion.p
                 style={{ opacity: opacityText2, y: moveTextY2 }}
-                className="text-clamp blur-gray px-6 py-5 self-end text-right w-1/2 leading-tight"
+                className="text-clamp px-6 py-5 self-end text-right w-1/2 leading-tight"
               >
                 TURAN — одна из немногих вод в регионе, прошедших проверку SGS
                 Institut Fresenius. Это мировой эталон лабораторного контроля,

@@ -112,7 +112,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           </motion.div>
           <motion.div
             style={{ opacity: opacityTitle }}
-            className="text-white blur-gray px-10 py-5 leading-tight w-full 1xl:w-1/2"
+            className="text-white  px-10 py-5 leading-tight w-full 1xl:w-1/2"
           >
             <p className="title-clamp font-bold mb-2">
               Локальность как принцип. Независимость как выбор.
@@ -130,14 +130,14 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
               className="w-full h-full flex flex-col justify-end"
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-4  text-white leading-tight">
-                <div className="blur-gray text-center px-10 py-5">
+                <div className=" text-center px-10 py-5">
                   <p className="title-clamp font-bold mb-2">Источник</p>
                   <p className="text-clamp">
                     Природный, глубинный, расположен в заповедной зоне
                     Кокшетауской возвышенности.
                   </p>
                 </div>
-                <div className="blur-gray text-center px-10 py-5">
+                <div className=" text-center px-10 py-5">
                   <p className="title-clamp font-bold mb-2">Розлив</p>
                   <p className="text-clamp">
                     На собственном заводе, оснащенном самыми современными
@@ -146,7 +146,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
                     производственной мощностью более 70 000 бутылок в час.
                   </p>
                 </div>
-                <div className="blur-gray text-center px-10 py-5">
+                <div className=" text-center px-10 py-5">
                   <p className="title-clamp font-bold mb-2">Упаковка</p>
                   <p className="text-clamp">
                     Даже РЕТ преформы (заготовки для бутылок), которые все
@@ -162,7 +162,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
               style={{ opacity: opacityText2, y: moveTextY2 }}
               className="w-full h-full flex flex-col justify-end items-center gap-8"
             >
-              <p className="text-white text-center text-clamp blur-gray p-4 leading-tight w-5/6">
+              <p className="text-white text-center text-clamp  p-4 leading-tight w-5/6">
                 Мы не зависим от импорта, не ждём поставок из-за границы и не
                 ищем подрядчиков за рубежом. Это не жест маркетинга, а
                 стратегия: полный контроль над каждым звеном позволяет сохранять

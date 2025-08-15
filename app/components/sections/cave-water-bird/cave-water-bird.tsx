@@ -58,7 +58,7 @@ export default function CaveWaterBird({
 
       <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] 1xl:max-h-[670vh] 2xl:max-h-[600vh] h-full w-full bg-fit 1xl:bg-cover  bg-top z-0 top-[90vh] 1xl:top-[90vh] 2xl:top-[155vh] bg-no-repeat" />
 
-      <div className="relative z-10 h-full">
+      <div className="relative z-[60] h-full">
         <CaveSection scrollYProgress={scrollYProgress} />
         <WaterSection scrollYProgress={scrollYProgress} />
         <BirdSection scrollYProgress={scrollYProgress} />

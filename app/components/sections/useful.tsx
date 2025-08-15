@@ -119,7 +119,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
               style={{ opacity: opacityText1, y: moveTextY1 }}
               className="w-full h-full flex flex-col justify-between items-end relative z-30"
             >
-              <div className="flex flex-col gap-2 h-fit text-white leading-tight blur-gray px-6 py-5 text-right w-2/3">
+              <div className="flex flex-col gap-2 h-fit text-white leading-tight px-6 py-5 text-right w-2/3">
                 <p className="title-clamp">
                   TURAN — это тонкая, незаметная,но ежедневная поддержка
                   организма
@@ -133,7 +133,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
                   воду TURAN можно и нужно пить каждый день
                 </p>
               </div>
-              <p className="text-white text-right text-clamp blur-gray px-6 py-5 leading-tight w-2/3">
+              <p className="text-white text-right text-clamp px-6 py-5 leading-tight w-2/3">
                 Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при
                 которой вода не только утоляет жажду, но и работает на вас:
                 помогает клеткам, сосудам, нервной системе, костям, обмену
@@ -146,7 +146,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
               style={{ opacity: opacityTitle2, y: moveTitle2 }}
               className="relative z-30 flex justify-end h-fit text-white leading-tight text-right w-full"
             >
-              <p className="title-clamp blur-gray px-6 py-5 w-fit">
+              <p className="title-clamp px-6 py-5 w-fit">
                 Что делает воду TURAN полезной?
               </p>
             </motion.div>
@@ -156,7 +156,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
               style={{ opacity: opacityText2, y: moveTextY2 }}
               className="relative z-30 w-full h-full flex flex-col justify-end items-end gap-8"
             >
-              <div className="text-white blur-gray text-right flex flex-col gap-2 w-2/3 px-6 py-4">
+              <div className="text-white text-right flex flex-col gap-2 w-2/3 px-6 py-4">
                 <div>
                   <p className="title-clamp">Кальций</p>
                   <p className="text-clamp">
@@ -192,7 +192,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
               style={{ opacity: opacityText3, y: moveTextY3 }}
               className="relative z-30 w-full h-full flex flex-col justify-end items-end gap-8"
             >
-              <div className="text-white blur-gray text-right flex flex-col gap-2 w-2/3 px-6 py-4">
+              <div className="text-white text-right flex flex-col gap-2 w-2/3 px-6 py-4">
                 <div>
                   <p className="title-clamp">Калий и натрий</p>
                   <p className="text-clamp">

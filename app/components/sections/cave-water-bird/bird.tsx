@@ -82,7 +82,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
               style={{ opacity: opacityText1, y: moveTextY1 }}
               className="w-full h-full flex flex-col justify-between"
             >
-              <div className="text-white px-6 py-6 leading-tight w-2/3 self-end text-right flex flex-col gap-0.5 blur-blue">
+              <div className="text-white px-6 py-6 leading-tight w-2/3 self-end text-right flex flex-col gap-0.5 ">
                 <p className="title-clamp w-full">
                   Вода TURAN отличается не только чистотой,но и естественным
                   уровнем pH. 7,5 — это именно тот показатель, к которому
@@ -95,7 +95,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
                   подходящей для ежедневного употребления.
                 </p>
               </div>
-              <p className="text-white text-clamp w-full blur-blue px-6 py-5">
+              <p className="text-white text-clamp w-full  px-6 py-5">
                 Легкая вода — это научный термин, описывающий воду с низким
                 содержанием дейтерия (тяжелого водорода). Она не создаётся
                 искусственно, а добывается в местах с особой геологией и
@@ -109,7 +109,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
               style={{ opacity: opacityText2, y: moveTextY2 }}
               className="w-full h-full flex flex-col justify-between gap-8"
             >
-              <div className="text-white px-6 py-6 leading-tight w-2/3 self-end text-right flex flex-col gap-0.5 blur-blue">
+              <div className="text-white px-6 py-6 leading-tight w-2/3 self-end text-right flex flex-col gap-0.5 ">
                 <p className="text-clamp w-full">
                   pH — это показатель кислотно-щелочного равновесия. Вода с pH
                   7,5 мягко поддерживает внутренний баланс, не вызывая ни
@@ -120,7 +120,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
                   нарушениях питания
                 </p>
               </div>
-              <p className="text-white text-clamp blur-blue px-6 py-5 leading-tight max-w-2/3">
+              <p className="text-white text-clamp  px-6 py-5 leading-tight max-w-2/3">
                 Многие производители стремятся добиться «идеального» pH с
                 помощью химической коррекции — добавляя соли или изменяя
                 структуру воды. TURAN не нуждается в этом. Её сбалансированный
