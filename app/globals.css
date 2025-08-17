@@ -2,14 +2,38 @@
 @import "../tailwind.theme.css";
 
 @layer utilities {
+  /* Сбрасываем fixed/w-full/h-full у корня и всех детей компонента заголовка */
+  .title-svg-reset,
+  .title-svg-reset * {
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+  }
+  /* Делает SVG внутри заголовка обычным блочным, без fixed */
+  .title-svg-reset :where(svg){
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    display: block;
+  }
+  .turan-h1-small {
+    font-family: var(--font-engravers);
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: -0.06em;
+    font-size: clamp(28px, 3.8vw, 64px);
+  }
   .title-clamp {
-    font-size: clamp(32px, calc(32px + 16 * ((100vw - 1024px) / 1536)), 48px);
+    font-size: clamp(32px, calc(32px + 16 * ((100vw - 1024px) / 1536)), 32px);
     line-height: clamp(
       1.08,
       calc(1.08 + 0.09 * ((100vw - 1024px) / 1536)),
       1.17
     );
-    font-weight: 800;
+    font-weight: 500;
   }
 
   .text-clamp {
