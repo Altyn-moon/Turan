@@ -55,7 +55,7 @@ export function useAutoScrollDown(
   scrollYProgress: MotionValue<number>,
   from: number,
   to: number,
-  _speed: number = 10
+ // _speed: number = 10
 ) {
   const isSnapping = useRef(false);
   const lastTo = useRef<number | null>(null);
