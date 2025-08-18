@@ -4,6 +4,8 @@ import MenuButton from "../ui/menu-button";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import { useState } from "react";
 import FamilyText from "../ui/text-logo/family-text";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface AwardSectionProps { scrollYProgress: MotionValue<number>; }
 
@@ -42,15 +44,14 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
   useAutoScrollDown(scrollYProgress, 0.86, 0.90, 13.8);
   useAutoScrollDown(scrollYProgress, 0.90, 0.95, 14.6);
 
+  const router = useRouter();
+
   return (
     <section className="relative h-screen w-full">
       <motion.section
         style={{ opacity }}
-        className="relative top-0 w-full h-full z-50 pointer-events-none snap-none"
-      >
-
-        {/* === Градиент-картинка: над фоном, под контентом === */}
-                        {/* важно: используем fixed и z-30, чтобы не перекрывал текст */}
+        className="relative top-0 w-full h-full z-50 pointer-events-none snap-none">
+        
                         <div className="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none">
                           <div className="relative h-full w-full">
                             <Image
@@ -129,7 +130,6 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
                 ))}
               </div>
 
-              {/* ряд из 3 медалей отдельно, с другими размерами */}
               <div className="flex gap-6 mt-4 items-center self-start relative z-50">
                 <Image src="/awards/gold1.png" width={52} height={88} alt="gold1" unoptimized />
                 <Image src="/awards/gold2.png" width={52} height={88} alt="gold2" unoptimized />
@@ -138,13 +138,11 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
               
             </motion.div>
           )}
-
           
           {showText2 && (
             <motion.div
               style={{ opacity: opacityText2, y: moveTextY2 }}
-              className="w-full flex flex-col items-start justify-start gap-5 flex-none"
-            >
+              className="w-full flex flex-col items-start justify-start gap-5 flex-none">
 
               <div className="relative z-50 text-white p-0 leading-[1.4]
                               w-auto max-w-[630px] self-start text-left
@@ -177,18 +175,59 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
             </motion.div>
           )}
 
-          
-          {showText3 && (
-            <div className="w-full flex flex-col xl:flex-row items-start gap-4 relative z-50">
-              <div className="flex flex-col gap-4">
-                <MenuButton>СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</MenuButton>
-                <MenuButton>ПОЛЕЗНО ЗНАТЬ</MenuButton>
-                <MenuButton>АССОРТИМЕНТ</MenuButton>
-                <MenuButton>ДОСТАВКА</MenuButton>
+        {showText3 && (
+          <div className="w-full flex flex-col xl:flex-row items-start gap-4 relative z-50"> 
+            <div className="flex flex-col gap-4 pointer-events-auto">             
+              <div
+                onClick={() => router.push("/turan/social")}
+                className="
+                  group inline-block cursor-pointer
+                  group-hover:[&>div>button]:text-black
+                  group-hover:[&>div>button]:border-black">
+                <div>
+                  <MenuButton>СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</MenuButton>
+                </div>
               </div>
-              
+
+              <div
+                onClick={() => router.push("/turan/useful")}
+                className="
+                  group inline-block cursor-pointer
+                  group-hover:[&>div>button]:text-black
+                  group-hover:[&>div>button]:border-black">
+                <div>
+                  <MenuButton>ПОЛЕЗНО ЗНАТЬ</MenuButton>
+                </div>
+              </div>
+
+              <div
+                onClick={() => router.push("/turan/assortiment")}
+                className="
+                  group inline-block cursor-pointer
+                  group-hover:[&>div>button]:text-black
+                  group-hover:[&>div>button]:border-black">
+                <div>
+                  <MenuButton>АССОРТИМЕНТ</MenuButton>
+                </div>
+              </div>
+
+
+              <div
+                onClick={() => router.push("/turan/delivery")}
+                className="
+                  group inline-block cursor-pointer
+                  group-hover:[&>div>button]:text-black
+                  group-hover:[&>div>button]:border-black">
+                <div>
+                  <MenuButton>ДОСТАВКА</MenuButton>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
+        )}
+
+
+
         </div>
       </motion.section>
     </section>
