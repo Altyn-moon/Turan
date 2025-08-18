@@ -42,125 +42,142 @@ export function useAutoScrollDown(
   }, [scrollYProgress, from, to]);
 }*/
 
-
 // app/utils/useAutoScrollDown.ts
 import { MotionValue, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 /**
- * Автодоскролл из прогресса `from` в `to`.
- * speed — скорость в пикселях/секунду (по умолчанию 1500).
- * Если нужен контейнер, передайте его ref.current вместо window (см. ниже).
+ * Плавный авто-скролл из доли страницы `from` в `to` (0..1).
+ * - speedPxPerSec — скорость, px/сек (default: 1500)
+ * - scroller — по умолчанию window; можно передать прокручиваемый контейнер (ref.current)
+ * - триггерится только при движении вниз и когда попадаем внутрь коридора [from..to)
  */
 export function useAutoScrollDown(
   scrollYProgress: MotionValue<number>,
   from: number,
   to: number,
-  speed: number = 1500, // px/sec
-  // container?: HTMLElement | null   // <- если скролл не у window, а у контейнера — раскомментируйте параметр
+  speedPxPerSec: number = 1500,
+  scroller?: Window | HTMLElement | null
 ) {
-  const running = useRef(false);
-  const rafId = useRef<number | null>(null);
+  const runningRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
+  const prevV = useRef(0);
+  const cooldownRef = useRef<number>(0); // чтобы не триггериться постоянно на границах
 
-  // кто скроллит: window или контейнер
-  const getScroller = () =>
-    typeof window !== "undefined" ? window : null;
-    // return container ?? (typeof window !== "undefined" ? window : null);
+  const getScroller = (): Window | HTMLElement | null =>
+    (typeof window !== "undefined" ? scroller ?? window : null);
+
+  const nowMs = () => (typeof performance !== "undefined" ? performance.now() : Date.now());
 
   const stop = () => {
-    running.current = false;
-    if (rafId.current) {
-      cancelAnimationFrame(rafId.current);
-      rafId.current = null;
+    runningRef.current = false;
+    if (rafRef.current != null) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
     }
   };
 
-  // если пользователь крутит колесо/тач — отменяем автопрокрутку
+  // отменяем автопрокрутку при любых действиях пользователя
   useEffect(() => {
-    const scroller = getScroller();
-    if (!scroller) return;
+    const s = getScroller();
+    if (!s) return;
 
     const cancel = () => stop();
-    // @ts-ignore — у Window тоже есть эти события
-    scroller.addEventListener("wheel", cancel, { passive: true });
-    // @ts-ignore
-    scroller.addEventListener("touchstart", cancel, { passive: true });
+    const keyCancel = (e: KeyboardEvent) => {
+      const keys = ["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "];
+      if (keys.includes(e.key)) stop();
+    };
+
+    s.addEventListener("wheel", cancel, { passive: true });
+    s.addEventListener("touchstart", cancel, { passive: true });
+    s.addEventListener("keydown", keyCancel as EventListener);
 
     return () => {
-      // @ts-ignore
-      scroller.removeEventListener("wheel", cancel);
-      // @ts-ignore
-      scroller.removeEventListener("touchstart", cancel);
+      s.removeEventListener("wheel", cancel as EventListener);
+      s.removeEventListener("touchstart", cancel as EventListener);
+      s.removeEventListener("keydown", keyCancel as EventListener);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scroller]);
 
-  // основная логика
+  // главная логика
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    // небольшой гистерезис, чтобы не вызывалось на границах
     const EPS = 0.0005;
+    const s = getScroller();
+    if (!s) return;
 
-    if (running.current) return;
+    // защищаемся от частых перезапусков у границы
+    if (cooldownRef.current && nowMs() < cooldownRef.current) {
+      prevV.current = v;
+      return;
+    }
+
+    // триггерим только при движении вниз
+    const goingDown = v > prevV.current + EPS;
+    prevV.current = v;
+    if (!goingDown) return;
+
+    if (runningRef.current) return;
     if (!(v >= from - EPS && v < to - EPS)) return;
 
-    const scroller = getScroller();
-    if (!scroller) return;
+    // вычисляем метрики
+    const getViewportH = (): number =>
+      "innerHeight" in s ? (s as Window).innerHeight : (s as HTMLElement).clientHeight;
 
-    // вычисляем абсолютные координаты прокрутки
-    const docHeight =
-      typeof document !== "undefined"
-        ? Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight
-          )
-        : 0;
+    const getScrollTop = (): number =>
+      "scrollY" in s ? (s as Window).scrollY : (s as HTMLElement).scrollTop;
 
-    const viewport =
-      typeof window !== "undefined" ? window.innerHeight : 0;
+    const getScrollHeight = (): number => {
+      if ("document" in window) {
+        const b = document.body;
+        const e = document.documentElement;
+        return Math.max(b.scrollHeight, e.scrollHeight);
+      }
+      // для контейнера
+      return (s as HTMLElement).scrollHeight ?? 0;
+    };
 
-    const maxScroll = Math.max(0, docHeight - viewport);
+    const viewport = getViewportH();
+    const maxScroll = Math.max(0, getScrollHeight() - viewport);
+    const startY = getScrollTop();
     const targetY = Math.min(maxScroll, Math.max(0, to * maxScroll));
-
-    // текущее положение
-    const startY =
-      typeof window !== "undefined" ? window.scrollY : 0;
-
     const distance = targetY - startY;
-    if (Math.abs(distance) < 1) return; // уже там
 
-    // длительность по скорости (px/sec)
-    const duration = Math.max(200, (Math.abs(distance) / speed) * 1000);
+    if (Math.abs(distance) < 1) return;
 
-    running.current = true;
-    const start = performance.now();
+    // длительность из скорости
+    const duration = Math.max(200, (Math.abs(distance) / speedPxPerSec) * 1000);
+    const start = nowMs();
+    runningRef.current = true;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
-    const step = (now: number) => {
-      if (!running.current) return;
+    const step = () => {
+      if (!runningRef.current) return;
 
-      const t = Math.min(1, (now - start) / duration);
-      const eased = easeOutCubic(t);
-      const y = startY + distance * eased;
+      const t = Math.min(1, (nowMs() - start) / duration);
+      const y = startY + distance * easeOutCubic(t);
 
-      // @ts-ignore
-      getScroller()?.scrollTo?.(0, y);
+      // Window и HTMLElement поддерживают scrollTo
+      (s as Window | HTMLElement).scrollTo({ left: 0, top: y, behavior: "auto" });
 
       if (t < 1) {
-        rafId.current = requestAnimationFrame(step);
+        rafRef.current = requestAnimationFrame(step);
       } else {
         stop();
+        // короткий «кулдаун», чтобы хук не перезапустился на той же границе
+        cooldownRef.current = nowMs() + 250;
       }
     };
 
-    rafId.current = requestAnimationFrame(step);
+    rafRef.current = requestAnimationFrame(step);
   });
 
-  // чистка на размонтировании
+  // очистка
   useEffect(() => stop, []);
 }
 
 export default useAutoScrollDown;
-
 
 
 
