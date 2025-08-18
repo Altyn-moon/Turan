@@ -1,4 +1,4 @@
-/*import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { MotionValue } from "framer-motion";
 
 export function useAutoScrollDown(
@@ -40,16 +40,13 @@ export function useAutoScrollDown(
 
     return () => unsub();
   }, [scrollYProgress, from, to]);
-}*/
+}
 
-
+/*
 import { MotionValue, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-/**
- * Плавно докручивает scrollYProgress из from -> to.
- * speed – необязательный множитель скорости (чем больше, тем быстрее).
- */
+
 export function useAutoScrollDown(
   scrollYProgress: MotionValue<number>,
   from: number,
@@ -85,7 +82,7 @@ export function useAutoScrollDown(
 }
 
 export default useAutoScrollDown;
-
+*/
 
 
 /*
