@@ -97,7 +97,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
           {showText1 && (
             <motion.div
               style={{ opacity: opacityText1, y: moveTextY1 }}
-              className="w-full flex flex-col items-start justify-start gap-2 flex-none"
+              className="w-full flex flex-col items-start justify-start gap-5 flex-none"
             >
 
               <div className="relative z-50 text-white p-0 leading-[1.4]
@@ -143,7 +143,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
           {showText2 && (
             <motion.div
               style={{ opacity: opacityText2, y: moveTextY2 }}
-              className="w-full flex flex-col items-start justify-start gap-2 flex-none"
+              className="w-full flex flex-col items-start justify-start gap-5 flex-none"
             >
 
               <div className="relative z-50 text-white p-0 leading-[1.4]

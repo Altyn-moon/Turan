@@ -76,7 +76,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
             alt="Turan Water"
             width={100}
             height={100}
-            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-cover"
+            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-cover shadow-lg"
             priority
             unoptimized
           />
@@ -96,7 +96,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                     TURAN — природная минеральная вода, рожденная из глубин
                     веков.
                   </p>
-                  <p className="col-start-3 2xl:col-start-4 col-span-2 2xl:col-span-1 w-4/5 2xl:w-full text-right font-bold text-clamp text-white leading-normal py-5 px-6 place-self-end">
+                  <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold px-10 py-5 leading-normal text-right py-5 px-6 place-self-end">
                     Она берет свое начало в заповедной зоне Кокшетауской
                     возвышенности, где на глубине более 100 метров скрыт
                     реликтовый источник, сформированный более 15 000 лет назад
@@ -125,12 +125,13 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                 </div>
               </motion.div>
             )}
+
             {showText2 && (
               <motion.div
                 style={{ y: moveTextY2, opacity: opacityText2 }}
                 className="flex flex-col justify-between h-full gap-5"
               >
-                <div className="grid grid-cols-4 gap-5 h-full">
+                <div className="grid grid-cols-4 gap-5 h-full w-full">
                   <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold px-10 py-5 leading-normal">
                     TURAN — не просто вода, это символ вечности, заключенной в
                     каждой капле. Ее источник — естественный природный
@@ -141,7 +142,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                     скрывается уникальная экосистема, полностью защищенная от
                     внешних воздействий.
                   </p>
-                  <p className="col-start-3 2xl:col-start-4 col-span-2 2xl:col-span-1 w-4/5 2xl:w-full text-right font-bold text-clamp text-white leading-normal py-5 px-6 place-self-end">
+                    <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold px-10 py-5 leading-normal text-right py-5 px-6 place-self-end">
                     Эта вода не подвергается дополнительной обработке, потому
                     что в ней нет ничего лишнего. Природная минерализация,
                     идеально сбалансированный состав, мягкий, освежающий вкус —
