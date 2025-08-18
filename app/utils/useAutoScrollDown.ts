@@ -43,53 +43,48 @@ export function useAutoScrollDown(
 }*/
 
 
+import { MotionValue, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef } from "react";
-import type { MotionValue } from "framer-motion";
 
 /**
- * Одноразовый «снап»: как только v попал в [from..to) — ровно один раз
- * докручиваем ЧУТОЧКУ дальше правой границы окна (или прям в самый низ,
- * если to >= 0.965). Без инерции, чтобы не «плавало».
+ * Плавно докручивает scrollYProgress из from -> to.
+ * speed – необязательный множитель скорости (чем больше, тем быстрее).
  */
 export function useAutoScrollDown(
   scrollYProgress: MotionValue<number>,
   from: number,
   to: number,
- // _speed: number = 10
+  speed: number = 6 // <-- по умолчанию, чтобы можно было вызывать с 3 аргументами
 ) {
-  const isSnapping = useRef(false);
-  const lastTo = useRef<number | null>(null);
+  const ticking = useRef(false);
 
-  useEffect(() => {
-    if (to <= from) return;
-
-    const unsub = scrollYProgress.on("change", (v) => {
-      if (isSnapping.current) return;
-      if (v >= from && v < to) {
-        // если это почти последний экран — едем в самый низ страницы
-        const doc = document.documentElement;
-        const total = doc.scrollHeight - window.innerHeight;
-
-        const snapToBottom = to >= 0.965;
-        const targetProgress = snapToBottom ? 1 : Math.min(0.995, to + 0.002); // небольшой «перелёт»
-
-        if (lastTo.current !== to) {
-          lastTo.current = to;
-          isSnapping.current = true;
-
-          const y = snapToBottom ? Math.max(0, total - 2) : targetProgress * total;
-          window.scrollTo({ top: y, behavior: "auto" });
-
-          window.setTimeout(() => {
-            isSnapping.current = false;
-          }, 160);
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    // если попали в коридор – запускаем автодосролл
+    if (!ticking.current && v >= from && v < to) {
+      ticking.current = true;
+      const id = requestAnimationFrame(function tick() {
+        const cur = scrollYProgress.get();
+        if (cur < to) {
+          // шаг прокрутки зависит от speed
+          scrollYProgress.set(Math.min(cur + (0.001 * speed), to));
+          requestAnimationFrame(tick);
+        } else {
+          ticking.current = false;
         }
-      }
-    });
+      });
+      return () => cancelAnimationFrame(id);
+    }
+  });
 
-    return () => unsub();
-  }, [scrollYProgress, from, to]);
+  // сброс флага при выходе из коридора
+  useEffect(() => {
+    return () => {
+      ticking.current = false;
+    };
+  }, []);
 }
+
+export default useAutoScrollDown;
 
 
 
