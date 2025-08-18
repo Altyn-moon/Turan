@@ -209,6 +209,10 @@
   flex-shrink: 0;
 }
 
+.bottle-card:hover {
+  background: #c4e6f3;
+}
+
 .bottle-inner {
   display: flex;
   flex-direction: column;
@@ -365,16 +369,32 @@
 
 /* Вкусовые стили */
 .flavored-card.strawberry .flavored-bg {
-  background-image: url('/images/strawberry-b.png');
+  background-image: url('/images/strawberry.png');
 }
 .flavored-card.raspberry .flavored-bg {
-  background-image: url('/images/raspberry.png');
+  background-image: url('/images/raspberry-b.png');
 }
 .flavored-card.mango .flavored-bg {
-  background-image: url('/images/mango.png');
+  background-image: url('/images/mango-b.png');
 }
 .flavored-card.lemon .flavored-bg {
   background-image: url('/images/lemon.png');
+}
+
+.flavored-card.strawberry:hover {
+  background-color: #ED0B0B;
+}
+
+.flavored-card.raspberry:hover {
+  background-color: #EE0076;
+}
+
+.flavored-card.mango:hover {
+  background-color: #EE6700;
+}
+
+.flavored-card.lemon:hover {
+  background-color: #5AB64B;
 }
 
 /* Цветные верхние табы */

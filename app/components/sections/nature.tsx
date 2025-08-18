@@ -58,8 +58,12 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
     ["10%", "0%", "0%", "-10%"]
   );
 
-  useAutoScrollDown(scrollYProgress, 0, 0.07, 0.81);
-  useAutoScrollDown(scrollYProgress, 0.07, 0.1, 1.7);
+  //useAutoScrollDown(scrollYProgress, 0, 0.07, 0.81);
+  //useAutoScrollDown(scrollYProgress, 0.07, 0.1, 1.7);
+
+  // НОВОЕ — только для первой секции «Природная»
+  useAutoScrollDown(scrollYProgress, 0.02, 0.08, 2800);
+  useAutoScrollDown(scrollYProgress, 0.08, 0.14, 2800);
 
   return (
     <section className="relative h-full">
