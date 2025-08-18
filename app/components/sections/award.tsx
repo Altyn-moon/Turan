@@ -4,7 +4,6 @@ import MenuButton from "../ui/menu-button";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import { useState } from "react";
 import FamilyText from "../ui/text-logo/family-text";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface AwardSectionProps { scrollYProgress: MotionValue<number>; }
