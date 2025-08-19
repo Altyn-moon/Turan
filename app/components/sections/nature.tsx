@@ -95,23 +95,23 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
           className="
             aspect-square object-contain 
 
-            /* Базово — не больше 160px */
-            w-[clamp(72px,22vw,160px)]
+            /* базово */
+            w-[clamp(100px,22vw,160px)]
 
             /* ≥640px */
-            sm:w-[clamp(84px,20vw,180px)]
+            sm:w-[clamp(100px,20vw,180px)]
 
             /* ≥768px */
-            md:w-[clamp(96px,16vw,200px)]
+            md:w-[clamp(100px,16vw,200px)]
 
             /* ≥1024px */
-            lg:w-[clamp(110px,13vw,220px)]
+            lg:w-[clamp(100px,13vw,220px)]
 
-            /* ≥1280px — критичный диапазон: бутылка уже, поэтому уменьшаем максимум */
-            xl:w-[clamp(120px,11vw,230px)]
+            /* ≥1280px */
+            xl:w-[clamp(100px,11vw,230px)]
 
-            /* ≥1536px — можно позволить больше */
-            2xl:w-[clamp(140px,10vw,260px)]
+            /* ≥1536px */
+            2xl:w-[clamp(100px,10vw,260px)]
           "
           priority
           unoptimized
