@@ -96,13 +96,17 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
               <div className="relative z-50 text-white p-0 leading-[1.4]
                               w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-3">
-                <div>
+                <div className="relative z-50 text-white p-0 leading-[1.4]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp leading-[1.2]">Дисковая фильтрация <br></br>  AZUD (10 микрон)</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Удаляет крупные частицы: песок, ил, органические фрагменты и механические примеси. Это первая и самая щадящая ступень очистки — подобная природной фильтрации, как если бы вода проходила через камни и песок.
                   </p>
                 </div>
-                <div>
+                <div className="relative z-50 text-white p-0 leading-[1.4]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp leading-[1.2]">Микрофильтрация <br></br> PALL (0,45 микрон) </p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     На этой стадии устраняются мельчайшие загрязнения: бактерии, грибки, микроорганизмы и тонкодисперсные частицы. Вода становится кристально чистой — не теряя при этом своих природных свойств.
