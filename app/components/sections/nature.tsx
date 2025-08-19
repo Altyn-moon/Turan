@@ -80,7 +80,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
             alt="Turan Water"
             width={100}
             height={100}
-            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-cover shadow-lg"
+            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-cover w-[clamp(80px,22vw,288px)] "
             priority
             unoptimized
           />
