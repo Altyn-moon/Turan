@@ -36,6 +36,16 @@
     font-weight: 500;
   }
 
+  .title-clamp-list {
+    font-size: clamp(36px, calc(36px + 28 * ((100vw - 1024px) / 1536)), 64px);
+    line-height: clamp(
+      1.08,
+      calc(1.08 + 0.09 * ((100vw - 1024px) / 1536)),
+      1.17
+    );
+    font-weight: 500;
+  }
+
   .text-clamp {
     font-size: clamp(16px, calc(16px + 4 * ((100vw - 1024px) / 1536)), 20px);
     line-height: clamp(
