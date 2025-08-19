@@ -17,7 +17,6 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
   const [showText1, setShowText1] = useState(false);
   const [showText2, setShowText2] = useState(false);
 
-  // старт ровно с 0.14: экраны [0.14–0.18] и [0.18–0.22]
   useMotionValueEvent(scrollYProgress, "change", (v) => setShowText1(v > 0.14 && v < 0.18));
   useMotionValueEvent(scrollYProgress, "change", (v) => setShowText2(v > 0.18 && v < 0.22));
 
@@ -27,7 +26,6 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
   const opacityText2 = useTransform(scrollYProgress, [0.18, 0.195, 0.21, 0.22], [0, 1, 1, 0]);
   const moveTextY2   = useTransform(scrollYProgress, [0.18, 0.195, 0.21, 0.22], ["10%", "0%", "0%", "-10%"]);
 
-  // авто-пины под новые коридоры
   useAutoScrollDown(scrollYProgress, 0.14, 0.18, 2.7);
   useAutoScrollDown(scrollYProgress, 0.18, 0.22, 3.3);
 
@@ -37,8 +35,7 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
         style={{ opacity }}
         className="relative top-0 w-full h-screen z-40 pointer-events-none snap-none bg-nature"
       >
-        {/* === Градиент-картинка: над фоном, под контентом === */}
-        {/* важно: используем fixed и z-30, чтобы не перекрывал текст */}
+
         <div className="fixed top-0 left-0 h-screen w-full z-30 pointer-events-none">
           <div className="relative h-full w-full">
             <Image
