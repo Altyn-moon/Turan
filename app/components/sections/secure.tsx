@@ -79,13 +79,17 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
           {showText1 && (
             <motion.div style={{ opacity: opacityText1, y: moveTextY1 }} className="w-full flex flex-col items-end justify-start gap-4 flex-none">
               <div className="grid gap-6 text-white w-full max-w-[1260px] self-end justify-items-end text-right">
-                <div className="p-0 w-full max-w-[660px]">
+                <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp font-bold mb-2 leading-none">Автоматизированный контроль</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Все этапы производства — от водозабора до упаковки — находятся под непрерывным контролем операторов. Современные цифровые системы отслеживают параметры в реальном времени, исключая человеческий фактор в критичных зонах
                   </p>
                 </div>
-                <div className="p-0 w-full max-w-[660px]">
+                <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp font-bold mb-2 leading-none">Ежегодная верификация <br></br> независимыми НИИ</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Один раз в год TURAN проходит расширенный химический анализ в независимых научно-исследовательских институтах — как казахстанских, так и зарубежных. Это обеспечивает международную валидность данных и полное соответствие мировым стандартам
@@ -99,19 +103,24 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
           {showText2 && (
             <motion.div style={{ opacity: opacityText2, y: moveTextY2 }} className="w-full flex flex-col items-end justify-start gap-4 flex-none">
               <div className="grid gap-6 text-white w-full max-w-[1260px] self-end justify-items-end text-right">
-                <div className="p-0 w-full max-w-[660px]">
+                <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp font-bold mb-2 leading-none">Ежедневная проверка качества</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     На заводе KMW работает собственная лаборатория, где вода ежедневно проходит полный анализ по санитарно-гигиеническим, органолептическим и физико-химическим показателям. Это не формальность, а часть ежедневного производственного процесса
                   </p>
                 </div>
-                <div className="p-0 w-full max-w-[660px]">
+                <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                   <p className="title-clamp font-bold mb-2 leading-[1.0]">Ежемесячный государственный <br></br> контроль</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Месторождение воды TURAN официально зарегистрировано и находится под надзором Комитета контроля качества МЗ РК. Специалисты ежемесячно выезжают на месторождение, где производят отбор проб прямо из эксплуатационной скважины — до какой-либо обработки или фильтрации. Пробы доставляются в аккредитованные лаборатории для проведения полного анализа: от химического состава до микробиологической чистоты. Это позволяет объективно оценивать стабильность природного источника и гарантировать безопасность воды на самом базовом уровне
                   </p>
                 </div>
               </div>
+
             </motion.div>
           )}
         </div>

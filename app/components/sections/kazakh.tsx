@@ -90,18 +90,25 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           {/* Экран 2 */}
           {showP2 && (
             <motion.div style={{ opacity: opP2, y: yP2 }} className="w-full flex flex-col items-end justify-end gap-6 flex-none">
-              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                 <p className="title-clamp font-bold mb-2 leading-[1.2]">Источник</p>
                 <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">Природный, глубинный, расположен в заповедной зоне Кокшетауской возвышенности.</p>
               </div>
-              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                 <p className="title-clamp font-bold mb-2 leading-[1.2]">Розлив</p>
                 <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">На собственном заводе, оснащенном самыми современными автоматизированными линиями розлива от ведущих мировых производителей: Krones, Sidel, FBT, KHS, общей производственной мощностью более 70 000 бутылок в час.</p>
               </div>
-              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
                 <p className="title-clamp font-bold mb-2 leading-[1.2]">Упаковка</p>
                 <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">Даже РЕТ преформы (заготовки для бутылок), которые все закупают у поставщиков, мы производим сами, здесь же на заводе.</p>
               </div>
+              
             </motion.div>
           )}
 
