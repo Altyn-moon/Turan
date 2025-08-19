@@ -75,12 +75,12 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
               className="w-full flex flex-col items-end justify-start gap-2 flex-none"
             >
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[480px] self-end text-right
+                              w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-2">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                   TURAN — это вода, которая сохраняет всё, чем её наделила природа. Её уникальность — в абсолютной чистоте, поэтому она не требует глубоких вмешательств. В отличие от большинства бутилированной воды, TURAN не подвергается химическим манипуляциям, не проходит осмос (так как он вместе с обеззараживанием «убивает» и все полезные свойства воды), не обременена искусственной минерализацией. Её формула создана природой и подтверждена наукой.
                 </p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                   Весь путь от скважины до бутылки устроен так, чтобы сохранить природную формулу воды. TURAN проходит только две стадии обработки — и обе являются механическими, то есть не затрагивают её минеральный состав:
                 </p>
               </div>
@@ -94,26 +94,21 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
               className="w-full flex justify-end items-start gap-8 flex-none"
             >
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[650px] self-end text-right
+                              w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-3">
                 <div>
-                  <p className="title-clamp">Дисковая фильтрация AZUD (10 микрон)</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="title-clamp leading-[1.2]">Дисковая фильтрация <br></br>  AZUD (10 микрон)</p>
+                  <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Удаляет крупные частицы: песок, ил, органические фрагменты и механические примеси. Это первая и самая щадящая ступень очистки — подобная природной фильтрации, как если бы вода проходила через камни и песок.
                   </p>
                 </div>
                 <div>
-                  <p className="title-clamp">Микрофильтрация PALL (0,45 микрон)</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="title-clamp leading-[1.2]">Микрофильтрация <br></br> PALL (0,45 микрон) </p>
+                  <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     На этой стадии устраняются мельчайшие загрязнения: бактерии, грибки, микроорганизмы и тонкодисперсные частицы. Вода становится кристально чистой — не теряя при этом своих природных свойств.
                   </p>
                 </div>
-                <div>
-                  <p className="title-clamp">Финальный штрих — озон</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
-                    Чтобы обеспечить идеальную микробиологическую безопасность без потери природных качеств, вода обрабатывается озоном — мощным и абсолютно натуральным окислителем. Озон разрушает органику и нейтрализует микробы, не взаимодействуя с полезными минералами. В течение нескольких минут он распадается на чистый кислород, не оставляя никаких следов — только лёгкий вкус свежести и ощущение бодрящей лёгкости на языке.
-                  </p>
-                </div>
+               
               </div>
             </motion.div>
           )}
@@ -124,13 +119,20 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
               style={{ opacity: opacityText3, y: moveTextY3 }}
               className="w-full flex justify-end items-start gap-8 flex-none"
             >
-              <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-end text-right
-                              flex flex-col gap-5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+              <div className="relative z-50 text-white p-0 leading-[1.2]
+                              w-auto max-w-[660px] self-end text-right
+                              flex flex-col gap-3">
+              
+               
+                  <p className="title-clamp leading-[1.2]">Финальный штрих — озон</p>
+                  <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
+                    Чтобы обеспечить идеальную микробиологическую безопасность без потери природных качеств, вода обрабатывается озоном — мощным и абсолютно натуральным окислителем. Озон разрушает органику и нейтрализует микробы, не взаимодействуя с полезными минералами. В течение нескольких минут он распадается на чистый кислород, не оставляя никаких следов — только лёгкий вкус свежести и ощущение бодрящей лёгкости на языке.
+                  </p>
+                 <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                   TURAN — вода, которую не создают, а бережно сохраняют. Без осмоса. Без химии. Без добавок. Только механическая очистка и природная формула, нетронутая временем.
                 </p>
               </div>
+              
             </motion.div>
           )}
         </div>

@@ -46,7 +46,7 @@
     font-weight: 500;
   }
 
-  .text-clamp {
+  /* .text-clamp {
     font-size: clamp(16px, calc(16px + 4 * ((100vw - 1024px) / 1536)), 20px);
     line-height: clamp(
       1.35,
@@ -54,7 +54,12 @@
       1.42
     );
     font-weight: 400;
-  }
+  } */
+.text-clamp {
+  font-size: clamp(16px, calc(14px + 4 * ((100vw - 1024px) / 1536)), 20px);
+  line-height: calc(1.15 * clamp(14px, calc(16px + 4 * ((100vw - 1024px) / 1536)), 20px));
+  font-weight: 400;
+}
 
   .blur-blue {
     border-radius: 10px;

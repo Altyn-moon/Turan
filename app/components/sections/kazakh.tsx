@@ -55,7 +55,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
     <section className="h-screen relative w-full">
       <motion.section style={{ opacity }} className="relative top-0 w-full h-full z-40 pointer-events-none snap-none">
         {/* Градиент справа: над фоном, под контентом */}
-        <div className="fixed top-0 right-0 h-screen w-1/2 z-30 pointer-events-none">
+        <div className="fixed top-0 right-0 h-screen w-full z-30 pointer-events-none">
           <div className="relative h-full w-full">
             <Image fill src="/cave-water-bird/gradient2.png" alt="gradient" className="object-cover" unoptimized />
           </div>
@@ -79,9 +79,9 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           {/* Экран 1 */}
           {showP1 && (
             <motion.div style={{ opacity: opP1 }} className="relative z-50 text-white p-0 leading-[1.4]
-                         w-auto max-w-[630px] self-end text-right flex flex-col gap-0.5">
-              <p className="title-clamp font-bold mb-2">Локальность как принцип. Независимость как выбор.</p>
-              <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                         w-auto max-w-[660px] self-end text-right flex flex-col gap-0.5">
+              <p className="title-clamp font-bold mb-2 leading-[1.2]">Локальность как принцип. <br></br> Независимость как выбор.</p>
+              <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                 TURAN — это не просто вода с казахстанским адресом на этикетке. Это продукт, в котором всё, без исключений, — казахстанского происхождения. Не на бумаге, а на деле: от источника и производственной цепочки до упаковки.
               </p>
             </motion.div>
@@ -90,25 +90,25 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           {/* Экран 2 */}
           {showP2 && (
             <motion.div style={{ opacity: opP2, y: yP2 }} className="w-full flex flex-col items-end justify-end gap-6 flex-none">
-              <div className="p-0 w-full max-w-[480px] self-end text-right text-white">
-                <p className="title-clamp font-bold mb-2">Источник</p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">Природный, глубинный, расположен в заповедной зоне Кокшетауской возвышенности.</p>
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+                <p className="title-clamp font-bold mb-2 leading-[1.2]">Источник</p>
+                <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">Природный, глубинный, расположен в заповедной зоне Кокшетауской возвышенности.</p>
               </div>
-              <div className="p-0 w-full max-w-[520px] self-end text-right text-white">
-                <p className="title-clamp font-bold mb-2">Розлив</p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">На собственном заводе, оснащенном самыми современными автоматизированными линиями розлива от ведущих мировых производителей: Krones, Sidel, FBT, KHS, общей производственной мощностью более 70 000 бутылок в час.</p>
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+                <p className="title-clamp font-bold mb-2 leading-[1.2]">Розлив</p>
+                <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">На собственном заводе, оснащенном самыми современными автоматизированными линиями розлива от ведущих мировых производителей: Krones, Sidel, FBT, KHS, общей производственной мощностью более 70 000 бутылок в час.</p>
               </div>
-              <div className="p-0 w-full max-w-[480px] self-end text-right text-white">
-                <p className="title-clamp font-bold mb-2">Упаковка</p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">Даже РЕТ преформы (заготовки для бутылок), которые все закупают у поставщиков, мы производим сами, здесь же на заводе.</p>
+              <div className="p-0 w-full max-w-[660px] self-end text-right text-white">
+                <p className="title-clamp font-bold mb-2 leading-[1.2]">Упаковка</p>
+                <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">Даже РЕТ преформы (заготовки для бутылок), которые все закупают у поставщиков, мы производим сами, здесь же на заводе.</p>
               </div>
             </motion.div>
           )}
 
           {/* Экран 3 */}
           {showP3 && (
-            <motion.div style={{ opacity: opP3, y: yP3 }} className="w-full flex flex-col items-end justify-end gap-6 flex-none">
-              <p className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[680px] self-end text-right text-[clamp(14px,1.05vw,18px)]">
+            <motion.div style={{ opacity: opP3, y: yP3 }} className="w-full flex flex-col items-end justify-end gap-6 flex-none max-w-[660px]">
+              <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                 Мы не зависим от импорта, не ждём поставок из-за границы и не ищем подрядчиков за рубежом. Это не жест маркетинга, а стратегия: полный контроль над каждым звеном позволяет сохранять стабильность, гарантировать качество и действительно отвечать за продукт перед потребителем. Мы гордимся тем, что TURAN — не импортированный бренд и не франшиза. Это полностью казахстанская история: честная, прозрачная и сильная.
               </p>
             </motion.div>

@@ -101,16 +101,16 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
             >
 
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-start text-left
+                              w-auto max-w-[660px] self-start text-left
                               flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   Вода TURAN отмечена более чем 20 республиканскими и международными наградами за безупречное качество, природный состав и производственные стандарты.
                 </p>
               </div>
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-start text-left
+                              w-auto max-w-[660px] self-start text-left
                               flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   Вот уже несколько лет подряд TURAN получает высшую награду от Monde Selection — одного из самых авторитетных европейских институтов оценки качества. Эта независимая экспертиза проводится в Брюсселе, и включает слепую дегустацию, анализ состава и производственного процесса.
                 </p>
               </div>
@@ -144,16 +144,16 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
               className="w-full flex flex-col items-start justify-start gap-5 flex-none">
 
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-start text-left
+                              w-auto max-w-[660px] self-start text-left
                               flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   TURAN — одна из немногих вод в регионе, прошедших проверку SGS Institut Fresenius. Это мировой эталон лабораторного контроля, которому доверяют более 160 лет. Институт оценивает не только воду в бутылке, но и весь путь от скважины до розлива: санитарные условия, оборудование, технологии.
                 </p>
               </div>
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-start text-left
+                              w-auto max-w-[660px] self-start text-left
                               flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   С 1991 года TURAN остаётся верна своему стандарту: только природная вода, только проверенное качество — и только та чистота, за которую голосуют профессионалы по всему миру.
                 </p>
               </div>

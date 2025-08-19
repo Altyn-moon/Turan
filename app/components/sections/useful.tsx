@@ -57,7 +57,6 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
                   </div>
                 </div>
 
-        {/* колонка контента слева (как в cave.tsx) */}
         <div className="h-full w-full flex flex-col fixed top-0 left-0 gap-0 px-20 pt-[90px] pb-10 z-40">
           <div className="leading-none mb-10 [&>svg]:block [&>svg]:static [&>svg]:w-[400px] [&>svg]:h-auto">
             <UsefulText />
@@ -66,8 +65,8 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
           {/* Экран 1 */}
           {showText1 && (
             <motion.div style={{ opacity: opacityText1, y: moveTextY1 }} className="w-full flex flex-col items-start justify-start gap-2 flex-none">
-              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[630px] self-start text-left flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[660px] self-start text-left flex flex-col gap-0.5">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   TURAN — это тонкая, незаметная, но ежедневная поддержка организма. Она содержит комплекс жизненно важных минералов, без которых наше тело не может функционировать полноценно. Они не добавлены извне и не подогнаны под норму. Это натуральный природный состав: ровно столько, сколько нужно, чтобы поддерживать здоровье, не перегружая организм. Именно поэтому воду TURAN можно и нужно пить каждый день.
                 </p>
               </div>
@@ -84,22 +83,22 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
           {/* Экран 2 */}
           {showText2 && (
             <motion.div style={{ opacity: opacityText2, y: moveTextY2 }} className="relative z-50 w-full flex flex-col justify-start items-start gap-4 flex-none">
-              <div className="text-white text-left flex flex-col gap-2 w-auto max-w-[630px] p-0">
+              <div className="text-white text-left flex flex-col gap-2 w-auto max-w-[660px] p-0">
                 <div>
                   <p className="title-clamp">Кальций</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Поддерживает здоровье сердца, укрепляет кости и зубы, регулирует работу сосудов и свертываемость крови. Его регулярное поступление помогает в профилактике остеопороза и играет важную роль в иммунной защите организма
                   </p>
                 </div>
                 <div>
                   <p className="title-clamp">Магний</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Влияет на сотни процессов в организме — от усвоения белков до нормальной работы нервной системы. Снижает уровень холестерина, уменьшает нервное напряжение, помогает избежать судорог и нарушений сердечного ритма
                   </p>
                 </div>
                 <div>
                   <p className="title-clamp">Калий и натрий</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Эти элементы работают в паре: регулируют водно-солевой баланс, поддерживают сердечный ритм, участвуют в передаче нервных сигналов и обеспечивают здоровую работу мышц. Их дефицит может вызывать слабость, обезвоживание и сбои в работе сердца.
                   </p>
                 </div>
@@ -110,22 +109,22 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
           {/* Экран 3 */}
           {showText3 && (
             <motion.div style={{ opacity: opacityText3, y: moveTextY3 }} className="relative z-50 w-full flex flex-col justify-start items-start gap-4 flex-none">
-              <div className="text-white text-left flex flex-col gap-2 w-auto max-w-[630px] p-0">
+              <div className="text-white text-left flex flex-col gap-2 w-auto max-w-[660px] p-0">
                 <div>
                   <p className="title-clamp">Гидрокарбонаты</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Отвечают за кислотно-щелочное равновесие организма. Они улучшают пищеварение, снижают избыточную кислотность желудочного сока и способствуют мягкому выводу продуктов обмена веществ.
                   </p>
                 </div>
                 <div>
                   <p className="title-clamp">Фтор</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Укрепляет эмаль зубов, кости, участвует в обмене кальция и фосфора. Обладает антибактериальными свойствами, поддерживает здоровье полости рта и способствует выведению тяжёлых металлов из организма.
                   </p>
                 </div>
                 <div>
                   <p className="title-clamp">Йод</p>
-                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                  <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                     Важнейший микроэлемент для щитовидной железы. Участвует в выработке гормонов, влияющих на метаболизм, уровень энергии, концентрацию и развитие мозга.
                   </p>
                 </div>

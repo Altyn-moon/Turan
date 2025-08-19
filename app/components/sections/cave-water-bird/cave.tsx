@@ -65,33 +65,30 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
               className="w-full flex flex-col items-start justify-start gap-2 flex-none">
               <div
                 className="relative z-50 text-white p-0 leading-[1.4]
-                           w-auto max-w-[630px] self-start text-left
+                           w-auto max-w-[660px] self-start
                            flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                   Природная минеральная вода TURAN добывается из источника Бұқпа
                   на месторождении Кусколь — одном из 5 редких источников лёгкой воды
                   на планете. В этом коротком списке он занимает уверенную вторую позицию.
                 </p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                   Легче воды TURAN только талые воды ледников Антарктики. Но в отличие
                   от лидера списка TURAN доступен всем желающим.
                 </p>
-              </div>
+          
 
-              <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+              <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                 Лёгкая вода — это научный термин, описывающий воду с низким содержанием
                 дейтерия (тяжёлого водорода). Она не создаётся искусственно, а добывается
                 в местах с особой геологией и экологической чистотой.
               </p>
-              <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+              <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                 Исследования доказали её уникальный оздоровительный эффект, включая омоложение и продление жизни.
               </p>
-              <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+              <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                 Венгерский ученый Габор Шомлай подтвердил: лёгкая вода способна замедлить метастазирование, восстанавливая защитные функции организма. И это не просто слова, это научно подтвержденная истина, скрытая в самой структуре воды — лёгкая вода с уровнем дейтерия ниже 135 ppm, редка и особо ценна, ведь её структура максимально приближена к межклеточной жидкости нашего организма.
-              </p>
+              </p>    </div>
             </motion.div>
           )}
 
@@ -101,35 +98,29 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
               className="w-full flex justify-start items-start gap-8 flex-none"
             >
               <div className="relative z-50 text-white p-0 leading-[1.4]
-                              w-auto max-w-[630px] self-start text-left
-                              flex flex-col gap-0.5">
+                           w-auto max-w-[660px] self-start
+                           flex flex-col gap-0.">
                 <p className="title-clamp">Лёгкая вода:</p>
-                <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   - Помогает клеткам вырабатывать больше энергии. В митохондриях
                   снижается тормозящий эффект тяжёлых молекул. В результате чего
                   организм быстрее восстанавливается, дольше остаётся бодрым и
                   устойчивым к нагрузкам. </p>
-                <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   - Помогает активизировать
                   естественные защитные силы. Организм лучше справляется со
                   стрессами, вирусами и воспалениями. </p>
-                <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
-                  - Улучшает обмен
-                  веществ — ускоряет ключевые биохимические процессы. Это
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
+                  - Улучшает обмен веществ - ускоряет ключевые биохимические процессы. Это
                   помогает телу эффективнее усваивать питательные вещества,
                   избавляться от токсинов и поддерживать баланс. </p>
-                <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   - Замедляет старение на клеточном уровне. Защищает ДНК и
                   способствует обновлению клеток. Это помогает дольше сохранять
                   внутреннюю молодость и стабильность работы органов и систем.
                 </p>
 
-                <p className="relative z-50 text-white text-[clamp(14px,1.05vw,18px)]
-                            p-0 mt-2 leading-[1.4] w-auto max-w-[630px] self-start text-left">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold ">
                   Лёгкая вода — это не лекарство, а природная поддержка организма. Она работает мягко, но эффективно, помогая телу включать собственные ресурсы. Ее регулярное употребление имеет накопительный эффект — улучшение самочувствия, ясность ума и лёгкость в теле становятся естественной нормой.
                 </p>
               </div>

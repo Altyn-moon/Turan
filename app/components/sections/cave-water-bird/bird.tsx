@@ -50,14 +50,14 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
 
           {showText1 && (
             <motion.div style={{ opacity: opacityText1, y: moveTextY1 }} className="w-full flex flex-col items-start justify-start gap-2 flex-none">
-              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[620px] self-start text-left flex flex-col gap-0.5">
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4]">
+              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[660px] self-start text-left flex flex-col gap-0.5">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   Вода TURAN отличается не только чистотой, но и естественным уровнем pH. 7,5 — это именно тот показатель, к которому стремится сам организм. Такой уровень кислотно-щелочного баланса максимально близок к внутренней среде человека, особенно к плазме крови и лимфе. Это делает воду TURAN не просто утоляющей жажду, а физиологически подходящей для ежедневного употребления.
                 </p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] mt-2">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   pH — это показатель кислотно-щелочного равновесия. Вода с pH 7,5 мягко поддерживает внутренний баланс, не вызывая ни закисления, ни ощелачивания. Она легко усваивается, не перегружает организм, способствует нормализации обменных процессов и помогает телу сохранять внутреннюю стабильность, особенно при умственных и физических нагрузках, стрессах или нарушениях питания.
                 </p>
-                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] mt-2">
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   Многие производители стремятся добиться «идеального» pH с помощью химической коррекции — добавляя соли или изменяя структуру воды. TURAN не нуждается в этом. Её сбалансированный уровень pH — естественный результат прохождения через глубинные геологические породы, сформированные миллионы лет назад. Природа сама отрегулировала этот баланс — мы просто бережно сохраняем его.
                 </p>
               </div>

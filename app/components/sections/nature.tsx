@@ -128,12 +128,12 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                 style={{ y: moveTextY1, opacity: opacityText1 }}
                 className="flex flex-col justify-between h-full gap-5"
               >
-                <div className="grid grid-cols-4 gap-5 h-full">
+                <div className="grid grid-cols-4 gap-5 w-full">
                   <p className="col-span-2 w-2/3 title-clamp h-fit text-white font-bold  leading-none">
                     TURAN — природная минеральная вода, рожденная из глубин
                     веков.
                   </p>
-                  <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold  leading-normal text-right place-self-end">
+                  < p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-normal text-justify  place-self-end">
                     Она берет свое начало в заповедной зоне Кокшетауской
                     возвышенности, где на глубине более 100 метров скрыт
                     реликтовый источник, сформированный более 15 000 лет назад
@@ -144,6 +144,8 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                     внешнего воздействия — только идеальный баланс, созданный
                     самой природой.
                   </p>
+
+                  
                 </div>
                 <div className="relative w-full grid grid-cols-4 z-30 gap-5">
                   {features.map((f) => (
@@ -168,8 +170,9 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                 style={{ y: moveTextY2, opacity: opacityText2 }}
                 className="flex flex-col justify-between h-full gap-5"
               >
-                <div className="grid grid-cols-4 gap-5 h-full w-full">
-                  <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-normal">
+                
+                <div className="grid grid-cols-4 gap-5 w-full">
+                  <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold leading-normal">
                     TURAN — не просто вода, это символ вечности, заключенной в
                     каждой капле. Ее источник — естественный природный
                     резервуар, сформированный ледниковыми водами, которые
@@ -179,7 +182,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                     скрывается уникальная экосистема, полностью защищенная от
                     внешних воздействий.
                   </p>
-                    <p className="col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-normal text-right  place-self-end">
+                    <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-normal text-justify  place-self-end">
                     Эта вода не подвергается дополнительной обработке, потому
                     что в ней нет ничего лишнего. Природная минерализация,
                     идеально сбалансированный состав, мягкий, освежающий вкус —
@@ -196,7 +199,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
                       key={f.value}
                       className="px-10 py-5 flex flex-col justify-between items-center gap-4 text-white text-center"
                     >
-                      <span className="title-clamp font-bold leading-5">
+                      <span className="title-clamp-list font-bold leading-5">
                         {f.value}
                       </span>
                       <span className="text-clamp opacity-80 !leading-none">
