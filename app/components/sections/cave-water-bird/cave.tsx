@@ -100,7 +100,7 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
                 <p className="title-clamp">Легкая вода:</p>
                 <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   <span className="white-dot"></span>Помогает клеткам вырабатывать больше энергии. В митохондриях
-                  снижается "тормозящий эффект" тяжёлых молекул. В результате чего
+                  снижается &quot;тормозящий эффект&quot; тяжёлых молекул. В результате чего
                   организм быстрее восстанавливается, дольше остаётся бодрым и
                   устойчивым к нагрузкам. </p>
                 <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
