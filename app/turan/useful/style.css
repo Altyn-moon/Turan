@@ -19,12 +19,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  font-size: 178px; 
+  font-size: clamp(40px, 12vw, 178px); /* min, динамика, max */
   font-weight: 700;
   color: white;
   line-height: 0.8;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.00);
 }
+
 
 /*water*/
 .water-block {

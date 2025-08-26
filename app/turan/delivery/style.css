@@ -17,12 +17,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   
-  font-size: 277px; 
+  font-size: clamp(60px, 14vw, 277px); /* min / адаптив / max */
   font-weight: 700;
   color: white;
   line-height: 0.8;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.00);
 }
+
 
 /*water*/
 .delivery-block {

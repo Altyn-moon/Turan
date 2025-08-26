@@ -33,23 +33,23 @@ export default function SocialPage() {
   </p>
 
   <div className="market-grid">
-    <a className="market-card" href="#" aria-label="Wolt">
+    <a className="market-card" href="https://wolt.com/ru/" aria-label="Wolt">
       <img src="/images/wolt.png" alt="Wolt" />
     </a>
 
-    <a className="market-card" href="#" aria-label="Aiqrbafresh">
+    <a className="market-card" href="https://airbafresh.kz/" aria-label="Aiqrbafresh">
       <img src="/images/AIRBA-FRESH.png" alt="airba fresh" />
     </a>
 
-    <a className="market-card" href="#" aria-label="Magnum GO">
+    <a className="market-card" href="https://magnum.kz/MagnumGo?city=almaty" aria-label="Magnum GO">
       <img src="/images/AIRBA-FRESH-Photoroom copy.png" alt="magnum GO" />
     </a>
 
-    <a className="market-card" href="#" aria-label="Arbuz">
+    <a className="market-card" href="https://arbuz.kz/#/" aria-label="Arbuz">
       <img src="/images/arbuz.png" alt="arbuz" />
     </a>
 
-    <a className="market-card" href="#" aria-label="Choco">
+    <a className="market-card" href="https://chocolife.me/" aria-label="Choco">
       <img src="/images/choco.png" alt="Choco" />
     </a>
   </div>

@@ -69,9 +69,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
           {(showText1 || showText2) && (
             <motion.div style={{ opacity }} className="relative z-50 text-white p-0 leading-[1.4]
                                                          w-auto max-w-[660px] self-end text-right flex flex-col gap-0.5">
-              <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
-                Вода TURAN не просто «соответствует нормам». Она подтверждает свою чистоту и стабильность каждый день, каждый месяц, каждый год.
-              </p>
+
             </motion.div>
           )}
 
@@ -82,7 +80,10 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                 <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
                               w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-1">
-                  <p className="title-clamp font-bold mb-0 leading-none">Автоматизированный контроль</p>
+                                  <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
+                Вода TURAN не просто «соответствует нормам». Она подтверждает свою чистоту и стабильность каждый день, каждый месяц, каждый год.
+              </p>
+                  <p className="title-clamp font-bold mb-0 leading-none ">Автоматизированный<br></br> контроль</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Все этапы производства — от водозабора до упаковки — находятся под непрерывным контролем операторов. Современные цифровые системы отслеживают параметры в реальном времени, исключая человеческий фактор в критичных зонах
                   </p>
@@ -106,7 +107,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                 <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
                               w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-1">
-                  <p className="title-clamp font-bold mb-0 leading-none">Ежедневная проверка качества</p>
+                  <p className="title-clamp font-bold mb-0 leading-none">Ежедневная проверка <br></br> качества</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     На заводе KMW работает собственная лаборатория, где вода ежедневно проходит полный анализ по санитарно-гигиеническим, органолептическим и физико-химическим показателям. Это не формальность, а часть ежедневного производственного процесса
                   </p>
@@ -114,7 +115,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                 <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
                               w-auto max-w-[660px] self-end text-right
                               flex flex-col gap-1">
-                  <p className="title-clamp font-bold mb-0 leading-[1.0]">Ежемесячный государственный <br></br> контроль</p>
+                  <p className="title-clamp font-bold mb-0 leading-[1.0] ">Ежемесячный <br></br>государственный  контроль</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
                     Месторождение воды TURAN официально зарегистрировано и находится под надзором Комитета контроля качества МЗ РК. Специалисты ежемесячно выезжают на месторождение, где производят отбор проб прямо из эксплуатационной скважины — до какой-либо обработки или фильтрации. Пробы доставляются в аккредитованные лаборатории для проведения полного анализа: от химического состава до микробиологической чистоты. Это позволяет объективно оценивать стабильность природного источника и гарантировать безопасность воды на самом базовом уровне
                   </p>

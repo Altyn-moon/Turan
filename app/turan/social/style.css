@@ -19,7 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   
-  font-size: 145px; 
+  font-size: clamp(40px, 10vw, 145px); /* min, динамика, max */
   font-weight: 700;
   color: white;
   line-height: 0.8;
@@ -27,6 +27,7 @@
 
   overflow-wrap: break-word;
 }
+
 
 /*Water Section*/
 .social-block {
@@ -44,6 +45,16 @@
   color: #003366;
   margin-bottom: 30px;
 }
+
+.blue-dot {
+    display: inline-block; 
+    width: 8px;
+    height: 8px;
+    background-color: #009FE3;
+    border-radius: 50%;
+    margin-right: 8px; 
+    flex-shrink: 0;
+  }
 
 /*Footer*/
 .footer {

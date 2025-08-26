@@ -17,7 +17,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   
-  font-size: 200px; 
+  font-size: clamp(48px, 12vw, 200px); /* min / адаптив / max */
   font-weight: 700;
   color: white;
   text-align: center;
@@ -27,6 +27,7 @@
   padding: 0;
   white-space: nowrap;
 }
+
 
 /*Footer*/
 .footer {
@@ -207,6 +208,8 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+
+  overflow: visible;    
 }
 
 .bottle-card:hover {
@@ -224,6 +227,27 @@
   border-radius: 20px;
   background: #E6F6FC;
 }
+
+.bottle-inner,
+.flavored-bg {
+  position: static;      
+  overflow: visible;     
+  border-radius: 20px;   
+}
+
+.bottle-img {
+  position: absolute;                 
+  left: 50%;
+  transform: translateX(-50%) translateY(80px); 
+  bottom: 20px;                                    
+  transition: transform 0.3s ease;
+
+  /* обрезаем НИЗ картинки */
+  -webkit-clip-path: inset(0 0 80px 0);  
+  clip-path: inset(0 0 80px 0);
+  object-fit: contain; 
+}
+
 
 /* Синий прямоугольник внизу */
 .bottle-label {
