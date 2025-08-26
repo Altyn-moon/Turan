@@ -393,16 +393,28 @@
 
 /* Вкусовые стили */
 .flavored-card.strawberry .flavored-bg {
-  background-image: url('/images/strawberry.png');
+  background-image: url('/images/straw-back.png');
+  background-position: center;
+  background-size: cover;
+
 }
 .flavored-card.raspberry .flavored-bg {
-  background-image: url('/images/raspberry-b.png');
+  background-image: url('/images/raspberry-back.png');
+  background-position: center;
+  background-size: cover;
+
 }
 .flavored-card.mango .flavored-bg {
-  background-image: url('/images/mango-b.png');
+  background-image: url('/images/mango-back.png');
+  background-position: center;
+  background-size: cover;
+
 }
 .flavored-card.lemon .flavored-bg {
-  background-image: url('/images/lemon.png');
+  background-image: url('/images/lemon2.png');
+  background-position: center;
+  background-size: cover;
+  /* background-size: cover; */
 }
 
 .flavored-card.strawberry:hover {

@@ -66,23 +66,23 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
         <div className="fixed inset-0 z-0">
           <Image
             fill
-            src="/awards/bg-family.webp"
+            src="/awards/family-award.png"
             alt="background"
             className="object-cover"
             priority
             unoptimized
           />
         </div>
-        <div className="fixed inset-0 z-20 translate-y-2">
+        {/* <div className="fixed inset-0 z-20 translate-y-2">
           <Image
             fill
-            src="/awards/family.png"
+            src="/awards/family-award.jpeg"
             alt="family"
             className="object-cover"
             priority
             unoptimized
           />
-        </div>
+        </div> */}
 
         
         <div className="h-full w-full flex flex-col fixed top-0 left-0 gap-0 px-20 pt-[90px] pb-10 z-40 text-white">
