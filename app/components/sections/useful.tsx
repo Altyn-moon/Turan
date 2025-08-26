@@ -65,9 +65,12 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
           {/* Экран 1 */}
           {showText1 && (
             <motion.div style={{ opacity: opacityText1, y: moveTextY1 }} className="w-full flex flex-col items-start justify-start gap-2 flex-none">
-              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[660px] self-start text-left flex flex-col gap-0.5">
+              <div className="relative z-50 text-white p-0 leading-[1.4] w-auto max-w-[660px] self-start text-left flex flex-col gap-2">
                 <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
                   TURAN — это тонкая, незаметная, но ежедневная поддержка организма. Она содержит комплекс жизненно важных минералов, без которых наше тело не может функционировать полноценно. Они не добавлены извне и не подогнаны под норму. Это натуральный природный состав: ровно столько, сколько нужно, чтобы поддерживать здоровье, не перегружая организм. Именно поэтому воду TURAN можно и нужно пить каждый день.
+                </p>
+                <p className="text-[clamp(14px,1.05vw,18px)] leading-[1.4] col-span-2 w-5/6 2xl:w-2/3 text-clamp h-fit text-white text-justify font-bold">
+                  Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при которой вода не только утоляет жажду, но и работает на вас: помогает клеткам, сосудам, нервной системе, костям, обмену веществ.
                 </p>
               </div>
             </motion.div>

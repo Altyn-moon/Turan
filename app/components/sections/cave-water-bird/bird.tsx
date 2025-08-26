@@ -16,7 +16,6 @@ interface BirdSectionProps {
 export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
   const [showText1, setShowText1] = useState(false);
 
-  // теперь 0.34–0.38
   useMotionValueEvent(scrollYProgress, "change", (v) => setShowText1(v > 0.34 && v < 0.38));
 
   const opacity      = useTransform(scrollYProgress, [0.34, 0.345, 0.375, 0.38], [0, 1, 1, 0]);

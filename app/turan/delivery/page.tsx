@@ -75,23 +75,14 @@ export default function SocialPage() {
     <div className="footer-contacts">
       <h4>КОНТАКТЫ</h4>
       <div>
-        Офис в России (г. Москва)<br />
-        <a href="tel:+79777882787">+7 977 788 27 87</a><br />
-        <a href="tel:+79262713508">+7 926 271 35 08</a><br />
-        <a href="mailto:constantine.kravtsov@globalbeverages.kz">constantine.kravtsov@globalbeverages.kz</a>
-      </div>
-    </div>
-
-    <div className="footer-contacts">
-      <div className="footer-branch">
-        Дистрибутор в Приволжском Федеральном округе (г. Самара)<br />
-        <a href="tel:+78462218170"><strong>+7 846 221 81 70</strong></a><br />
-        <a href="mailto:turan@turanvolga.ru">turan@turanvolga.ru</a>
+        Отдел Экспорта<br />
+        <a href="tel:+77273318947">+7 (727) 331-89-47</a><br />
+        <a href="mailto:info@globalbeverages.kz">info@globalbeverages.kz</a>
       </div>
     </div>
 
     <div className="footer-button">
-      <a href="/turan/delivery" className="footer-delivery-btn">Доставка</a>
+      {/* <a href="/turan/delivery" className="footer-delivery-btn">Доставка</a> */}
       <div className="footer-del-num footer-contacts">
         <a href="tel:+78462218170">+7 846 221 81 70</a><br />
         <a href="mailto:turan@turanvolga.ru">turan@turanvolga.ru</a>
