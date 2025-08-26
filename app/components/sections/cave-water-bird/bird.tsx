@@ -43,7 +43,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
         </div>
 
         <div className="h-full w-full flex flex-col fixed top-0 left-0 gap-0 px-20 pt-[90px] pb-10 items-start z-40">
-          <div className="leading-none mb-10 [&>svg]:block [&>svg]:static [&>svg]:w-[945px] [&>svg]:h-auto">
+          <div className="leading-none mb-10 [&>svg]:block [&>svg]:static  [&>svg]:h-auto">
             <BirdText />
           </div>
 

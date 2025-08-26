@@ -28,8 +28,8 @@
 /*water*/
 .delivery-block {
   max-width: 1280px;
-  margin: 100px auto;
-  padding: 60px;
+  margin: 60px auto;
+  padding: clamp(20px, 5vw, 60px); /* плавный паддинг */
   background: #fff;
   border-radius: 16px;
   border: 1px solid #E4EAF2;
@@ -37,11 +37,36 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+/* маленькие ноутбуки */
+@media (max-width: 1366px) {
+  .delivery-block {
+    margin: 40px 40px; /* боковые отступы */
+  }
+}
+
+/* планшеты */
+@media (max-width: 992px) {
+  .delivery-block {
+    margin: 30px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* телефоны */
+@media (max-width: 576px) {
+  .delivery-block {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
+
 /* Карточка секции доставка */
 .delivery-card {
   border-radius: 20px;
   border: 1px solid #E4EAF2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 10px rgba(119, 19, 19, 0.02);
 }
 
 /* Верхний текст */
@@ -230,21 +255,45 @@
 }
 
 /* Адаптив */
+/* до 1200px — 4 карточки в строке */
 @media (max-width: 1200px) {
-  .market-grid { grid-template-columns: repeat(4, 1fr); }
-}
-@media (max-width: 900px) {
-  .market-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 640px) {
-  .market-grid { grid-template-columns: repeat(2, 1fr); }
-  .market-card { height: 96px; }
-}
-@media (max-width: 450px) {
-  .market-grid { grid-template-columns: repeat(1, 1fr); }
-  .market-card { height: 96px; }
+  .market-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* <-- центрирует строки и последнюю строку */
+    gap: 16px;
+  }
+  .market-card {
+    flex: 0 0 calc((100% - (16px * 3)) / 4);
+    max-width: calc((100% - (16px * 3)) / 4);
+  }
 }
 
+/* до 900px — 3 карточки в строке */
+@media (max-width: 900px) {
+  .market-card {
+    flex: 0 0 calc((100% - (16px * 2)) / 3);
+    max-width: calc((100% - (16px * 2)) / 3);
+  }
+}
+
+/* до 640px — 2 карточки в строке */
+@media (max-width: 640px) {
+  .market-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+    max-width: calc((100% - 16px) / 2);
+    height: 96px;
+  }
+}
+
+/* до 450px — 1 карточка в строке */
+@media (max-width: 450px) {
+  .market-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 96px;
+  }
+}
 
 
 

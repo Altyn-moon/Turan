@@ -30,18 +30,6 @@ export default function SocialPage() {
 
       {/* Water Section */}
       <section className="social-block">
-        {/*<p>
-          Turan Water придерживается принципов устойчивого развития, заботясь об
-          окружающей среде и благополучии общества. Компания внедряет экологически
-          чистые технологии, минимизирует влияние производства на природу и активно
-          поддерживает благотворительные инициативы.
-        </p>
-        <p>
-          Особое внимание уделяется доступу к чистой воде, а также проектам,
-          направленным на поддержку образования, спорта и здравоохранения. Мы
-          стремимся не только производить качественную воду, но и вносить вклад в
-          развитие общества, создавая лучшее будущее для следующих поколений.
-        </p>*/}
         <p>TURAN бережно относится к своему источнику — реликтовой воде, сформированной талыми водами Валдайского ледника. Здесь нет агрессивной химической обработки, дистилляции и искусственной минерализации. Только механическая очистка, позволяющая сохранить естественный баланс минералов и уникальный состав. Это принципиальный выбор бренда: не нарушать природное совершенство.
         Забота об экологии не заканчивается на воде. TURAN стремится минимизировать углеродный след:<br></br>
         <span className="blue-dot"></span> производство построено по принципам энергоэффективности; <br></br>
@@ -84,14 +72,6 @@ export default function SocialPage() {
         <a href="mailto:info@globalbeverages.kz">info@globalbeverages.kz</a>
       </div>
     </div>
-
-    <div className="footer-button">
-      {/* <a href="/turan/delivery" className="footer-delivery-btn">Доставка</a> */}
-      <div className="footer-del-num footer-contacts">
-        <a href="tel:+78462218170">+7 846 221 81 70</a><br />
-        <a href="mailto:turan@turanvolga.ru">turan@turanvolga.ru</a>
-      </div>
-    </div>
   </div>
 
   <div className="footer-bottom">
@@ -107,8 +87,8 @@ export default function SocialPage() {
     <a href="#">Политика конфиденциальности</a>
 
     <div className="footer-rights">
-      <span className="font">00</span>
-      <span className="font">/</span>
+      {/* <span className="font">00</span>
+      <span className="font">/</span> */}
       <span>Сайт создан <a href="#">OG Group</a></span>
     </div>
   </div>

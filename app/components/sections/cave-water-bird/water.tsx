@@ -64,7 +64,7 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
           {/* Заголовок */}
           <div className="leading-none mb-10 ml-auto
                           [&>svg]:block [&>svg]:static
-                          [&>svg]:w-[400px] [&>svg]:h-auto">
+                           [&>svg]:h-auto">
             <WaterText />
           </div>
 

@@ -32,13 +32,39 @@
 /*Water Section*/
 .social-block {
   max-width: 1280px;
-  margin: 100px auto;
-  padding: 60px;
+  margin: 60px auto;
+  padding: clamp(20px, 5vw, 60px);
   background: #fff;
   border-radius: 16px;
   border: 1px solid #E4EAF2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
 }
+
+/* маленькие ноуты (например, до 1366px ширина) */
+@media (max-width: 1366px) {
+  .social-block {
+    margin: 40px 40px; /* по бокам всегда есть пространство */
+  }
+}
+
+/* планшеты */
+@media (max-width: 992px) {
+  .social-block {
+    margin: 30px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* телефоны */
+@media (max-width: 576px) {
+  .social-block {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
+
 
 .social-block > p {
   font-size: 20px;

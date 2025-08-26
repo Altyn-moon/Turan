@@ -80,14 +80,6 @@ export default function SocialPage() {
         <a href="mailto:info@globalbeverages.kz">info@globalbeverages.kz</a>
       </div>
     </div>
-
-    <div className="footer-button">
-      {/* <a href="/turan/delivery" className="footer-delivery-btn">Доставка</a> */}
-      <div className="footer-del-num footer-contacts">
-        <a href="tel:+78462218170">+7 846 221 81 70</a><br />
-        <a href="mailto:turan@turanvolga.ru">turan@turanvolga.ru</a>
-      </div>
-    </div>
   </div>
 
   <div className="footer-bottom">
@@ -103,8 +95,8 @@ export default function SocialPage() {
     <a href="#">Политика конфиденциальности</a>
 
     <div className="footer-rights">
-      <span className="font">00</span>
-      <span className="font">/</span>
+      {/* <span className="font">00</span>
+      <span className="font">/</span> */}
       <span>Сайт создан <a href="#">OG Group</a></span>
     </div>
   </div>

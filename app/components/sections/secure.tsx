@@ -62,7 +62,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         <div className="h-full w-full flex flex-col fixed top-0 left-0 gap-2.5 px-20 pt-[90px] pb-10 z-40 items-end">
           <div className="leading-none mb-10 self-end
                           [&>svg]:block [&>svg]:static
-                          [&>svg]:w-[590px] [&>svg]:h-auto">
+                          [&>svg]:w-[660px] [&>svg]:h-auto">
             <SecureText />
           </div>
 

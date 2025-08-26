@@ -30,14 +30,39 @@
 /*water*/
 .water-block {
   max-width: 1280px;
-  margin: 100px auto;
-  padding: 60px;
+  margin: 60px auto;
+  padding: clamp(20px, 5vw, 60px); /* динамический паддинг */
   background: #fff;
   border-radius: 16px;
   border: 1px solid #E4EAF2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
   font-family: 'Montserrat', sans-serif;
 }
+
+/* маленькие ноутбуки */
+@media (max-width: 1366px) {
+  .water-block {
+    margin: 40px 40px; /* добавляем боковые отступы */
+  }
+}
+
+/* планшеты */
+@media (max-width: 992px) {
+  .water-block {
+    margin: 30px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* телефоны */
+@media (max-width: 576px) {
+  .water-block {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
 
 .water-block h2 {
   color: #003366;
