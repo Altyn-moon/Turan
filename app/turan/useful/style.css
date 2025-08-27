@@ -67,12 +67,17 @@
   color: #003366;
   font-size: 32px;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .water-block > p {
   font-size: 20px;
   color: #003366;
   margin-bottom: 30px;
+
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 .water-cards {
@@ -105,18 +110,30 @@
 .water-card strong {
   color: #003366;
   font-size: 20px;
+
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 .water-card p {
   margin: 4px 0 0;
   font-size: 20px;
   color: #003366;
+
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 .water-block .note {
   font-size: 20px;
-  color: #666;
+  color: #002856;
   text-align: left;
+
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 /*Мифы*/
@@ -160,6 +177,7 @@
   color: #003366;
   font-size: 32px;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .myth-item {
@@ -176,6 +194,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 .dot {
@@ -183,7 +205,9 @@
   height: 16px;
   background-color: #009FE3;
   border-radius: 50%;
-  display: inline-block;
+
+  display: inline-block;   /* гарантируем блочный элемент */
+  flex-shrink: 0; 
 }
 
 .cross {
@@ -200,13 +224,20 @@
 
   display: inline-flex;  
   align-items: center;
-  gap: 6px;    
+  gap: 6px;  
+  
+   font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 .myth-explained {
   font-size: 20px;
   color: #003366;
-  line-height: 1.5;
+
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.4px;
 }
 
 /*Footer*/
@@ -344,6 +375,147 @@
 }
 
 
+
+
+
+
+
+/* ============ ADAPTIVE ============ */
+
+/* laptops down */
+@media (max-width: 1366px) {
+  .water-block, .myths-block { margin: 40px 40px; }
+}
+
+/* tablets */
+@media (max-width: 992px) {
+  .water-block { margin: 30px 20px; margin-top: 50px; }
+  .myths-block { margin: 30px 20px; border-radius: 12px; }
+}
+
+/* phones ≤576 */
+@media (max-width: 576px) {
+  .water-block { margin: 30px 15px; padding: 20px; margin-top: 50px; }
+  .myths-block { margin: 20px 10px; padding: 20px; border-radius: 8px; }
+}
+
+/* === MOBILE HERO (точно как в delivery) === */
+@media (max-width: 768px) {
+  .hero--with-header { padding-top: 0 !important; }
+
+  .useful-hero {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center;
+    min-height: clamp(220px, 30vh, 520px);
+    height: auto;
+    padding-inline: 16px;
+  }
+
+  .useful-hero .useful-text {
+    position: static;
+    top: auto; left: auto;
+    transform: none;
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1;
+  }
+}
+@supports (height: 1dvh) {
+  @media (max-width: 768px) { .useful-hero { min-height: clamp(220px, 30dvh, 520px); } }
+}
+/* ступень 36vh */
+@media (max-width: 768px) { .useful-hero { min-height: clamp(200px, 36vh, 460px); } }
+@supports (height: 1dvh) {
+  @media (max-width: 768px) { .useful-hero { min-height: clamp(200px, 36dvh, 460px); } }
+}
+/* ступень 42vh */
+@media (max-width: 480px) { .useful-hero { min-height: clamp(180px, 42vh, 420px); } }
+@supports (height: 1dvh) {
+  @media (max-width: 480px) { .useful-hero { min-height: clamp(180px, 42dvh, 420px); } }
+}
+
+/* === CONTENT sizing on mobile === */
+@media (max-width: 768px) {
+  .water-block h2, .myths-block h2 { font-size: 28px; line-height: 30px;}
+  .water-block > p, .myth-explained { font-size: 18px; }
+  .water-cards { grid-template-columns: 1fr; gap: 16px; }
+  .water-card { padding: 24px; }
+  .water-card strong, .water-card p, .myth-question, .myth-false { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .water-block h2, .myths-block h2 { font-size: 24px; }
+  .water-block > p, .myth-explained { font-size: 16px; }
+  .water-card { padding: 18px; }
+  .water-card strong, .water-card p, .myth-question, .myth-false { font-size: 16px; }
+}
+
+/* === FOOTER (mobile layout как на остальных) === */
+@media (max-width: 768px) {
+  .footer { padding: 32px 16px 0; }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto;   /* меню слева, контакты справа */
+    column-gap: 32px;
+    align-items: start;
+  }
+
+  .footer-logo { grid-column: 1 / -1; text-align: center; margin-bottom: 16px; }
+  .footer-logo img { display: inline-block; width: 105px; height: auto; }
+
+  .footer-menu { grid-column: 1; text-align: left; }
+  .footer-contacts { grid-column: 2; justify-self: end; text-align: left; width: max-content; }
+  .footer-contacts > div { width: auto; font-size: 13px; }
+
+  .footer-social { grid-column: 2; justify-self: end; display:flex; gap:8px; margin:10px 0 0; }
+  .footer-social img { width:32px; height:32px; }
+
+  .footer-button { grid-column: 2; justify-self: end; margin-top: 10px; }
+  .footer-del-num { text-align: right; }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+  }
+  .footer-bottom > p { grid-column: 1; margin: 0; }
+  .footer-bottom > a:nth-of-type(1),
+  .footer-bottom > a:nth-of-type(2) { grid-column: 1; }
+  .footer-rights { grid-column: 2; justify-self: end; text-align: right; }
+}
+
+@media (max-width: 480px) {
+  .footer-top { column-gap: 24px; }
+  .footer-logo img { width: 84px; }
+  .footer-menu h4, .footer-contacts h4 { font-size: 10px; margin-bottom: 12px; }
+  .footer-menu ul li a, .footer-contacts a { font-size: 14px; }
+  .font { font-size: 20px; }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+  .footer-top { column-gap: 20px; }
+  .footer-logo img { width: 76px; }
+  .footer-menu ul li a { font-size: 13px; }
+  .footer-contacts > div, .footer-contacts a { font-size: 12px; }
+  .footer-social { gap: 6px; }
+  .footer-social img { width: 28px; height: 28px; }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  .footer-top { column-gap: 14px; }
+  .footer-logo img { width: 70px; }
+  .footer-menu ul li a { font-size: 12.5px; }
+  .footer-contacts > div, .footer-contacts a { font-size: 11.5px; }
+  .footer-social img { width: 26px; height: 26px; }
+}
 
 
 
