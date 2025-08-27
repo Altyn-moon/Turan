@@ -76,7 +76,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
         <div className="fixed inset-0 z-20 translate-y-2">
           <Image
             fill
-            src="/awards/fam.png"
+            src="/awards/family5.png"
             alt="family"
             className="object-cover"
             priority

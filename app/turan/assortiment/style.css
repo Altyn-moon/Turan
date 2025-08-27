@@ -24,8 +24,7 @@
   line-height: 1;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.00);
   margin: 0;
-  padding: 0;
-  white-space: nowrap;
+  padding: 0;  
 }
 
 
@@ -293,7 +292,7 @@
 .bottle-top-label {
   background: #002856;
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 5px 20px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -304,7 +303,6 @@
   top: 0px;
   left: 0px;
 
-  padding: 4px 10px;
   font-weight: 500;
   border-radius: 20px 0;
 }
@@ -373,7 +371,7 @@
 
 .flavored-top {
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 5px 20px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -386,7 +384,6 @@
   top: 0px;
   left: 0px;
 
-  padding: 4px 10px;
   font-weight: 500;
   border-radius: 20px 0;
 }
@@ -455,9 +452,168 @@
 
 
 
+/* Адаптив для мобилки */
+
+/* Hero */
+.assortiment-text {
+  font-size: clamp(40px, 12vw, 200px);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;     
+  hyphens: none;           
+  word-break: normal;
+}
+
+/* Футер базово */
+.footer {
+  padding: clamp(32px, 5vw, 60px) clamp(16px, 4vw, 40px) 0;
+}
+
+/* Планшет ≤ 768px */
+@media (max-width: 768px) {
+/*хиро*/
+  .hero--with-header { 
+    padding-top: 0;
+  }
+  .assortiment-hero { 
+    height: 30vh; /* фиксируем высоту */
+    display: flex;
+    justify-content: center; /* по горизонтали */
+    align-items: center; /* по вертикали */
+    text-align: center; /* чтобы текст был по центру */
+  }
+  
+.assortiment-hero .assortiment-text {
+    position: static;
+    top: auto; 
+    left: auto;
+    transform: none;
+    margin: 0;              
+    white-space: nowrap;    
+  }
+
+/*ассортимент тексты */
+  .assortment-title {
+    font-size: clamp(32px, 4.2vw, 32px);
+    margin-bottom: clamp(20px, 4vw, 40px);
+  }
+  .bottle-label,
+  .flavored-sub {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .bottle-top-label,
+  .flavored-top {
+    font-size: 20px;
+    padding: 5px 20px;
+  }
+}
+
+/* Смартфон ≤ 480px */
+@media (max-width: 480px) {
+  .hero--with-header { padding-top: 96px; }
+
+  .footer-logo img { width: 84px; }
+
+
+  .footer-menu ul li a,
+  .footer-contacts a { font-size: 14px; }
+
+  .footer-contacts > div { font-size: 13px; }
+
+  .font { font-size: 20px; }
+}
 
 
 
+
+
+
+
+/* ===== MOBILE/TABLET FOOTER LAYOUT (clean & fixed) ===== */
+
+/* ≤ 768px */
+@media (max-width: 768px) {
+  /* Верх футера: 2 колонки — меню слева (тянется), контакты справа (по контенту) */
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto;   /* создаёт «пустоту»/отступ между колонками */
+    column-gap: 36px;                  /* явный ОТСТУП между меню и контактами */
+    align-items: start;
+  }
+
+  /* Логотип — по центру над колонками */
+  .footer-logo {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .footer-logo img { display: inline-block; width: 105px; height: auto; }
+
+  /* Меню слева */
+  .footer-menu {
+    grid-column: 1;
+    text-align: left;
+    padding-right: 4px;                /* чуть больше «воздуха» у текста меню */
+  }
+
+  /* Контакты справа: прижимаем блок к правому краю, но его текст — слева */
+  .footer-contacts {
+    grid-column: 2;
+    justify-self: end;                 /* прижали весь блок к правому краю */
+    text-align: left;                  /* внутри — выравнивание текста слева */
+    width: max-content;                /* ширина по контенту — gap визуально работает */
+  }
+  /* Убираем фиксированную ширину, заданную выше в десктопе */
+  .footer-contacts > div { width: auto !important; font-size: 13px; }
+
+  /* Соц-иконки: сразу под контактами справа (визуально «поверх» блока turan volga) */
+  .footer-social {
+    grid-column: 2;                    /* правая колонка */
+    justify-self: end;
+    display: flex;
+    gap: 8px;
+    margin: -6px 0 6px;                /* чуть подтягиваем вверх к контактам */
+  }
+  .footer-social img { width: 32px; height: 32px; }
+
+  /* Блок с доп. телефоном/почтой и кнопкой — ниже соцсетей справа */
+  .footer-button {
+    grid-column: 2;
+    justify-self: end;
+    margin-top: 10px;
+  }
+  .footer-del-num { text-align: right; }
+
+  /* Нижняя полоса футера: слева — копирайт и политики; справа — OG Group */
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-items: start;
+    margin-top: 16px;
+  }
+  .footer-bottom > p { grid-column: 1; margin: 0; }
+  .footer-bottom > a:nth-of-type(1),
+  .footer-bottom > a:nth-of-type(2) { grid-column: 1; }
+
+  .footer-rights {
+    grid-column: 2;
+    justify-self: end;
+    text-align: right;
+  }
+}
+
+/* ≤ 480px — та же схема, чуть компактнее */
+@media (max-width: 480px) {
+  .footer-top { column-gap: 28px; }
+  .footer-logo img { width: 84px; }
+  .footer-menu h4, .footer-contacts h4 { font-size: 10px; margin-bottom: 12px; }
+  .footer-menu ul li a, .footer-contacts a { font-size: 14px; }
+  .font { font-size: 20px; }
+}
 
 
 
