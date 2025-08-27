@@ -82,6 +82,26 @@
     );
   }
 
+  .blue-dot {
+    display: inline-block; 
+    width: 8px;
+    height: 8px;
+    background-color: #009FE3;
+    border-radius: 50%;
+    margin-right: 8px; 
+    flex-shrink: 0;
+  }
+
+  .white-dot {
+    display: inline-block; 
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 8px; 
+    flex-shrink: 0;
+  }
+
   .bg-nature {
     background-image: url("../public/nature/bg-nature.webp");
   }
