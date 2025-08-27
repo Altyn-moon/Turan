@@ -19,7 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   
-  font-size: clamp(20px, 10vw, 145px); /* min, динамика, max */
+  font-size: clamp(18px, 10vw, 145px); /* min, динамика, max */
   font-weight: 700;
   color: white;
   line-height: 0.8;
@@ -197,7 +197,7 @@
 
 /* Адаптив под мобилку и планшета */
 .social-text {
-  font-size: clamp(20px, 10vw, 145px);
+  font-size: clamp(18px, 10vw, 145px);
 }
 
 @media (max-width: 768px) {
