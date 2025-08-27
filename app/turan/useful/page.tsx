@@ -46,7 +46,7 @@ export default function SocialPage() {
             <span className="dot"></span>
             <div>
               <strong>Артезианская:</strong>
-              <p>может быть минерализованной или содержать природные загрязнители</p>
+              <p>может быть минерализованной или содержать природные загрязнители.</p>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default function SocialPage() {
             <span className="dot"></span>
             <div>
               <strong>Ледниковая:</strong>
-              <p>низкая минерализация, возможны тяжёлые металлы</p>
+              <p>низкая минерализация, возможны тяжёлые металлы.</p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function SocialPage() {
             <span className="dot"></span>
             <div>
               <strong>Родниковая:</strong>
-              <p>может содержать микроорганизмы</p>
+              <p>может содержать микроорганизмы.</p>
             </div>
           </div>
 
@@ -75,12 +75,12 @@ export default function SocialPage() {
             <span className="dot"></span>
             <div>
               <strong>Горная:</strong>
-              <p>может содержать примеси, микроорганизмы</p>
+              <p>может содержать примеси, микроорганизмы.</p>
             </div>
           </div>
         </div>
 
-        <p className="note">Чистота воды определяется не названием источника, а ее анализом и обработкой</p>
+        <p className="note">Чистота воды определяется не названием источника, а ее анализом и обработкой.</p>
       </section>
 
       {/* Water 3 */}
@@ -146,7 +146,7 @@ export default function SocialPage() {
           <div className="water-card">
             <span className="dot"></span>
             <div>
-              <p><strong>Водопроводной —</strong> обработана, но может содержать примеси</p>
+              <p><strong>Водопроводной —</strong> обработана, но может содержать примеси.</p>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function SocialPage() {
       НЕТ
     </p>
     <p className="myth-explained">
-      PET безопасен при правильном использовании, одобрен FDA, EFSA и СНГ. Вред может возникнуть только при неправильной эксплуатации (нагревание, многократное использование)
+      PET безопасен при правильном использовании, одобрен FDA, EFSA и СНГ. Вред может возникнуть только при неправильной эксплуатации (нагревание, многократное использование).
     </p>
   </div>
 
