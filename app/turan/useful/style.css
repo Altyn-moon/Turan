@@ -89,6 +89,8 @@
   padding: 40px 60px;
   border-radius: 12px;
   gap: 12px;
+
+  display: inline-flex;  
 }
 
 .water-card .dot {
@@ -96,7 +98,7 @@
   height: 8px;
   background-color: #009FE3;
   border-radius: 50%;
-  margin-top: 6px;
+  margin-top: 14px;
   flex-shrink: 0;
 }
 
@@ -177,8 +179,8 @@
 }
 
 .dot {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-color: #009FE3;
   border-radius: 50%;
   display: inline-block;
