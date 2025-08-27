@@ -52,6 +52,10 @@ export default function SocialPage() {
     <a className="market-card" href="https://chocolife.me/" aria-label="Choco">
       <img src="/images/choco.png" alt="Choco" />
     </a>
+
+    <a className="market-card" href="https://kaspi.kz/" aria-label="Kaspi">
+      <img src="/images/kaspi.png" alt="Kaspi" />
+    </a>
   </div>
 </section>
 
