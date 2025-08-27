@@ -209,7 +209,14 @@
     justify-content: center;
 
     min-height: clamp(220px, 34vh, 520px);
+
+    /* hero становится ниже на мобильных */
+    min-height: 34vh;
     height: auto;
+  }
+
+  @supports (height: 1dvh) {
+    .social-hero { min-height: 34dvh; }
   }
 
   .social-hero .social-text {
@@ -247,7 +254,10 @@
 }
 
 @media (max-width: 480px) {
-  .social-hero { min-height: clamp(180px, 40vh, 420px); }
+  .social-hero { min-height: clamp(180px, 30vh, 420px); 
+  }
+  @supports (height: 1dvh) {
+    .social-hero { min-height: 30dvh; }
 }
 
 @media (max-width: 768px) {
@@ -345,9 +355,9 @@
 /* === extra small phones: 375px === */
 @media (max-width: 375px) {
   /* Hero */
-  .social-hero { min-height: clamp(180px, 46vh, 420px); }
+  .social-hero { min-height: clamp(180px, 28vh, 420px); }
   .social-hero .social-text {
-    max-width: 88vw;
+    max-width: 90vw;
     line-height: 0.9;
   }
 
@@ -388,8 +398,8 @@
 /* === ultra small phones: 320px === */
 @media (max-width: 320px) {
   /* Hero */
-  .social-hero { min-height: clamp(160px, 50vh, 400px); }
-  .social-hero .social-text { max-width: 86vw; }
+  .social-hero { min-height: clamp(160px, 26vh, 400px); }
+  .social-hero .social-text { max-width: 88vw; }
 
   /* Контентные блоки */
   .social-block { margin: 20px 8px; padding: 14px; }
