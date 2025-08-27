@@ -200,24 +200,22 @@
   font-size: clamp(18px, 10vw, 145px);
 }
 
+/* ≤ 768px — базовый блок: центрирование + высота */
 @media (max-width: 768px) {
-  .hero--with-header { padding-top: 0; }
-
   .social-hero {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    min-height: clamp(220px, 34vh, 520px);
 
-    /* hero становится ниже на мобильных */
-    min-height: 34vh;
+    /* базово */
+    min-height: clamp(220px, 30vh, 520px);
     height: auto;
   }
-
   @supports (height: 1dvh) {
-    .social-hero { min-height: 34dvh; }
+    .social-hero { min-height: clamp(220px, 30dvh, 520px); }
   }
+
 
   .social-hero .social-text {
     position: static;
@@ -226,6 +224,22 @@
     transform: none;
     max-width: 92vw;   
     line-height: 0.9;
+  }
+}
+
+/* ≤ 768px — повышение как в assortiment до ~36vh */
+@media (max-width: 768px) {
+  .social-hero { min-height: clamp(200px, 36vh, 460px); }
+  @supports (height: 1dvh) {
+    .social-hero { min-height: clamp(200px, 36dvh, 460px); }
+  }
+}
+
+/* ≤ 480px — ещё выше, как в assortiment (~42vh) */
+@media (max-width: 480px) {
+  .social-hero { min-height: clamp(180px, 42vh, 420px); }
+  @supports (height: 1dvh) {
+    .social-hero { min-height: clamp(180px, 42dvh, 420px); }
   }
 }
 
@@ -362,7 +376,7 @@
   }
 
   /* Контентные блоки */
-  .social-block { margin: 24px 12px; padding: 16px; }
+  .social-block { margin: 24px 12px; padding: 20px; }
   .social-block > p { font-size: 15px; margin: 18px 0; }
   .blue-dot { width: 6px; height: 6px; margin-right: 6px; }
 
@@ -402,7 +416,7 @@
   .social-hero .social-text { max-width: 88vw; }
 
   /* Контентные блоки */
-  .social-block { margin: 20px 8px; padding: 14px; }
+  .social-block { margin: 20px 8px; padding: 15px; }
   .social-block > p { font-size: 14px; margin: 16px 0; }
 
   /* Футер верх: держим 2 колонки, ещё компактнее отступ */

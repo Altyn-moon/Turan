@@ -629,17 +629,6 @@
 
 /* === extra small phones: 375px === */
 @media (max-width: 375px) {
-  /* Hero */
-  .social-hero { min-height: clamp(180px, 46vh, 420px); }
-  .social-hero .social-text {
-    max-width: 88vw;
-    line-height: 0.9;
-  }
-
-  /* Контентные блоки */
-  .social-block { margin: 24px 12px; padding: 16px; }
-  .social-block > p { font-size: 15px; margin: 18px 0; }
-  .blue-dot { width: 6px; height: 6px; margin-right: 6px; }
 
   /* Футер верх: меню слева, контакты справа, отступ меньше */
   .footer-top {
