@@ -31,12 +31,11 @@
 .water-block {
   max-width: 1280px;
   margin: 60px auto;
-  padding: clamp(20px, 5vw, 60px); /* динамический паддинг */
+  padding: clamp(30px, 5vw, 60px);
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid #E4EAF2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
-  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 0 5px 0 rgba(0, 40, 86, 0.25);
 }
 
 /* маленькие ноутбуки */
@@ -50,16 +49,16 @@
 @media (max-width: 992px) {
   .water-block {
     margin: 30px 20px;
-    border-radius: 12px;
+    margin-top: 50px;
   }
 }
 
 /* телефоны */
 @media (max-width: 576px) {
   .water-block {
-    margin: 20px 10px;
+    margin: 30px 15px;
     padding: 20px;
-    border-radius: 8px;
+    margin-top: 50px;
   }
 }
 
@@ -123,11 +122,11 @@
 .myths-block {
   max-width: 1280px;
   margin: 60px auto;
-  padding: clamp(20px, 5vw, 60px); /* динамический паддинг */
+  padding: clamp(30px, 5vw, 60px);
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid #E4EAF2;
-  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 0 5px 0 rgba(0, 40, 86, 0.25);
 }
 
 /* маленькие ноутбуки */

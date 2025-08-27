@@ -471,31 +471,27 @@
 
 /* Планшет ≤ 768px */
 @media (max-width: 768px) {
-/*хиро*/
+  /*хиро*/
   .hero--with-header { 
     padding-top: 0;
   }
-  /* HERO: центрирование и адаптивная высота */
+
 .assortiment-hero {
-  /* центрирование */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  /* адаптивная высота: ≈30vh, но с границами */
   min-height: clamp(220px, 30vh, 520px);
-  height: auto; /* не режем контент, если вдруг станет выше */
+  height: auto;
 }
 
-/* если поддерживается динамический vh (iOS/Android), используем его */
 @supports (height: 1dvh) {
   .assortiment-hero {
     min-height: clamp(220px, 30dvh, 520px);
   }
 }
 
-/* чуть крупнее на узких экранах, чтобы геро не выглядел совсем низким */
 @media (max-width: 768px) {
   .assortiment-hero {
     min-height: clamp(200px, 36dvh, 460px);
@@ -552,23 +548,17 @@
 
 
 
-
-
-
-
-/* ===== MOBILE/TABLET FOOTER LAYOUT (clean & fixed) ===== */
+/* ===== Адаптация для мобилки и планшета ===== */
 
 /* ≤ 768px */
 @media (max-width: 768px) {
-  /* Верх футера: 2 колонки — меню слева (тянется), контакты справа (по контенту) */
   .footer-top {
     display: grid;
-    grid-template-columns: 1fr auto;   /* создаёт «пустоту»/отступ между колонками */
-    column-gap: 36px;                  /* явный ОТСТУП между меню и контактами */
+    grid-template-columns: 1fr auto;   
+    column-gap: 36px;                 
     align-items: start;
   }
 
-  /* Логотип — по центру над колонками */
   .footer-logo {
     grid-column: 1 / -1;
     text-align: center;
@@ -576,34 +566,30 @@
   }
   .footer-logo img { display: inline-block; width: 105px; height: auto; }
 
-  /* Меню слева */
   .footer-menu {
     grid-column: 1;
     text-align: left;
-    padding-right: 4px;                /* чуть больше «воздуха» у текста меню */
+    padding-right: 4px;               
   }
 
-  /* Контакты справа: прижимаем блок к правому краю, но его текст — слева */
   .footer-contacts {
     grid-column: 2;
-    justify-self: end;                 /* прижали весь блок к правому краю */
-    text-align: left;                  /* внутри — выравнивание текста слева */
-    width: max-content;                /* ширина по контенту — gap визуально работает */
+    justify-self: end;                 
+    text-align: left;                
+    width: max-content;              
   }
-  /* Убираем фиксированную ширину, заданную выше в десктопе */
+
   .footer-contacts > div { width: auto !important; font-size: 13px; }
 
-  /* Соц-иконки: сразу под контактами справа (визуально «поверх» блока turan volga) */
   .footer-social {
-    grid-column: 2;                    /* правая колонка */
+    grid-column: 2;                   
     justify-self: end;
     display: flex;
     gap: 8px;
-    margin: -6px 0 6px;                /* чуть подтягиваем вверх к контактам */
+    margin: -6px 0 6px;               
   }
   .footer-social img { width: 32px; height: 32px; }
 
-  /* Блок с доп. телефоном/почтой и кнопкой — ниже соцсетей справа */
   .footer-button {
     grid-column: 2;
     justify-self: end;
@@ -611,7 +597,6 @@
   }
   .footer-del-num { text-align: right; }
 
-  /* Нижняя полоса футера: слева — копирайт и политики; справа — OG Group */
   .footer-bottom {
     display: grid;
     grid-template-columns: 1fr auto;
