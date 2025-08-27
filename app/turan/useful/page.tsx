@@ -171,8 +171,7 @@ export default function SocialPage() {
   <div className="myth-item">
     <p className="myth-question"><span className="dot"></span><strong>Опасна ли минеральная вода для ежедневного питья?</strong></p>
     <p className="myth-false">
-      <img className="cross" src="/images/no.png" alt="No" />
-      НЕТ
+      <img className="cross" src="/images/no.png" alt="No" />НЕТ
     </p>
     <p className="myth-explained">
       Нет, если это столовая или лечебно-столовая вода. TURAN (0,47 г/л) и BURABAY (2,5 г/л) подходят для регулярного употребления.

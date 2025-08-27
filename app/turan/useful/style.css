@@ -187,7 +187,7 @@
 .cross {
   color: red;
   font-weight: bold;
-  margin-right: 6px;
+  margin-right: 1px;
 }
 
 .myth-false {
@@ -195,6 +195,10 @@
   color: red;
   font-weight: 600;
   margin: 8px 0;
+
+  display: inline-flex;  
+  align-items: center;
+  gap: 6px;    
 }
 
 .myth-explained {
