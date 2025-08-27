@@ -101,6 +101,13 @@ export default function SocialPage() {
         <BottleCard src="/images/sparkling-0.5.png" label="0.5 л" width={121} height={358}/>
         <BottleCard src="/images/sparkling-1.png" label="1 л" width={124} height={344}/>
         <BottleCard src="/images/sparkling-1.5.png" label="1.5 л" width={125} height={378}/>
+      </div>
+    </div>
+
+    {/* Сильно Газированная */}
+    <div className="assortment-group">
+      <h2 className="assortment-title">Сильно-газированная</h2>
+      <div className="bottle-grid">
         <BottleCard src="/images/sparkling-1.5m.png" label="1.5 л" width={205} height={400}/>
       </div>
     </div>
