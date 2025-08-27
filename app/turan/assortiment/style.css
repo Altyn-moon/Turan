@@ -627,16 +627,95 @@
 
 
 
+/* === extra small phones: 375px === */
+@media (max-width: 375px) {
+  /* Hero */
+  .social-hero { min-height: clamp(180px, 46vh, 420px); }
+  .social-hero .social-text {
+    max-width: 88vw;
+    line-height: 0.9;
+  }
+
+  /* Контентные блоки */
+  .social-block { margin: 24px 12px; padding: 16px; }
+  .social-block > p { font-size: 15px; margin: 18px 0; }
+  .blue-dot { width: 6px; height: 6px; margin-right: 6px; }
+
+  /* Футер верх: меню слева, контакты справа, отступ меньше */
+  .footer-top {
+    grid-template-columns: 1fr auto;
+    column-gap: 20px;
+  }
+  .footer-logo img { width: 76px; }
+
+  .footer-menu h4, .footer-contacts h4 { font-size: 10px; margin-bottom: 10px; }
+  .footer-menu ul li a { font-size: 13px; }
+  .footer-contacts > div { font-size: 12px; }
+  .footer-contacts a {
+    font-size: 12px;
+    overflow-wrap: anywhere;   /* чтобы email/тел не ломали сетку */
+    word-break: break-word;
+  }
+
+  /* Соцсети под контактами справа */
+  .footer-social { gap: 6px; margin: 8px 0 0; }
+  .footer-social img { width: 28px; height: 28px; }
+
+  /* Нижняя полоса: слева — копирайт и политики; справа — OG Group */
+  .footer-bottom {
+    grid-template-columns: 1fr auto;
+    column-gap: 12px;
+    row-gap: 6px;
+  }
+  .font { font-size: 18px; }
+}
 
 
 
 
+/* === extra small phones: 375px === */
+@media (max-width: 375px) {
+  /* Футер верх: меню слева, контакты справа, отступ меньше */
+  .footer-top {
+    grid-template-columns: 1fr auto;
+    column-gap: 20px;
+  }
+  .footer-logo img { width: 76px; }
 
+  .footer-menu h4, .footer-contacts h4 { font-size: 10px; margin-bottom: 10px; }
+  .footer-menu ul li a { font-size: 13px; }
+  .footer-contacts > div { font-size: 12px; }
+  .footer-contacts a {
+    font-size: 12px;
+    overflow-wrap: anywhere;   /* чтобы email/тел не ломали сетку */
+    word-break: break-word;
+  }
 
+  /* Соцсети под контактами справа */
+  .footer-social { gap: 6px; margin: 8px 0 0; }
+  .footer-social img { width: 28px; height: 28px; }
 
+  /* Нижняя полоса: слева — копирайт и политики; справа — OG Group */
+  .footer-bottom {
+    grid-template-columns: 1fr auto;
+    column-gap: 12px;
+    row-gap: 6px;
+  }
+  .font { font-size: 18px; }
+}
 
+/* === ultra small phones: 320px === */
+@media (max-width: 320px) {
+  /* Футер верх: держим 2 колонки, ещё компактнее отступ */
+  .footer-top { column-gap: 14px; }
+  .footer-logo img { width: 70px; }
 
+  .footer-menu ul li a { font-size: 12.5px; }
+  .footer-contacts > div { font-size: 11.5px; }
+  .footer-contacts a { font-size: 11.5px; }
 
-
-
+  /* Соцсети и низ футера */
+  .footer-social img { width: 26px; height: 26px; }
+  .footer-bottom { column-gap: 10px; }
+}
 
