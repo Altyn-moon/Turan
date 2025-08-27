@@ -259,7 +259,7 @@
   @supports (height: 1dvh) {
     .social-hero { min-height: 30dvh; }
 }
-
+}
 @media (max-width: 768px) {
   .social-block > p {
     font-size: 18px;
