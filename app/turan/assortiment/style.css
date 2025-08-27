@@ -475,13 +475,37 @@
   .hero--with-header { 
     padding-top: 0;
   }
-  .assortiment-hero { 
-    height: 30vh; /* фиксируем высоту */
-    display: flex;
-    justify-content: center; /* по горизонтали */
-    align-items: center; /* по вертикали */
-    text-align: center; /* чтобы текст был по центру */
+  /* HERO: центрирование и адаптивная высота */
+.assortiment-hero {
+  /* центрирование */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* адаптивная высота: ≈30vh, но с границами */
+  min-height: clamp(220px, 30vh, 520px);
+  height: auto; /* не режем контент, если вдруг станет выше */
+}
+
+/* если поддерживается динамический vh (iOS/Android), используем его */
+@supports (height: 1dvh) {
+  .assortiment-hero {
+    min-height: clamp(220px, 30dvh, 520px);
   }
+}
+
+/* чуть крупнее на узких экранах, чтобы геро не выглядел совсем низким */
+@media (max-width: 768px) {
+  .assortiment-hero {
+    min-height: clamp(200px, 36dvh, 460px);
+  }
+}
+@media (max-width: 480px) {
+  .assortiment-hero {
+    min-height: clamp(180px, 42dvh, 420px);
+  }
+}
   
 .assortiment-hero .assortiment-text {
     position: static;
@@ -499,13 +523,13 @@
   }
   .bottle-label,
   .flavored-sub {
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px 20px;
   }
 
   .bottle-top-label,
   .flavored-top {
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px 20px;
   }
 }
