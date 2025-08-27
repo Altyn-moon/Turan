@@ -19,7 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   
-  font-size: clamp(24px, 10vw, 145px); /* min, динамика, max */
+  font-size: clamp(20px, 10vw, 145px); /* min, динамика, max */
   font-weight: 700;
   color: white;
   line-height: 0.8;
@@ -197,7 +197,7 @@
 
 /* Адаптив под мобилку и планшета */
 .social-text {
-  font-size: clamp(24px, 10vw, 145px);
+  font-size: clamp(20px, 10vw, 145px);
 }
 
 @media (max-width: 768px) {
@@ -388,7 +388,7 @@
 /* === ultra small phones: 320px === */
 @media (max-width: 320px) {
   /* Hero */
-  .social-hero { min-height: clamp(170px, 50vh, 400px); }
+  .social-hero { min-height: clamp(160px, 50vh, 400px); }
   .social-hero .social-text { max-width: 86vw; }
 
   /* Контентные блоки */
