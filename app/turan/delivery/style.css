@@ -299,6 +299,171 @@
 
 
 
+/* ===== Adaptive ===== */
+
+/* laptops down */
+@media (max-width: 1366px) {
+  .delivery-block { margin: 40px 40px; }
+}
+
+/* tablets */
+@media (max-width: 992px) {
+  .delivery-block { margin: 30px 20px; margin-top: 50px; }
+}
+
+/* phones ≤576 */
+@media (max-width: 576px) {
+  .delivery-block { margin: 30px 15px; padding: 20px; margin-top: 50px; }
+}
+
+/* === MOBILE HERO === */
+@media (max-width: 768px) {
+  .hero--with-header { padding-top: 0; }
+
+  .hero-delivery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-inline: 15px;
+
+    min-height: clamp(220px, 30vh, 520px);
+    height: auto;
+  }
+}
+@supports (height: 1dvh) {
+  @media (max-width: 768px) {
+    .hero-delivery { min-height: clamp(220px, 30dvh, 520px); }
+  }
+}
+
+/* та же «ступень», что и в assortiment */
+@media (max-width: 768px) {
+  .hero-delivery { min-height: clamp(200px, 36vh, 460px); }
+}
+@supports (height: 1dvh) {
+  @media (max-width: 768px) {
+    .hero-delivery { min-height: clamp(200px, 36dvh, 460px); }
+  }
+}
+@media (max-width: 480px) {
+  .hero-delivery { min-height: clamp(180px, 42vh, 420px); }
+}
+@supports (height: 1dvh) {
+  @media (max-width: 480px) {
+    .hero-delivery { min-height: clamp(180px, 42dvh, 420px); }
+  }
+}
+
+/* заголовок внутри hero — как в assortiment: статик, nowrap */
+@media (max-width: 768px) {
+  .hero-delivery .text-delivery {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0;
+    white-space: wrap; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .delivery-block > p { font-size: 18px; margin: 30px; }
+}
+@media (max-width: 480px) {
+  .delivery-block > p { font-size: 16px; margin: 25px; }
+}
+
+/* === Footer mobile layout === */
+@media (max-width: 768px) {
+  .footer { padding: 32px 16px 0; }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto; /* меню слева, контакты справа */
+    column-gap: 32px;
+    align-items: start;
+  }
+
+  .footer-logo {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .footer-logo img { display: inline-block; width: 105px; height: auto; }
+
+  .footer-menu { grid-column: 1; text-align: left; }
+
+  .footer-contacts {
+    grid-column: 2;
+    justify-self: end;     /* прижать к правому краю */
+    text-align: left;      /* текст внутри слева */
+    width: max-content;
+  }
+  .footer-contacts > div { width: auto; font-size: 13px; }
+
+  .footer-social {
+    grid-column: 2;
+    justify-self: end;
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 0;      /* под контактами */
+  }
+  .footer-social img { width: 32px; height: 32px; }
+
+  .footer-button {
+    grid-column: 2;
+    justify-self: end;
+    margin-top: 10px;
+  }
+  .footer-del-num { text-align: right; }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+  }
+  .footer-bottom > p { grid-column: 1; margin: 0; }
+  .footer-bottom > a:nth-of-type(1),
+  .footer-bottom > a:nth-of-type(2) { grid-column: 1; }
+  .footer-rights { grid-column: 2; justify-self: end; text-align: right; }
+}
+
+/* small phones tweaks */
+@media (max-width: 480px) {
+  .footer-top { column-gap: 24px; }
+  .footer-logo img { width: 84px; }
+  .footer-menu h4, .footer-contacts h4 { font-size: 10px; margin-bottom: 12px; }
+  .footer-menu ul li a, .footer-contacts a { font-size: 14px; }
+  .font { font-size: 20px; }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+  .social-block { margin: 24px 12px; padding: 20px; }
+  .footer-top { column-gap: 20px; }
+  .footer-logo img { width: 76px; }
+  .footer-menu ul li a { font-size: 13px; }
+  .footer-contacts > div, .footer-contacts a { font-size: 12px; }
+  .footer-social { gap: 6px; }
+  .footer-social img { width: 28px; height: 28px; }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  .social-block { margin: 20px 8px; padding: 15px; }
+  .footer-top { column-gap: 14px; }
+  .footer-logo img { width: 70px; }
+  .footer-menu ul li a { font-size: 12.5px; }
+  .footer-contacts > div, .footer-contacts a { font-size: 11.5px; }
+  .footer-social img { width: 26px; height: 26px; }
+}
+
+
 
 
 
