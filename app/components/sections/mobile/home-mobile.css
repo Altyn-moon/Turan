@@ -1,0 +1,52 @@
+/* отступ под фиксированную шапку */
+.hero--with-header { padding-top: 0; }
+
+/* ===== HERO как в assortment/social ===== */
+@media (max-width: 768px){
+  .home-hero{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    width:100%;
+    background:url('/images/view-iceberg-water 1.png') no-repeat center/cover;
+    min-height: clamp(220px, 30vh, 520px);
+    height:auto;
+    padding-inline:16px;
+  }
+  @supports (height:1dvh){
+    .home-hero{ min-height: clamp(220px, 30dvh, 520px); }
+  }
+
+  .home-hero__title{
+    font-family: var(--font-engravers), serif;
+    font-weight:700; line-height:1; color:#fff;
+    white-space:nowrap; hyphens:none; word-break:normal;
+    font-size: clamp(36px, 12vw, 120px);
+    margin:0;
+  }
+}
+
+/* ступени высоты — как в assortment */
+@media (max-width: 768px){ .home-hero{ min-height: clamp(200px, 36vh, 460px); } }
+@media (max-width: 480px){ .home-hero{ min-height: clamp(180px, 42vh, 420px); } }
+
+/* ===== Контентные блоки ===== */
+@media (max-width: 768px){
+  .home-block{
+    margin: 28px 16px 40px;
+    padding: 20px 16px;
+    border:1px solid #E4EAF2; border-radius:16px; background:#fff;
+    box-shadow:0 0 5px rgba(0,40,86,.06);
+  }
+  .home-block__title{ font-size: clamp(20px, 5vw, 24px); color:#003366; margin:0 0 10px; }
+  .home-block__text{ font-size: clamp(14px, 3.9vw, 16px); color:#153A51; line-height:1.6; margin:0 0 16px; }
+  .home-block__cta{ display:flex; gap:10px; flex-wrap:wrap; }
+  .home-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 16px; border-radius:999px; text-decoration:none;
+    background:#05A8E2; color:#fff; font-weight:500;
+  }
+  .home-btn--ghost{ background:#E9F6FF; color:#003366; border:1px solid #CDE7F6; }
+}
+
+/* XS */
+@media (max-width: 375px){ .home-hero__title{ font-size: clamp(32px, 11.5vw, 40px); } .home-block{ margin-inline:12px; } }
+@media (max-width: 320px){ .home-hero__title{ font-size: clamp(28px, 12vw, 36px); } .home-block{ margin-inline:8px; padding:16px 12px; } }

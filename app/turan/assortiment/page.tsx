@@ -114,7 +114,7 @@ export default function SocialPage() {
 
     {/* Стеклянная */}
     <div className="assortment-group">
-      <h2 className="assortment-title">Стеклянная</h2>
+      <h2 className="assortment-title">В стекле</h2>
       <div className="bottle-grid">
         <BottleCard src="/images/glass-still-0.25.png" label="Негазированная" subLabel="0.25 л" width={84} height={280}/>
         <BottleCard src="/images/glass-still-0.5.png" label="Негазированная" subLabel="0.5 л" width={90} height={323}/>
@@ -125,7 +125,7 @@ export default function SocialPage() {
 
   {/* Вкусовая линейка */}
           <div className="assortment-group">
-            <h2 className="assortment-title">Вкусовая линейка</h2>
+            <h2 className="assortment-title">Вкусовая негазированная</h2>
             <div className="bottle-grid">
               <FlavoredBottleCard src="/images/strawberry-0.5.png" label="Клубника" subLabel="0.5 л" flavor="strawberry" width={126} height={318}/>
               <FlavoredBottleCard src="/images/raspberry-0.5.png" label="Малина" subLabel="0.5 л" flavor="raspberry" width={126} height={318}/>
@@ -142,7 +142,7 @@ export default function SocialPage() {
 
           {/* Вкусовая линейка газированная*/}
           <div className="assortment-group">
-            <h2 className="assortment-title">Вкусовая линейка (Газированная)</h2>
+            <h2 className="assortment-title">Вкусовая газированная</h2>
             <div className="bottle-grid">
               <FlavoredBottleCard src="/images/spark-raspberry-0.5.png" label="Малина" subLabel="0.5 л" flavor="raspberry" width={126} height={318}/>
               <FlavoredBottleCard src="/images/spark-mango-0.5.png" label="Манго-ананас" subLabel="0.5 л" flavor="mango" width={126} height={318}/>

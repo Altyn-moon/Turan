@@ -85,7 +85,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
               </p>
                   <p className="title-clamp font-bold mb-0 leading-none ">Автоматизированный<br></br> контроль</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
-                    Все этапы производства — от водозабора до упаковки — находятся под непрерывным контролем операторов. Современные цифровые системы отслеживают параметры в реальном времени, исключая человеческий фактор в критичных зонах
+                    Все этапы производства — от водозабора до упаковки — находятся под непрерывным контролем операторов. Современные цифровые системы отслеживают параметры в реальном времени, исключая человеческий фактор в критичных зонах.
                   </p>
                 </div>
                 <div className="p-0 w-full max-w-[660px] relative z-50 text-white p-0 leading-[1.2]
@@ -93,7 +93,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
                               flex flex-col gap-1">
                   <p className="title-clamp font-bold mb-0 leading-none">Ежегодная верификация <br></br> независимыми НИИ</p>
                   <p className="col-span-2 col-end-5 w-5/6 2xl:w-2/3 text-clamp h-fit text-white font-bold leading-[1.4] text-justify  place-self-end">
-                    Один раз в год TURAN проходит расширенный химический анализ в независимых научно-исследовательских институтах — как казахстанских, так и зарубежных. Это обеспечивает международную валидность данных и полное соответствие мировым стандартам
+                    Один раз в год TURAN проходит расширенный химический анализ в независимых научно-исследовательских институтах — как казахстанских, так и зарубежных. Это обеспечивает международную валидность данных и полное соответствие мировым стандартам.
                   </p>
                 </div>
               </div>

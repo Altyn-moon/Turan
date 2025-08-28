@@ -356,7 +356,7 @@ export default function SocialPage() {
   </div>
 
   <div className="myth-item">
-    <p className="myth-question"><span className="dot"></span><strong>Артезианская, родниковая, ледниковая или горная? какая вода самая чистая?</strong></p>
+    <p className="myth-question"><span className="dot"></span><strong>Артезианская, родниковая, ледниковая или горная?</strong></p>
     <p className="myth-false">
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
