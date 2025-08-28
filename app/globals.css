@@ -102,6 +102,33 @@
     flex-shrink: 0;
   }
 
+  .button-more {
+  display: inline-block;
+  padding: 8px 20px; /* сверху/снизу 8px, слева/справа 24px */
+
+
+  background-color: #fff;
+  transition: all 0.3s ease;
+
+  color: #182438;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+
+  border-radius: 50px;
+  border: 1px solid var(--blue-primary, #00A0DF);
+}
+
+.button-more:hover {
+  background-color: #00A0DF;
+  color: #fff;
+}
+
+
+
   .bg-nature {
     background-image: url("../public/nature/bg-nature.webp");
   }
