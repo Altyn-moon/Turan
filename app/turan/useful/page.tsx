@@ -198,7 +198,7 @@ export default function SocialPage() {
     <p className="myth-false">
       <img className="cross" src="/images/no.png" alt="No" />НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[2] ? "" : "line-clamp-3"}`}>
       Этот миф основывается на искажении фактов и недостатке информации. Заблуждения возникают из-за путаницы между PET и 
       другими видами пластиков (например, содержащих BPA или фталаты). Проблемы с PET могут возникать, если бутылки используются повторно
        (особенно для хранения других жидкостей) или нагреваются до высоких температур, или долгое время (месяцами) находятся под воздействием 
@@ -214,6 +214,10 @@ export default function SocialPage() {
        обеспокоенность из-за потенциальной токсичности, не выделяет фталаты. <br />
        PET используется для пищевых продуктов более 40 лет, и ни одно крупное исследование не доказало его вреда при соблюдении правил эксплуатации.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 2: !expanded[2] })} >
+            {expanded[2] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -222,7 +226,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[3] ? "" : "line-clamp-3"}`}>
       На самом деле, искусственная минерализация и натуральная минерализация выполняют разные функции, и утверждение 
       о превосходстве одной над другой не совсем корректно. Обе имеют своиособенности, но натуральная минерализация часто 
       оказывается более предпочтительной, поскольку основана на природных процессах, которые невозможно полноценно воспроизвести искусственно.<br />
@@ -242,6 +246,10 @@ export default function SocialPage() {
       что увеличивает экологический след. Искусственная минерализация может быть полезна для улучшения качества очищенной воды, 
       но она не может заменить натуральную минерализацию.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 3: !expanded[3] })} >
+            {expanded[3] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -250,7 +258,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[4] ? "" : "line-clamp-3"}`}>
       Миф связан с путаницей между разными типами воды.Деминерализованная или дистиллированная вода действительно может нарушать 
       баланс минералов, так как не содержит соли и минералы. Однако это не относится к минеральной воде. 
       Также некоторые люди ошибочно считают, что вода, выводя токсины, удаляет и полезные вещества. Наоборот, правильновыбранная 
@@ -264,6 +272,10 @@ export default function SocialPage() {
       Людям с определёнными заболеваниями (например, заболевания почек или гипертония) следует выбирать минеральную воду 
       с подходящим уровнем минерализации.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 4: !expanded[4] })} >
+            {expanded[4] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -272,7 +284,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[5] ? "" : "line-clamp-3"}`}>
       Минеральная вода не вызывает образование камней во внутренних органах. Наоборот, она помогает поддерживать водный баланс, 
       снижает концентрацию солей в моче и может предотвращать камнеобразование. Этот миф связан с неправильным пониманием процессов 
       в организме и необоснованным страхом перед минеральной водой. <br />
@@ -289,6 +301,10 @@ export default function SocialPage() {
       так как магний связывает оксалаты — один из основных компонентов камней. Минеральные воды со щелочным pH помогают 
       растворять мочевую кислоту, снижая риск образования уратных камней.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 5: !expanded[5] })} >
+            {expanded[5] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -297,7 +313,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[6] ? "" : "line-clamp-3"}`}>
       Этот миф связан с недопониманием разницы между типами минеральной воды и их назначением.<br />
       Минеральная вода делится на несколько категорий в зависимости от уровня минерализации:<br />
       - Столовая вода (до 1 г/л): подходит для ежедневного употребления; содержит небольшое количество минералов, 
@@ -308,6 +324,10 @@ export default function SocialPage() {
       при регулярном неконтролируемом употреблении.<br /><br />
       TURAN – уровень минерализации 0,47г/л
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 6: !expanded[6] })} >
+            {expanded[6] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -316,7 +336,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[7] ? "" : "line-clamp-3"}`}>
       Появление осадка в воде после её заморозки и оттаивания вовсе не свидетельствует о низком качестве продукта. 
       Этот процесс объясняется физико-химическими свойствами воды и её МИНЕРАЛЬНОГО состава. Этот осадок многие часто 
       ошибочно принимают за загрязнение.Появление осадка не связано с присутствием вредных примесей или бактерий.
@@ -329,6 +349,10 @@ export default function SocialPage() {
       Настоящее качество воды определяется химическим анализом, а не визуальными признаками после заморозки. Для оценки качества воды 
       следует опираться на лабораторные тесты, а не на мифы и визуальные наблюдения.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 7: !expanded[7] })} >
+            {expanded[7] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -337,7 +361,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[8] ? "" : "line-clamp-3"}`}>
       Хотя эти типы воды часто ассоциируются с чистотой и природным происхождением, они не всегда гарантируют 
       абсолютную безопасность или лучшее качество. Каждый из этих видов воды может содержать нежелательные примеси 
       и не всегда соответствует представлениям о чистоте. <br />
@@ -372,6 +396,10 @@ export default function SocialPage() {
 
       TURAN ГАРАНТИРУЕT кристальную прозрачность, микробиологическую безопасность, экологичность, полезность и неизменный природный вкус.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 8: !expanded[8] })} >
+            {expanded[8] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 
   <div className="myth-item">
@@ -380,7 +408,7 @@ export default function SocialPage() {
       <img className="cross" src="/images/no.png" alt="No" />
       НЕТ
     </p>
-    <p className="myth-explained">
+    <p className={`myth-explained ${expanded[9] ? "" : "line-clamp-3"}`}>
       Этот миф основан на ложном убеждении, что вода разбавляет желудочный сок и нарушает пищеварение. 
       На самом деле желудок автоматически регулирует количество выделяемого желудочного сока в зависимости 
       от вида и объёма съеденной пищи. Если в желудок попадает вода, он просто выделяет столько кислоты и ферментов, 
@@ -395,6 +423,10 @@ export default function SocialPage() {
       Современные исследования показывают, что питьё воды во время еды не оказывает негативного влияния на пищеварение. 
       Наоборот, умеренное потребление воды может улучшить процесс переваривания пищи и усвоения питательных веществ.
     </p>
+    <button className="button-more mt-4"
+            onClick={() => setExpanded({ ...expanded, 9: !expanded[9] })} >
+            {expanded[9] ? "Скрыть" : "Узнать больше"}
+    </button>
   </div>
 </section>
 

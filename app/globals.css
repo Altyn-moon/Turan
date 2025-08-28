@@ -119,11 +119,11 @@
   text-transform: uppercase;
 
   border-radius: 50px;
-  border: 1px solid var(--blue-primary, #00A0DF);
+  border: 1px solid var(--blue-primary, #009FE3);
 }
 
 .button-more:hover {
-  background-color: #00A0DF;
+  background-color: #009FE3;
   color: #fff;
 }
 
