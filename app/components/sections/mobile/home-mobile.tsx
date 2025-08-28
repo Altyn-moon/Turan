@@ -1,58 +1,178 @@
-// "use client";
+"use client";
 
-// import Header from "../../layout/header"; 
-// import Image from "next/image";
-// import LogoText from "../../../ui/logo-text";  
-// import Link from "next/link";
-// import "./home-mobile.css";
+import Header from "../../layout/header";
+import Image from "next/image";
+import LogoText from "../../ui/logo-text";
+import "./home-mobile.css";
+import { useState } from "react";
 
-// export default function HomeMobile() {
-//   return (
-//     <main className="font-rubik">
-//       {/* универсальная шапка (бургер на мобилке) */}
-//       <Header />
+/** выносим константу за компонент, чтобы не пересоздавалась на каждом рендере */
+const FEATURES = [
+  { value: "15 тыс",   label: "лет возраст источника" },
+  { value: "104 м",    label: "глубина водозабора" },
+  { value: "800 млн",  label: "лет возраст пород" },
+  { value: "1991 год", label: "основания производства" },
+];
 
-//       {/* HERO */}
-//       <section className="hero--with-header home-hero" role="banner" aria-label="TURAN — природная лёгкая живая вода">
-//         {/* фон */}
-//         <div className="home-hero__bg">
-//           <Image
-//             src="/hero/bg-hero.webp"        // можно заменить, если у тебя другой фон
-//             alt=""
-//             fill
-//             priority
-//             className="object-cover"
-//             sizes="100vw"
-//           />
-//         </div>
+export default function HomeMobile() {
+  // словарь «раскрыт/свернут» для секций (оставляем твой формат)
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
-//         {/* карточка с текстом как на скрине */}
-//         <div className="home-hero__card">
-//           <span className="home-hero__eyebrow">ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ</span>
+  return (
+    <main className="font-rubik">
+      {/* фикс-шапка (на мобилке с бургером) */}
+      <Header />
 
-//           <h1 className="home-hero__title">
-//             <span>ПРИРОДНАЯ</span>
-//             <span>ЛЕГКАЯ</span>
-//             <span>ЖИВАЯ ВОДА</span>
-//           </h1>
+      {/* HERO */}
+      <section
+        className="hero--with-header home-hero"
+        role="banner"
+        aria-label="TURAN — природная лёгкая живая вода"
+      >
+        {/* фон */}
+        <div className="home-hero__bg">
+          <Image
+            src="/hero/bg-hero.webp"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
 
-//           <div className="home-hero__brand">
-//             <LogoText />
-//           </div>
-//         </div>
-//       </section>
+        {/* карточка */}
+        <div className="home-hero__card">
+          <span className="home-hero__eyebrow">ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ</span>
 
-//       {/* Пример простого блока ниже (по желанию дополним позже) */}
-//       <section className="home-block">
-//         <h2 className="home-block__title">О бренде</h2>
-//         <p className="home-block__text">
-//           Чистая природная вода. Экологичные технологии и забота об источнике.
-//         </p>
-//         <div className="home-block__cta">
-//           <Link href="/turan/assortiment" className="home-btn">Ассортимент</Link>
-//           <Link href="/turan/useful" className="home-btn home-btn--ghost">Полезно знать</Link>
-//         </div>
-//       </section>
-//     </main>
-//   );
-// }
+          <h1 className="home-hero__title">
+            <span>ПРИРОДНАЯ</span>
+            <span>ЛЕГКАЯ</span>
+            <span>ЖИВАЯ ВОДА</span>
+          </h1>
+
+          <div className="home-hero__brand">
+            <LogoText />
+          </div>
+        </div>
+      </section>
+
+      {/* Природная — хиро секция №2 (как просил, оставляем) */}
+      <section className="hero">
+        <h1 className="hero-h1">ПРИРОДНАЯ</h1>
+      </section>
+
+      {/* Water */}
+      <section className="text-block">
+        {/* клампим только контент, не всю секцию */}
+        <div
+          id="water-more-1"
+          className={`text-content ${expanded[1] ? "expanded" : "collapsed"}`}
+        >
+          <h2>TURAN — природная минеральная вода, рожденная из глубин веков.</h2>
+
+          <p>
+            Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
+            где на глубине более 100 метров скрыт реликтовый источник,
+            сформированный более 15 000 лет назад талыми водами Валдайского
+            ледника. Проходя через древние породы, возраст которых исчисляется
+            сотнями миллионов лет, вода насыщается природными минералами и
+            сохраняет свою первозданную чистоту. Без искусственных добавок, без
+            внешнего воздействия — только идеальный баланс, созданный самой
+            природой.
+          </p>
+
+          <p>
+            Эта вода не подвергается дополнительной обработке, потому что в ней
+            нет ничего лишнего. Природная минерализация, идеально
+            сбалансированный состав, мягкий, освежающий вкус — TURAN сохраняет
+            все, что задумано самой природой. Ее добыча ведется в заповедной
+            зоне под строгим государственным контролем, а автоматизированные
+            системы мониторинга следят за каждым этапом, чтобы сохранить ее
+            первозданную свежесть и исключительные уникальные свойства.
+          </p>
+
+          <p>
+            TURAN — не просто вода, это символ вечности, заключенной в каждой
+            капле. Ее источник — естественный природный резервуар,
+            сформированный ледниковыми водами, которые тысячелетиями проникали
+            вглубь земли, проходя естественную фильтрацию через породы
+            протерозойского периода, возрастом более 800 миллионов лет. Там, на
+            глубине 104 метров, скрывается уникальная экосистема, полностью
+            защищенная от внешних воздействий.
+          </p>
+
+          {/* фичи — используем твои css-классы features-grid/feature */}
+          <div className="features-grid">
+            {FEATURES.map((f) => (
+              <div key={f.value} className="feature">
+                <span className="feature__value">{f.value}</span>
+                <span className="feature__label">{f.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[1]}
+          aria-controls="water-more-1"
+          onClick={() => setExpanded({ ...expanded, 1: !expanded[1] })}
+        >
+          {expanded[1] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+
+      {/* footer оставляем без изменений визуально */}
+      <footer className="footer">
+        <div className="footer-top">
+          <div className="footer-logo">
+            <img src="/images/logo_color.svg fill.svg" alt="TURAN Logo" />
+          </div>
+
+          <div className="footer-menu">
+            <h4>МЕНЮ</h4>
+            <ul>
+              <li><a href="/turan/useful">Полезно знать</a></li>
+              <li><a href="/turan/assortiment">Ассортимент</a></li>
+              <li><a href="/turan/social">Социальная ответственность</a></li>
+              <li><a href="/turan/delivery">Доставка</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-contacts">
+            <h4>КОНТАКТЫ</h4>
+            <div>
+              Отдел Экспорта<br />
+              <a href="tel:+77273318947">+7 (727) 331-89-47</a><br />
+              <a href="mailto:info@globalbeverages.kz">info@globalbeverages.kz</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="footer-social">
+            <a href="#"><img src="/images/item.png" alt="Telegram" /></a>
+            <a href="#"><img src="/images/socials.png" alt="Instagram" /></a>
+            <a href="#"><img src="/images/socials (1).png" alt="Facebook" /></a>
+            <a href="#"><img src="/images/socials (3).png" alt="WhatsApp" /></a>
+          </div>
+
+          <p>© Все права защищены 2025</p>
+          <a href="#">Согласие на обработку персональных данных</a>
+          <a href="#">Политика конфиденциальности</a>
+
+          <div className="footer-rights">
+            <span>Сайт создан <a href="#">OG Group</a></span>
+          </div>
+        </div>
+
+        <div className="footer-brand">
+          <img src="/images/logo_color.svg.png" alt="TURAN" />
+        </div>
+      </footer>
+    </main>
+  );
+}
+
