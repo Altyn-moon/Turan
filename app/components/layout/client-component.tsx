@@ -9,13 +9,16 @@ export default function ClientApp() {
   return <AnimatedSections />;
 }
 
+
+
+
 // "use client";
 // import dynamic from "next/dynamic";
 // import { useEffect, useState } from "react";
 
 // // ДЕСКТОП
 // // const DesktopHome = dynamic(() => import("@/sections/animated"), { ssr:false });
-// const AnimatedSections = dynamic(() => import("../sections/animated"), {
+// const DesktopHome = dynamic(() => import("../sections/animated"), {
 //    ssr: false,
 // });
 

@@ -74,17 +74,6 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
         style={{ opacity }}
       >
         <div className="h-full w-full bg-contain bg-center 1xl:bg-center bg-nature fixed z-0 top-0" />
-        {/*<div className="fixed top-1/2 left-1/2 -translate-1/2">
-          <Image
-            src="/nature/turan-text.png"
-            alt="Turan Water"
-            width={100}
-            height={100}
-            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-cover"
-            priority
-            unoptimized
-          />
-        </div>*/}
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <Image
           src="/nature/turan-text.png"

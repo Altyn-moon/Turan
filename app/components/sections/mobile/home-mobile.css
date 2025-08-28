@@ -1,52 +1,117 @@
-/* отступ под фиксированную шапку */
-.hero--with-header { padding-top: 0; }
+/* компенсируем фикс-хедер */
+.hero--with-header { padding-top: 86px; }
 
-/* ===== HERO как в assortment/social ===== */
-@media (max-width: 768px){
-  .home-hero{
-    display:flex; align-items:center; justify-content:center; text-align:center;
-    width:100%;
-    background:url('/images/view-iceberg-water 1.png') no-repeat center/cover;
-    min-height: clamp(220px, 30vh, 520px);
-    height:auto;
-    padding-inline:16px;
-  }
-  @supports (height:1dvh){
-    .home-hero{ min-height: clamp(220px, 30dvh, 520px); }
-  }
-
-  .home-hero__title{
-    font-family: var(--font-engravers), serif;
-    font-weight:700; line-height:1; color:#fff;
-    white-space:nowrap; hyphens:none; word-break:normal;
-    font-size: clamp(36px, 12vw, 120px);
-    margin:0;
-  }
+/* === HERO === */
+.home-hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 12px 20px;                 /* нижний отступ под карточку */
+  min-height: clamp(420px, 80vh, 740px);
+}
+@supports (height: 1dvh) {
+  .home-hero { min-height: clamp(380px, 80dvh, 700px); }
 }
 
-/* ступени высоты — как в assortment */
-@media (max-width: 768px){ .home-hero{ min-height: clamp(200px, 36vh, 460px); } }
-@media (max-width: 480px){ .home-hero{ min-height: clamp(180px, 42vh, 420px); } }
+.home-hero__bg { position: absolute; inset: 0; }
 
-/* ===== Контентные блоки ===== */
-@media (max-width: 768px){
-  .home-block{
-    margin: 28px 16px 40px;
-    padding: 20px 16px;
-    border:1px solid #E4EAF2; border-radius:16px; background:#fff;
-    box-shadow:0 0 5px rgba(0,40,86,.06);
-  }
-  .home-block__title{ font-size: clamp(20px, 5vw, 24px); color:#003366; margin:0 0 10px; }
-  .home-block__text{ font-size: clamp(14px, 3.9vw, 16px); color:#153A51; line-height:1.6; margin:0 0 16px; }
-  .home-block__cta{ display:flex; gap:10px; flex-wrap:wrap; }
-  .home-btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:10px 16px; border-radius:999px; text-decoration:none;
-    background:#05A8E2; color:#fff; font-weight:500;
-  }
-  .home-btn--ghost{ background:#E9F6FF; color:#003366; border:1px solid #CDE7F6; }
+/* карточка */
+.home-hero__card {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border: 1px solid #E4EAF2;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 40, 86, 0.12);
+  padding: 18px 16px 16px;
+  text-align: center;
 }
 
-/* XS */
-@media (max-width: 375px){ .home-hero__title{ font-size: clamp(32px, 11.5vw, 40px); } .home-block{ margin-inline:12px; } }
-@media (max-width: 320px){ .home-hero__title{ font-size: clamp(28px, 12vw, 36px); } .home-block{ margin-inline:8px; padding:16px 12px; } }
+/* бейдж сверху */
+.home-hero__eyebrow {
+  display: block;
+  color: #05A8E2;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* трёхстрочный заголовок */
+.home-hero__title {
+  margin: 0 0 6px 0;
+  color: #153A51;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: clamp(20px, 6.4vw, 28px);
+}
+
+/* брендовый логотип TURAN */
+.home-hero__brand {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+.home-hero__brand svg,
+.home-hero__brand img {
+  width: clamp(160px, 44vw, 240px);
+  height: auto;
+}
+
+/* ——— Адаптивы ——— */
+@media (max-width: 375px) {
+  .home-hero { padding: 0 10px 18px; }
+  .home-hero__card { border-radius: 16px; padding: 16px 14px; }
+  .home-hero__title { gap: 5px; font-size: clamp(19px, 6.8vw, 26px); }
+  .home-hero__eyebrow { font-size: 11px; }
+}
+
+@media (max-width: 320px) {
+  .home-hero { padding: 0 8px 16px; }
+  .home-hero__card { padding: 14px 12px; }
+  .home-hero__title { font-size: clamp(18px, 7.2vw, 24px); gap: 4px; }
+  .home-hero__brand svg,
+  .home-hero__brand img { width: clamp(150px, 52vw, 210px); }
+}
+
+/* === Пример простого блока ниже hero === */
+.home-block {
+  max-width: 1280px;
+  margin: 30px auto 60px;
+  padding: 24px 16px;
+}
+.home-block__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #153A51;
+  margin-bottom: 8px;
+}
+.home-block__text {
+  color: #153A51;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+.home-block__cta { display: flex; gap: 10px; }
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #05A8E2;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.home-btn--ghost {
+  background: transparent;
+  color: #05A8E2;
+  border: 1px solid #05A8E2;
+}
