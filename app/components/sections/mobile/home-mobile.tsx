@@ -6,7 +6,7 @@
 // import "./home-mobile.css";
 // import { useState } from "react";
 
-// /** выносим константу за компонент, чтобы не пересоздавалась на каждом рендере */
+// /** константы вне компонента */
 // const FEATURES = [
 //   { value: "15 тыс",   label: "лет возраст источника" },
 //   { value: "104 м",    label: "глубина водозабора" },
@@ -15,21 +15,19 @@
 // ];
 
 // export default function HomeMobile() {
-//   // словарь «раскрыт/свернут» для секций (оставляем твой формат)
+//   // словарь «раскрыт/свернут» — оставил как у тебя
 //   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
 //   return (
 //     <main className="font-rubik">
-//       {/* фикс-шапка (на мобилке с бургером) */}
 //       <Header />
 
-//       {/* HERO */}
+//       {/* HERO #1 */}
 //       <section
-//         className="hero--with-header home-hero"
+//         className={`home-hero hero--with-header ${expanded[1] ? "hero--center" : "hero--top"}`}
 //         role="banner"
 //         aria-label="TURAN — природная лёгкая живая вода"
 //       >
-//         {/* фон */}
 //         <div className="home-hero__bg">
 //           <Image
 //             src="/hero/bg-hero.webp"
@@ -41,7 +39,6 @@
 //           />
 //         </div>
 
-//         {/* карточка */}
 //         <div className="home-hero__card">
 //           <span className="home-hero__eyebrow">ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ</span>
 
@@ -57,14 +54,13 @@
 //         </div>
 //       </section>
 
-//       {/* Природная */}
-//       <section className="hero">
+//       {/* HERO #2 «Природная» — только классы меняем */}
+//       <section className={`hero ${expanded[1] ? "hero--center" : "hero--top"}`}>
 //         <h1 className="hero-h1">ПРИРОДНАЯ</h1>
 //       </section>
 
-//       {/* Water */}
-//       <section className="text-block">
-//         {/* клампим только контент, не всю секцию */}
+//       {/* TEXT-BLOCK — только классы меняем */}
+//       <section className={`text-block ${expanded[1] ? "" : "text-block--overlap"}`}>
 //         <div
 //           id="water-more-1"
 //           className={`text-content ${expanded[1] ? "expanded" : "collapsed"}`}
@@ -102,7 +98,6 @@
 //             защищенная от внешних воздействий.
 //           </p>
 
-//           {/* фичи — используем твои css-классы features-grid/feature */}
 //           <div className="features-grid">
 //             {FEATURES.map((f) => (
 //               <div key={f.value} className="feature">
@@ -124,76 +119,7 @@
 //         </button>
 //       </section>
 
-
-
-//       {/* ЛЕГКАЯ  */}
-//       <section className="hero">
-//         <h1 className="hero-h1">ЛЕГКАЯ</h1>
-//       </section>
-
-//       {/* Water */}
-//       <section className="text-block">
-//         {/* клампим только контент, не всю секцию */}
-//         <div
-//           id="water-more-1"
-//           className={`text-content ${expanded[1] ? "expanded" : "collapsed"}`}
-//         >
-//           <h2>TURAN — природная минеральная вода, рожденная из глубин веков.</h2>
-
-//           <p>
-//             Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
-//             где на глубине более 100 метров скрыт реликтовый источник,
-//             сформированный более 15 000 лет назад талыми водами Валдайского
-//             ледника. Проходя через древние породы, возраст которых исчисляется
-//             сотнями миллионов лет, вода насыщается природными минералами и
-//             сохраняет свою первозданную чистоту. Без искусственных добавок, без
-//             внешнего воздействия — только идеальный баланс, созданный самой
-//             природой.
-//           </p>
-
-//           <p>
-//             Эта вода не подвергается дополнительной обработке, потому что в ней
-//             нет ничего лишнего. Природная минерализация, идеально
-//             сбалансированный состав, мягкий, освежающий вкус — TURAN сохраняет
-//             все, что задумано самой природой. Ее добыча ведется в заповедной
-//             зоне под строгим государственным контролем, а автоматизированные
-//             системы мониторинга следят за каждым этапом, чтобы сохранить ее
-//             первозданную свежесть и исключительные уникальные свойства.
-//           </p>
-
-//           <p>
-//             TURAN — не просто вода, это символ вечности, заключенной в каждой
-//             капле. Ее источник — естественный природный резервуар,
-//             сформированный ледниковыми водами, которые тысячелетиями проникали
-//             вглубь земли, проходя естественную фильтрацию через породы
-//             протерозойского периода, возрастом более 800 миллионов лет. Там, на
-//             глубине 104 метров, скрывается уникальная экосистема, полностью
-//             защищенная от внешних воздействий.
-//           </p>
-
-//           {/* фичи — используем твои css-классы features-grid/feature */}
-//           <div className="features-grid">
-//             {FEATURES.map((f) => (
-//               <div key={f.value} className="feature">
-//                 <span className="feature__value">{f.value}</span>
-//                 <span className="feature__label">{f.label}</span>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <button
-//           type="button"
-//           className="button-more mt-4"
-//           aria-expanded={!!expanded[1]}
-//           aria-controls="water-more-1"
-//           onClick={() => setExpanded({ ...expanded, 1: !expanded[1] })}
-//         >
-//           {expanded[1] ? "Скрыть" : "Узнать больше"}
-//         </button>
-//       </section>
-
-//       {/* footer оставляем без изменений визуально */}
+//       {/* footer без изменений */}
 //       <footer className="footer">
 //         <div className="footer-top">
 //           <div className="footer-logo">
@@ -246,12 +172,9 @@
 // }
 
 
-
-
 "use client";
 
 import Header from "../../layout/header";
-import Image from "next/image";
 import LogoText from "../../ui/logo-text";
 import "./home-mobile.css";
 import { useState } from "react";
@@ -265,51 +188,47 @@ const FEATURES = [
 ];
 
 export default function HomeMobile() {
-  // словарь «раскрыт/свернут» — оставил как у тебя
+  // словарь «раскрыт/свернут»
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   return (
     <main className="font-rubik">
       <Header />
 
-      {/* HERO #1 */}
+      {/* HERO #1 — фон из HTML, сначала раскрыт (без кропа), карточка висит у низа */}
       <section
-        className={`home-hero hero--with-header ${expanded[1] ? "hero--center" : "hero--top"}`}
+        className={`hero hero--with-header ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
+        style={
+          {
+            ["--hero-bg" as any]: "url('/hero/bg-hero.webp')",
+            ["--hero-bg-size" as any]: "contain", 
+          }
+        }
         role="banner"
         aria-label="TURAN — природная лёгкая живая вода"
       >
-        <div className="home-hero__bg">
-          <Image
-            src="/hero/bg-hero.webp"
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-
         <div className="home-hero__card">
           <span className="home-hero__eyebrow">ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ</span>
-
           <h1 className="home-hero__title">
             <span>ПРИРОДНАЯ</span>
             <span>ЛЕГКАЯ</span>
             <span>ЖИВАЯ ВОДА</span>
           </h1>
-
           <div className="home-hero__brand">
             <LogoText />
           </div>
         </div>
       </section>
 
-      {/* HERO #2 «Природная» — только классы меняем */}
-      <section className={`hero ${expanded[1] ? "hero--center" : "hero--top"}`}>
+      {/* HERO #2 «Природная» — как было (разметка не трогаем), но с теми же состояниями высоты */}
+      <section
+        className={`hero ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
+        style={{ ["--hero-bg" as any]: "url('/nature/bg-nature.webp')" }}
+      >
         <h1 className="hero-h1">ПРИРОДНАЯ</h1>
       </section>
 
-      {/* TEXT-BLOCK — только классы меняем */}
+      {/* TEXT-BLOCK — в «закрытом» состоянии наезжает на фон; после клика опускается */}
       <section className={`text-block ${expanded[1] ? "" : "text-block--overlap"}`}>
         <div
           id="water-more-1"
@@ -332,20 +251,20 @@ export default function HomeMobile() {
             Эта вода не подвергается дополнительной обработке, потому что в ней
             нет ничего лишнего. Природная минерализация, идеально
             сбалансированный состав, мягкий, освежающий вкус — TURAN сохраняет
-            все, что задумано самой природой. Ее добыча ведется в заповедной
+            всё, что задумано самой природой. Её добыча ведётся в заповедной
             зоне под строгим государственным контролем, а автоматизированные
-            системы мониторинга следят за каждым этапом, чтобы сохранить ее
+            системы мониторинга следят за каждым этапом, чтобы сохранить её
             первозданную свежесть и исключительные уникальные свойства.
           </p>
 
           <p>
-            TURAN — не просто вода, это символ вечности, заключенной в каждой
-            капле. Ее источник — естественный природный резервуар,
-            сформированный ледниковыми водами, которые тысячелетиями проникали
-            вглубь земли, проходя естественную фильтрацию через породы
-            протерозойского периода, возрастом более 800 миллионов лет. Там, на
-            глубине 104 метров, скрывается уникальная экосистема, полностью
-            защищенная от внешних воздействий.
+            TURAN — не просто вода, это символ вечности, заключённой в каждой
+            капле. Её источник — естественный природный резервуар, сформированный
+            ледниковыми водами, которые тысячелетиями проникали вглубь земли,
+            проходя естественную фильтрацию через породы протерозойского периода,
+            возрастом более 800 миллионов лет. Там, на глубине 104 метров,
+            скрывается уникальная экосистема, полностью защищённая от внешних
+            воздействий.
           </p>
 
           <div className="features-grid">
@@ -369,7 +288,7 @@ export default function HomeMobile() {
         </button>
       </section>
 
-      {/* footer без изменений */}
+      {/* footer — как был */}
       <footer className="footer">
         <div className="footer-top">
           <div className="footer-logo">
@@ -420,4 +339,3 @@ export default function HomeMobile() {
     </main>
   );
 }
-

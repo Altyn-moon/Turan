@@ -1,157 +1,131 @@
-/* ——— компенсируем фикс-хедер ——— */
+/* шапка не перекрывает первый hero */
 .hero--with-header { padding-top: 86px; }
 
-/* ===================== HERO #1 ===================== */
-.home-hero{
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0 12px 20px;
-  min-height: clamp(420px, 80vh, 740px);
-  margin-bottom: 250px;
+:root{
+  --stack-gap: 24px;   /* постоянный отступ между хиро-блоками */
+  --hero-overlap: 0px;/* насколько HERO1 «подпрыгивает» в expanded */
 }
-@supports (height: 1dvh){ .home-hero{ min-height: clamp(380px, 80dvh, 700px); } }
 
-.home-hero__bg { position: absolute; inset: 0; }
-
-.home-hero__card{
+/* ===== общий hero, фон из CSS-переменной ===== */
+.hero{
   position: relative;
   width: 100%;
-  max-width: 640px;
+  background: var(--hero-bg) no-repeat top center / var(--hero-bg-size, cover);
+  padding-inline: 12px;
+  transition: min-height .28s ease, margin .28s ease, padding .28s ease;
+  isolation: isolate;                 /* свой стек, чтобы слои не мешали соседям */
+  z-index: 0; 
+  margin-top: 86px;
+   
+}
+
+/* ---------- Состояния высоты HERO1/HERO2 ---------- */
+/* старт: фон раскрыт — у HERO1 ниже стоит отрицательный «нахлёст» */
+.hero--expanded{
+  min-height: clamp(340px, 52vh, 620px);
+  margin-bottom: -48px;               /* создаём ощущение «поверх фона» */
+}
+/* после клика: фон ниже */
+.hero--compact{
+  min-height: clamp(220px, 34vh, 420px);
+  margin-bottom: 0;
+}
+
+/* ---------- КОМПЕНСАЦИЯ ДЛЯ HERO2 ---------- */
+/* по умолчанию зазор между хиро */
+.hero + .hero{
+  margin-top: var(--stack-gap);
+  transition: margin .28s ease;
+}
+/* когда HERO1 в expanded, он тянет вверх следующий блок (из-за -48px).
+   Возвращаем фиксированный зазор, добавив ту же величину к верху HERO2. */
+.hero.hero--expanded + .hero{
+  margin-top: calc(var(--stack-gap) + var(--hero-overlap)); /* 24px + 48px = 72px */
+}
+
+/* ---------- Контент в hero #1 (карточка) ---------- */
+.home-hero__card{
+  position: absolute;
+  left: 50%;
+  width: min(640px, calc(100% - 24px));
   background: #fff;
   border: 1px solid #E4EAF2;
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0,40,86,.12);
-  padding: 30px;
+  padding: 26px 22px;
   text-align: center;
-  margin-top: 250px;
+  transform: translateX(-50%);
+  transition: top .28s ease, bottom .28s ease, transform .28s ease;
+  z-index: 2; /* остаётся поверх фона своего сектора */
 }
 
+/* старт: фон высокий, карточка ЧУТЬ НАД нижней кромкой картинки */
+.hero--expanded .home-hero__card{
+  top: auto;
+  bottom: 56px;                     /* «чуть над» фоном */
+  transform: translate(-50%, 0);
+}
+/* После клика: карточка опускается вниз к кромке HERO1 */
+.hero--compact .home-hero__card{
+  top: auto;
+  bottom: 8px;                      /* «в своё место» у низа */
+  transform: translate(-50%, 0);
+}
+
+
+/* типографика карточки */
 .home-hero__eyebrow{
-  display: block;
-  color: #05A8E2;
-  font-size: 15px;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  letter-spacing: -0.307px;
+  display:block; color:#05A8E2; font-size:13px; font-weight:300;
+  text-transform:uppercase; margin-bottom:8px; letter-spacing:.12em;
 }
-
 .home-hero__title{
-  margin: 0 0 6px 0;
-  color: #153A51;
-  font-weight: 700;
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: clamp(20px, 6.4vw, 28px);
-  letter-spacing: -0.613px;
+  margin:0 0 8px 0; color:#153A51; font-weight:700; line-height:1;
+  display:flex; flex-direction:column; gap:6px;
+  font-size:clamp(20px, 6.2vw, 28px); letter-spacing:-0.613px;
 }
+.home-hero__brand{ display:flex; justify-content:center; margin-top:8px; }
+.home-hero__brand svg, .home-hero__brand img{ width:clamp(160px, 44vw, 240px); height:auto; }
 
-.home-hero__brand{
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-.home-hero__brand svg,
-.home-hero__brand img{ width: clamp(160px, 44vw, 240px); height: auto; }
-
-/* мобильные правки */
 @media (max-width: 375px){
-  .home-hero{ padding: 0 10px 18px; }
-  .home-hero__card{ border-radius: 16px; padding: 16px 14px; }
-  .home-hero__title{ gap: 5px; font-size: clamp(19px, 6.8vw, 26px); }
-  .home-hero__eyebrow{ font-size: 11px; }
+  .home-hero__card{ border-radius:16px; padding:18px 14px; }
+  .home-hero__title{ gap:5px; font-size:clamp(19px, 6.8vw, 26px); }
+  .home-hero__eyebrow{ font-size:11px; }
 }
 @media (max-width: 320px){
-  .home-hero{ padding: 0 8px 16px; }
-  .home-hero__card{ padding: 14px 12px; }
-  .home-hero__title{ font-size: clamp(18px, 7.2vw, 24px); gap: 4px; }
-  .home-hero__brand svg,
-  .home-hero__brand img{ width: clamp(150px, 52vw, 210px); }
+  .home-hero__card{ padding:16px 12px; }
+  .home-hero__title{ font-size:clamp(18px, 7.2vw, 24px); gap:4px; }
+  .home-hero__brand svg, .home-hero__brand img{ width:clamp(150px, 52vw, 210px); }
 }
 
-/* общее поведение hero на мобилке */
-@media (max-width: 768px){
-  .hero--with-header{ padding-top: 0 !important; }
-  .home-hero{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center;
-    min-height: clamp(220px, 30vh, 520px);
-    height: auto;
-    padding-inline: 16px;
-    overflow: hidden;
-  }
-  .home-hero__bg{ position: absolute; inset: 0; z-index: 1; }
-  .home-hero__bg > span{ position: absolute !important; inset: 0 !important; }
-  .home-hero__bg img{ width: 100%; height: 100%; object-fit: cover; }
-  .home-hero__card{ position: relative; z-index: 2; }
-}
-@media (max-width: 768px){ .home-hero{ min-height: clamp(200px, 36vh, 460px); } }
-@supports (height: 1dvh){
-  @media (max-width: 768px){ .home-hero{ min-height: clamp(200px, 36dvh, 460px); } }
-}
-@media (max-width: 480px){ .home-hero{ min-height: clamp(180px, 42vh, 420px); } }
-@supports (height: 1dvh){
-  @media (max-width: 480px){ .home-hero{ min-height: clamp(180px, 42dvh, 420px); } }
-}
-
-/* ===================== HERO #2 «Природная» ===================== */
-.hero{
-  width: 100%;
-  background: url('/nature/bg-nature.webp') no-repeat center center / cover;
-  position: relative;
-  box-sizing: border-box;
-  padding-inline: 12px;                     /* небольшие отступы сбоку всегда */
-  transition:
-    min-height .28s ease,
-    margin .28s ease,
-    padding .28s ease;
-}
-
-.hero-h1{
+/* ---------- Контент в hero #2 (слово «ПРИРОДНАЯ») ---------- */
+.hero-h1 {
+  position: absolute;
   font-family: var(--font-engravers), serif;
   white-space: nowrap;
-  font-size: clamp(40px, 12vw, 178px);
+  font-size: clamp(40px, 12vw, 178px); /* адаптивный размер */
   font-weight: 700;
   color: #fff;
   line-height: .8;
-  position: absolute;
-  transition: top .28s ease, left .28s ease, right .28s ease, transform .28s ease, text-align .28s ease;
+  width: 100%; /* растягиваем на всю ширину */
+  text-align: center; /* выравниваем по центру */
+  transition: top .28s ease, left .28s ease, transform .28s ease, bottom .28s ease;
 }
 
-/* Стартовое состояние: блок «подпрыгивает», заголовок у верхнего края */
-.hero--top{
-  min-height: clamp(160px, 28vh, 260px);
-  margin-bottom: -48px;                     /* белый блок заезжает на фон */
-  z-index: 1;
-}
-.hero--top .hero-h1{
-  top: 16px;
-  left: 16px;
-  right: 16px;                              /* чтобы сработали боковые отступы */
-  transform: none;
-  text-align: center;
+/* старт — слово у верхней кромки */
+.hero--expanded .hero-h1 {
+  top: 16px;      /* чуть отступ от верхнего края */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: auto;
 }
 
-/* После клика «Узнать больше»: растягиваем и центруем заголовок */
-.hero--center{
-  min-height: clamp(220px, 42vh, 520px);
-  margin-bottom: 0;
-}
-.hero--center .hero-h1{
+/* после клика — в центр */
+.hero--compact .hero-h1 {
   top: 50%;
   left: 50%;
-  right: auto;
   transform: translate(-50%, -50%);
-  text-align: center;
+  bottom: auto;
 }
-
 
 
 /* ===================== TEXT BLOCK ===================== */
@@ -167,74 +141,53 @@
   transition: margin .28s ease, transform .28s ease;
   z-index: 2;
 }
-.text-block--overlap{
-  /* лёгкое перекрытие картинки сверху */
-  margin-top: 0;
-  transform: translateY(-32px);
-}
+/* когда hero раскрыт — этот блок чуть «наезжает» наверх */
+.text-block--overlap{ transform: translateY(-270px); }
 
-.text-block h2{
-  color: #182438; font-size: 32px; margin-bottom: 10px; font-weight: 500;
-}
-.text-block > p{
-  font-size: 20px; color: #182438; margin-bottom: 30px; font-weight: 300; line-height: normal; letter-spacing: -0.4px;
-}
+.text-block h2{ color:#182438; font-size:32px; margin-bottom:10px; font-weight:500; }
+.text-block > p{ font-size:20px; color:#182438; margin-bottom:30px; font-weight:300; line-height:normal; letter-spacing:-.4px; }
 
-/* адаптивы */
-@media (max-width: 1366px){ .text-block{ margin: 40px 40px; } }
-@media (max-width: 992px){  .text-block{ margin: 30px 20px; margin-top: 50px; } }
-@media (max-width: 576px){  .text-block{ margin: 30px 15px; padding: 20px; margin-top: 50px; } }
-@media (max-width: 768px){
-  .text-block h2{ font-size: 28px; line-height: 30px; }
-  .text-block > p{ font-size: 18px; }
+@media (max-width:1366px){ .text-block{ margin:40px 40px; } }
+@media (max-width:992px){  .text-block{ margin:30px 20px; margin-top:50px; } }
+@media (max-width:576px){  .text-block{ margin:30px 15px; padding:20px; margin-top:50px; } }
+@media (max-width:768px){
+  .text-block h2{ font-size:28px; line-height:30px; }
+  .text-block > p{ font-size:18px; }
 }
-@media (max-width: 480px){
-  .text-block h2{ font-size: 24px; }
-  .text-block > p{ font-size: 16px; }
+@media (max-width:480px){
+  .text-block h2{ font-size:24px; }
+  .text-block > p{ font-size:16px; }
 }
 
 /* клампим только содержимое */
-.text-content.collapsed{
-  max-height: 420px; overflow: hidden; position: relative;
-}
+.text-content.collapsed{ max-height:420px; overflow:hidden; position:relative; }
 .text-content.collapsed::after{
   content:""; position:absolute; left:0; right:0; bottom:0; height:60px;
-  background: linear-gradient(180deg, rgba(255,255,255,0), #fff);
+  background:linear-gradient(180deg, rgba(255,255,255,0), #fff);
 }
 .text-content.expanded{ max-height:none; }
 
-/* кнопка «узнать больше» */
+/* кнопка */
 .button-more{
-  display: inline-block;
-  padding: 8px 20px;
-  background:#fff;
-  transition: all .25s ease;
-  color:#182438;
-  font-size:16px; font-weight:500; text-transform:uppercase;
+  display:inline-block; padding:8px 20px; background:#fff; transition:all .25s ease;
+  color:#182438; font-size:16px; font-weight:500; text-transform:uppercase;
   border-radius:50px; border:1px solid #009FE3;
 }
 .button-more:hover{ background:#009FE3; color:#fff; }
 
 /* фичи */
-.features-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-top: 16px;
-  width: 100%;
-}
-@media (min-width: 640px){ .features-grid{ grid-template-columns: repeat(2,1fr); } }
-
+.features-grid{ display:grid; grid-template-columns:1fr; gap:15px; margin-top:16px; width:100%; }
+@media (min-width:640px){ .features-grid{ grid-template-columns:repeat(2,1fr); } }
 .feature{
-  text-align: center;
-  padding: 12px 10px;
-  border-radius: 20px;
-  border: 2px solid #F5F5F5;
-  background: rgba(184,184,184,.00);
-  color: #182438;
+  text-align:center; padding:12px 10px; border-radius:20px;
+  border:2px solid #F5F5F5; background:rgba(184,184,184,.00); color:#182438;
 }
 .feature__value{ display:block; font-weight:400; font-size:50px; line-height:1; }
 .feature__label{ display:block; font-weight:700; font-size:16px; line-height:1.2; opacity:.8; }
+
+
+
+
 
 /* ===================== FOOTER ===================== */
 .footer{ background:#fff; color:#003366; padding:60px 40px 0; }
@@ -255,7 +208,8 @@
 .footer-bottom a{ text-decoration:none; color:#003366; }
 .footer-rights{ display:flex; align-items:center; gap:8px; font-weight:500; }
 .font{ font-size:28px; }
-.footer-brand{ text-align:center; margin:40px 0 0; display:flex; justify-content:center; align-items:center; }
+.footer-brand{ text-align:center; margin:40px 0 0; display:flex; justify-content:center; align-items:
+center; }
 .footer-brand img{ max-width:100%; height:auto; }
 .footer-del-num{ padding-top:16px; text-align:right; }
 .footer-del-num a{ text-decoration:none; font-size:12px; color:#909FB9; }
@@ -300,3 +254,8 @@
   .footer-contacts > div, .footer-contacts a{ font-size:11.5px; }
   .footer-social img{ width:26px; height:26px; }
 }
+
+
+
+
+
