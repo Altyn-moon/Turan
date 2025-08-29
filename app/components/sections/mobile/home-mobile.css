@@ -13,23 +13,19 @@
   background: var(--hero-bg) no-repeat top center / var(--hero-bg-size, cover);
   padding-inline: 12px;
   transition: min-height .28s ease, margin .28s ease, padding .28s ease;
-  isolation: isolate;                 /* свой стек, чтобы слои не мешали соседям */
-  z-index: 0; 
+  isolation: isolate;
   margin-top: 86px;
-   
 }
 
 /* ---------- Состояния высоты HERO1/HERO2 ---------- */
 /* старт: фон раскрыт — у HERO1 ниже стоит отрицательный «нахлёст» */
-.hero--expanded{
-  min-height: clamp(340px, 52vh, 620px);
-  margin-bottom: -48px;               /* создаём ощущение «поверх фона» */
-}
-/* после клика: фон ниже */
-.hero--compact{
-  min-height: clamp(220px, 34vh, 420px);
-  margin-bottom: 0;
-}
+.hero--expanded{ 
+  min-height: clamp(340px, 52vh, 620px); 
+  margin-bottom: -48px; }
+.hero--compact { 
+  min-height: clamp(220px, 34vh, 420px); 
+  margin-bottom: 0; }
+
 
 /* ---------- КОМПЕНСАЦИЯ ДЛЯ HERO2 ---------- */
 /* по умолчанию зазор между хиро */
@@ -47,29 +43,32 @@
 .home-hero__card{
   position: absolute;
   left: 50%;
+  bottom: 8px;                     /* базово — у кромки фона */
+  transform: translateX(-50%);     /* центрируем по горизонтали */
   width: min(640px, calc(100% - 24px));
+
   background: #fff;
   border: 1px solid #E4EAF2;
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0,40,86,.12);
   padding: 26px 22px;
   text-align: center;
-  transform: translateX(-50%);
-  transition: top .28s ease, bottom .28s ease, transform .28s ease;
-  z-index: 2; /* остаётся поверх фона своего сектора */
+  z-index: 2;
+
+  /* анимации позиции */
+  transition: bottom .28s ease, transform .28s ease;
 }
 
-/* старт: фон высокий, карточка ЧУТЬ НАД нижней кромкой картинки */
+/* ДО клика — «чуть над» кромкой (подпрыгивание) */
 .hero--expanded .home-hero__card{
-  top: auto;
-  bottom: 56px;                     /* «чуть над» фоном */
-  transform: translate(-50%, 0);
+  bottom: 56px;                    /* приподняли */
+  transform: translateX(-50%);     /* без вертикального сдвига */
 }
-/* После клика: карточка опускается вниз к кромке HERO1 */
+
+/* ПОСЛЕ клика — вернулась к низу */
 .hero--compact .home-hero__card{
-  top: auto;
-  bottom: 8px;                      /* «в своё место» у низа */
-  transform: translate(-50%, 0);
+  bottom: 8px;                     /* вплотную к низу */
+  transform: translateX(-50%);
 }
 
 
