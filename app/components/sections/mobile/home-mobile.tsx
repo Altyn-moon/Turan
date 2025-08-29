@@ -4,7 +4,13 @@ import Header from "../../layout/header";
 import LogoText from "../../ui/logo-text";
 import "./home-mobile.css";
 import { useState } from "react";
-import type { TouchEvent, WheelEvent, UIEvent, MouseEvent } from "react";
+import type React from "react";
+
+/** тип для CSS custom properties */
+type CSSVars = React.CSSProperties & {
+  ["--hero-bg"]?: string;
+  ["--hero-bg-size"]?: string;
+};
 
 /** константы вне компонента */
 const FEATURES = [
@@ -18,6 +24,15 @@ export default function HomeMobile() {
   // словарь «раскрыт/свернут»
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
+  const hero1Style: CSSVars = {
+    "--hero-bg": "url('/hero/bg-hero.webp')",
+    "--hero-bg-size": "contain",
+  };
+
+  const hero2Style: CSSVars = {
+    "--hero-bg": "url('/nature/bg-nature.webp')",
+  };
+
   return (
     <main className="font-rubik">
       <Header />
@@ -25,12 +40,7 @@ export default function HomeMobile() {
       {/* HERO #1 — фон из HTML, сначала раскрыт (без кропа), карточка висит у низа */}
       <section
         className={`hero hero--with-header ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
-        style={
-          {
-            ["--hero-bg" as any]: "url('/hero/bg-hero.webp')",
-            ["--hero-bg-size" as any]: "contain", 
-          }
-        }
+        style={hero1Style}
         role="banner"
         aria-label="TURAN — природная лёгкая живая вода"
       >
@@ -50,7 +60,7 @@ export default function HomeMobile() {
       {/* HERO #2 «Природная» — как было (разметка не трогаем), но с теми же состояниями высоты */}
       <section
         className={`hero ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
-        style={{ ["--hero-bg" as any]: "url('/nature/bg-nature.webp')" }}
+        style={hero2Style}
       >
         <h1 className="hero-h1">ПРИРОДНАЯ</h1>
       </section>
