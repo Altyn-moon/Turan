@@ -108,7 +108,7 @@
 .home-hero__card {
   position: absolute;
   left: 50%;
-  top: clamp(160px, 60%, calc(var(--hero-h-1) - 150px));
+  top: clamp(140px, 48%, calc(var(--hero-h-1) - 200px));
   transform: translateX(-50%);
   width: min(640px, calc(100% - 24px));
   background: #fff;
@@ -119,6 +119,7 @@
   text-align: center;
   z-index: 2;
 }
+
 
 /* для 375px */
 @media (max-width: 375px) {
