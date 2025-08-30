@@ -2,7 +2,7 @@
 .layout-stack{
   --header-h: 86px;           /* высота шапки */
   /* --stack-gap: 16px;          */
-  --hero-h-1: clamp(420px, 70vh, 100vh);
+  --hero-h-1: clamp(260px, 38vh, 480px);
   --hero-h-2: clamp(220px, 34vh, 420px);
 
   --gutter: clamp(12px, 4vw, 24px);
@@ -15,7 +15,7 @@
 
 :root{
   /* --stack-gap: 24px;      */
-  --hero-h-1: clamp(420px, 70vh, 100vh); /* фикс. область HERO1 */
+  --hero-h-1: clamp(260px, 38vh, 480px); /* фикс. область HERO1 */
   --hero-h-2: clamp(220px, 34vh, 420px); /* фикс. область HERO2 */
 }
 
@@ -59,6 +59,7 @@
   position: absolute;
   left: 50%;
   bottom: clamp(12px, 3vh, 32px);
+
   transform: translateX(-50%) translateY(0);
   width: min(640px, calc(100% - 24px));
   background: #fff;
