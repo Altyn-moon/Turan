@@ -45,16 +45,16 @@ export default function HomeMobile() {
   const hero9Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
 
   const golds = [
-    { url: "/awards/gold4.png", className: "h-20 w-20" },
-    { url: "/awards/gold5.png", className: "h-20 w-20" },
-    { url: "/awards/gold6.png", className: "h-20 w-20" },
-    { url: "/awards/gold7.png", className: "h-20 w-20" },
+    { url: "/awards/gold4.png", className: "h-15 w-15" },
+    { url: "/awards/gold5.png", className: "h-15 w-15" },
+    { url: "/awards/gold6.png", className: "h-15 w-15" },
+    { url: "/awards/gold7.png", className: "h-15 w-15" },
   ];
   const silvers = [
-    { url: "/awards/silver5.png", className: "h-20 w-20" },
-    { url: "/awards/silver6.png", className: "h-20 w-20" },
-    { url: "/awards/silver1.png", className: "h-20 w-20" },
-    { url: "/awards/silver2.png", className: "h-20 w-20" },
+    { url: "/awards/silver5.png", className: "h-15 w-15" },
+    { url: "/awards/silver6.png", className: "h-15 w-15" },
+    { url: "/awards/silver1.png", className: "h-15 w-15" },
+    { url: "/awards/silver2.png", className: "h-15 w-15" },
   ];
 
   const router = useRouter();
@@ -454,7 +454,7 @@ export default function HomeMobile() {
           <p>Вот уже несколько лет подряд TURAN получает высшую награду от Monde Selection — одного из самых авторитетных европейских институтов оценки качества. Эта независимая экспертиза проводится в Брюсселе, и включает слепую дегустацию, анализ состава и производственного процесса.
                 </p>
 
-          <div className="flex gap-4 items-center self-start relative z-50">
+          <div className="flex gap-4 items-center justify-center  relative z-50">
                           {golds.map((gold, i) => (
                             <Image
                               key={i}
@@ -468,11 +468,13 @@ export default function HomeMobile() {
                           ))}
                         </div>
           
-                        <div className="flex gap-6 mt-4 items-center self-start relative z-50">
+                        <div className="flex gap-6 mt-4 items-center justify-center  relative z-50">
                           <Image src="/awards/gold1.png" width={52} height={88} alt="gold1" unoptimized />
                           <Image src="/awards/gold2.png" width={52} height={88} alt="gold2" unoptimized />
                           <Image src="/awards/gold3.png" width={52} height={88} alt="gold3" unoptimized />
                         </div>
+
+                        <div></div>
 
             <p>TURAN — одна из немногих вод в регионе, прошедших проверку SGS Institut Fresenius. Это мировой эталон лабораторного контроля, которому доверяют более 160 лет. Институт оценивает не только воду в бутылке, но и весь путь от скважины до розлива: санитарные условия, оборудование, технологии.
                 </p>
@@ -480,7 +482,7 @@ export default function HomeMobile() {
             <p>С 1991 года TURAN остаётся верна своему стандарту: только природная вода, только проверенное качество — и только та чистота, за которую голосуют профессионалы по всему миру.
                 </p>
 
-            <div className="flex gap-4 items-center self-start relative z-50">
+            <div className="flex gap-4 items-center justify-center  relative z-50">
                             {silvers.map((silver, i) => (
                               <Image
                                 key={i}
