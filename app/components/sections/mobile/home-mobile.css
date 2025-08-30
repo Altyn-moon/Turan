@@ -2,9 +2,10 @@
 .layout-stack{
   --header-h: 86px;           /* высота шапки */
   /* --stack-gap: 16px;          */
-  --hero-h-1: clamp(220px, 34vh, 360px);
-  /* --hero-h-2: clamp(220px, 34vh, 420px); */
-  --hero-h-2: clamp(220px, 34vh, 360px);
+  /* --hero-h-1: clamp(220px, 34vh, 360px);
+  --hero-h-2: clamp(220px, 34vh, 360px); */
+  --hero-h-1: clamp(340px, 52vh, 620px);   /* главная hero */
+  --hero-h: clamp(220px, 34vh, 420px);     /* все остальные hero */
 
   --gutter: clamp(12px, 4vw, 24px);
 
@@ -16,16 +17,47 @@
 
 :root{
   /* --stack-gap: 24px;      */
-  --hero-h-1: clamp(220px, 34vh, 360px); /* фикс. область HERO1 */
-  --hero-h-2: clamp(220px, 34vh, 420px); /* фикс. область HERO2 */
-  --hero-h-2: clamp(220px, 34vh, 360px);
+  /* --hero-h-1: clamp(220px, 34vh, 360px); 
+  --hero-h-2: clamp(220px, 34vh, 420px); 
+  --hero-h-2: clamp(220px, 34vh, 360px); */
+
+  --hero-h-1: clamp(340px, 52vh, 620px);   /* главная hero */
+  --hero-h: clamp(220px, 34vh, 420px);     /* все остальные hero */
+}
+
+/* адаптив для маленьких экранов */
+@media (max-width: 375px) {
+  :root {
+    --hero-h-1: clamp(230px, 42vh, 380px);
+    --hero-h: clamp(200px, 36vh, 340px);
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --hero-h-1: clamp(220px, 44vh, 360px);
+    --hero-h: clamp(190px, 38vh, 320px);
+  }
 }
 
 /* ===== общий hero, фон из CSS-переменной ===== */
+
+/* только для первой hero */
+.hero--main {
+  height: var(--hero-h-1);
+  position: relative;
+  width: 100%;
+  background: var(--hero-bg) no-repeat top center / var(--hero-bg-size, cover);
+  padding-inline: 12px;
+  isolation: isolate;
+  /* никаких transition у margin/min-height — чтобы не создавались зазоры */
+  transition: none;
+}
+
 .hero{
   position: relative;
   width: 100%;
-  height: var(--hero-h-1);             /* по умолчанию высота как у HERO1 */
+  height: var(--hero-h);             /* по умолчанию высота как у HERO1 */
   background: var(--hero-bg) no-repeat top center / var(--hero-bg-size, cover);
   padding-inline: 12px;
   isolation: isolate;
@@ -159,7 +191,7 @@
 
 /* активное состояние — сдвиг вниз в середину */
 .text-hero--centered {
-  transform: translateY(15vh); /* подбери значение под высоту картинки */
+  transform: translateY(10vh); /* подбери значение под высоту картинки */
   padding: 0 var(--gutter);
 }
 

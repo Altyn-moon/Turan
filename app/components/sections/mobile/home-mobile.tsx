@@ -64,7 +64,7 @@ export default function HomeMobile() {
 
       {/* HERO #1 */}
       <section
-        className={`hero hero--with-header ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
+        className={`hero--main hero--with-header ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
         style={hero1Style}
         role="banner"
         aria-label="TURAN — природная лёгкая живая вода"
