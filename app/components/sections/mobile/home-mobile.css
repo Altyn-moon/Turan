@@ -192,7 +192,7 @@
 
 /* активное состояние — сдвиг вниз в середину */
 .text-hero--centered {
-  transform: translateY(10vh); /* подбери значение под высоту картинки */
+  transform: translateY(15vh); /* подбери значение под высоту картинки */
   padding: 0 var(--gutter);
 }
 
