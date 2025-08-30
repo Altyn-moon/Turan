@@ -211,7 +211,7 @@
 .text-block{
   position: relative;
   max-width: 1280px;
-  margin: var(--stack-gap) auto;        /* постоянный зазор с обеих сторон */
+  margin: 20px;        /* постоянный зазор с обеих сторон */
   padding: clamp(30px, 5vw, 60px);
   background: #fff;
   border-radius: 20px;
