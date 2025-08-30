@@ -55,11 +55,11 @@
 }
 
 /* ---------- Контент в hero #1 (карточка) ---------- */
-.home-hero__card{
+/* .home-hero__card{
   position: absolute;
   left: 50%;
-  bottom: clamp(12px, 3vh, 32px);
-
+  /* bottom: clamp(12px, 3vh, 32px); 
+  top: clamp(220px, 34vh, 420px);
   transform: translateX(-50%) translateY(0);
   width: min(640px, calc(100% - 24px));
   background: #fff;
@@ -69,8 +69,24 @@
   padding: 26px 22px;
   text-align: center;
   z-index: 2;
-  /* transition: transform .28s ease;  */
+} */
+
+.home-hero__card {
+  position: absolute;
+  left: 50%;
+  top: clamp(180px, 75%, calc(var(--hero-h-1) - 40px));
+  transform: translateX(-50%);
+  width: min(640px, calc(100% - 24px));
+  background: #fff;
+  border: 1px solid #E4EAF2;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,40,86,.12);
+  padding: 26px 22px;
+  text-align: center;
+  z-index: 2;
 }
+
+
 
 /* ДО клика — «чуть над» кромкой (подпрыгивание) */
 /* .hero--expanded .home-hero__card{
