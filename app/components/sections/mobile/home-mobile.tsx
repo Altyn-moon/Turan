@@ -510,7 +510,7 @@ export default function HomeMobile() {
 
 
 
-      <div className="w-full flex items-center justify-center relative"> 
+      <div className=" px-4 py-2 w-full flex items-center justify-center relative"> 
                   <div className="flex flex-col gap-4 pointer-events-auto">             
                     <div
                       onClick={() => router.push("/turan/social")}

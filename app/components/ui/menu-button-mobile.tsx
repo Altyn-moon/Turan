@@ -15,7 +15,7 @@ export default function MenuButton({
         xl:rounded-full xl:border-2 xl:border-white xl:bg-transparent xl:text-white
       "
     >
-      <span>{children}</span>
+      <span className="text-left xl:text-right">{children}</span>
 
       <span
         className="
