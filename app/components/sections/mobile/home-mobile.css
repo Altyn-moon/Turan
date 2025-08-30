@@ -3,7 +3,8 @@
   --header-h: 86px;           /* высота шапки */
   /* --stack-gap: 16px;          */
   --hero-h-1: clamp(220px, 34vh, 360px);
-  --hero-h-2: clamp(220px, 34vh, 420px);
+  /* --hero-h-2: clamp(220px, 34vh, 420px); */
+  --hero-h-2: clamp(220px, 34vh, 360px);
 
   --gutter: clamp(12px, 4vw, 24px);
 
@@ -17,6 +18,7 @@
   /* --stack-gap: 24px;      */
   --hero-h-1: clamp(220px, 34vh, 360px); /* фикс. область HERO1 */
   --hero-h-2: clamp(220px, 34vh, 420px); /* фикс. область HERO2 */
+  --hero-h-2: clamp(220px, 34vh, 360px);
 }
 
 /* ===== общий hero, фон из CSS-переменной ===== */
@@ -157,7 +159,7 @@
 
 /* активное состояние — сдвиг вниз в середину */
 .text-hero--centered {
-  transform: translateY(20vh); /* подбери значение под высоту картинки */
+  transform: translateY(15vh); /* подбери значение под высоту картинки */
   padding: 0 var(--gutter);
 }
 
