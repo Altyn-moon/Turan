@@ -86,7 +86,19 @@
   z-index: 2;
 }
 
+/* для 375px */
+@media (max-width: 375px) {
+  .home-hero__card {
+    top: clamp(120px, 50%, calc(var(--hero-h-1) - 120px));
+  }
+}
 
+/* для 320px */
+@media (max-width: 320px) {
+  .home-hero__card {
+    top: clamp(100px, 45%, calc(var(--hero-h-1) - 100px));
+  }
+}
 
 
 /* ДО клика — «чуть над» кромкой (подпрыгивание) */
