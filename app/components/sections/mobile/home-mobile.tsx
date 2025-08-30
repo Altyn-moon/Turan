@@ -38,7 +38,7 @@ export default function HomeMobile() {
   const hero2Style: CSSVars = { "--hero-bg": "url('/nature/bg-nature.webp')" };
   const hero3Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/cave.webp')" };
   const hero4Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/water.webp')" };
-  const hero5Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird.png')" };
+  const hero5Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird-mobile.png')" };
   const hero6Style: CSSVars = { "--hero-bg": "url('/kazakh/kazakh_back.png')" };
   const hero7Style: CSSVars = { "--hero-bg": "url('/useful/bg-cloud.webp')" };
   const hero8Style: CSSVars = { "--hero-bg": "url('/secure/bez_back.webp')" };
@@ -348,6 +348,9 @@ export default function HomeMobile() {
       <section>
       <section className={`hero ${expanded[6] ? "hero--compact" : "hero--expanded"}`} style={hero7Style}>
         <div className={`text-hero ${expanded[6] ? "text-hero--centered" : ""}`}><UsefulText /></div>
+        {/* <div class="poleznaya-img">
+          <img src="/useful/poleznaya_girl.png" alt="poleznaya_girl" /> 
+        </div> */}
       </section>
 
       {/* TEXT-BLOCK #6 */}
