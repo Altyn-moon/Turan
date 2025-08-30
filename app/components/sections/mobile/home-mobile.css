@@ -1,37 +1,52 @@
-/* шапка не перекрывает первый hero */
-.hero--with-header { padding-top: 86px; }
+
+.layout-stack{
+  --header-h: 86px;           /* высота шапки */
+  /* --stack-gap: 16px;          */
+  --hero-h-1: clamp(420px, 70vh, 100vh);
+  --hero-h-2: clamp(220px, 34vh, 420px);
+
+  --gutter: clamp(12px, 4vw, 24px);
+
+  padding-top: var(--header-h);           /* чтобы шапка не перекрывала первый hero */
+  display: grid;
+  grid-auto-rows: min-content;
+  /* row-gap: var(--stack-gap); */
+}
 
 :root{
-  --stack-gap: 24px;   /* постоянный отступ между хиро-блоками */
-  --hero-overlap: 0px;/* насколько HERO1 «подпрыгивает» в expanded */
+  /* --stack-gap: 24px;      */
+  --hero-h-1: clamp(420px, 70vh, 100vh); /* фикс. область HERO1 */
+  --hero-h-2: clamp(220px, 34vh, 420px); /* фикс. область HERO2 */
 }
 
 /* ===== общий hero, фон из CSS-переменной ===== */
 .hero{
   position: relative;
   width: 100%;
+  height: var(--hero-h-1);             /* по умолчанию высота как у HERO1 */
   background: var(--hero-bg) no-repeat top center / var(--hero-bg-size, cover);
   padding-inline: 12px;
-  transition: min-height .28s ease, margin .28s ease, padding .28s ease;
   isolation: isolate;
-  margin-top: 86px;
+  /* никаких transition у margin/min-height — чтобы не создавались зазоры */
+  transition: none;
 }
 
 /* ---------- Состояния высоты HERO1/HERO2 ---------- */
 /* старт: фон раскрыт — у HERO1 ниже стоит отрицательный «нахлёст» */
 .hero--expanded{ 
   min-height: clamp(340px, 52vh, 620px); 
-  margin-bottom: -48px; }
+  /* margin-bottom: -48px; } */
+}
 .hero--compact { 
   min-height: clamp(220px, 34vh, 420px); 
-  margin-bottom: 0; }
-
+      /* margin-bottom: 0; } */
+}
 
 /* ---------- КОМПЕНСАЦИЯ ДЛЯ HERO2 ---------- */
 /* по умолчанию зазор между хиро */
 .hero + .hero{
-  margin-top: var(--stack-gap);
-  transition: margin .28s ease;
+  height: var(--hero-h-2);
+  /* margin-top: var(--stack-gap);    */
 }
 /* когда HERO1 в expanded, он тянет вверх следующий блок (из-за -48px).
    Возвращаем фиксированный зазор, добавив ту же величину к верху HERO2. */
@@ -43,10 +58,9 @@
 .home-hero__card{
   position: absolute;
   left: 50%;
-  bottom: 8px;                     /* базово — у кромки фона */
-  transform: translateX(-50%);     /* центрируем по горизонтали */
+  bottom: clamp(8px, 2vh, 24px);
+  transform: translateX(-50%) translateY(0);
   width: min(640px, calc(100% - 24px));
-
   background: #fff;
   border: 1px solid #E4EAF2;
   border-radius: 18px;
@@ -54,23 +68,16 @@
   padding: 26px 22px;
   text-align: center;
   z-index: 2;
-
-  /* анимации позиции */
-  transition: bottom .28s ease, transform .28s ease;
+  /* transition: transform .28s ease;  */
 }
 
 /* ДО клика — «чуть над» кромкой (подпрыгивание) */
-.hero--expanded .home-hero__card{
-  bottom: 56px;                    /* приподняли */
-  transform: translateX(-50%);     /* без вертикального сдвига */
+/* .hero--expanded .home-hero__card{
+  transform: translateX(-50%) translateY(-48px);
 }
-
-/* ПОСЛЕ клика — вернулась к низу */
 .hero--compact .home-hero__card{
-  bottom: 8px;                     /* вплотную к низу */
-  transform: translateX(-50%);
-}
-
+  transform: translateX(-50%) translateY(0);
+} */
 
 /* типографика карточки */
 .home-hero__eyebrow{
@@ -97,33 +104,41 @@
 }
 
 /* ---------- Контент в hero #2 (слово «ПРИРОДНАЯ») ---------- */
-.hero-h1 {
-  position: absolute;
-  font-family: var(--font-engravers), serif;
-  white-space: nowrap;
-  font-size: clamp(40px, 12vw, 178px); /* адаптивный размер */
-  font-weight: 700;
-  color: #fff;
-  line-height: .8;
-  width: 100%; /* растягиваем на всю ширину */
-  text-align: center; /* выравниваем по центру */
-  transition: top .28s ease, left .28s ease, transform .28s ease, bottom .28s ease;
+
+/* базовое состояние */
+.text-hero {
+  box-sizing: border-box;
+  padding: var(--gutter);
+  padding-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.6s ease, padding 0.6s ease;
 }
 
-/* старт — слово у верхней кромки */
-.hero--expanded .hero-h1 {
-  top: 16px;      /* чуть отступ от верхнего края */
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: auto;
+/* svg внутри */
+.text-hero :where(svg, img) {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
 }
 
-/* после клика — в центр */
-.hero--compact .hero-h1 {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  bottom: auto;
+/* активное состояние — сдвиг вниз в середину */
+.text-hero--centered {
+  transform: translateY(20vh); /* подбери значение под высоту картинки */
+  padding: 0 var(--gutter);
+}
+
+
+
+
+
+/* если используешь современные свойства */
+.text-hero {
+  padding-block-start: var(--gutter); /* верхний отступ */
+  padding-inline: var(--gutter);      /* боковые отступы */
 }
 
 
@@ -131,24 +146,26 @@
 .text-block{
   position: relative;
   max-width: 1280px;
-  margin: 60px auto;
+  margin: var(--stack-gap) auto;        /* постоянный зазор с обеих сторон */
   padding: clamp(30px, 5vw, 60px);
   background: #fff;
   border-radius: 20px;
   border: 1px solid #E4EAF2;
   box-shadow: 0 0 5px 0 rgba(0,40,86,.25);
-  transition: margin .28s ease, transform .28s ease;
   z-index: 2;
+  transition: transform .28s ease;      /* больше не анимируем margin */
 }
-/* когда hero раскрыт — этот блок чуть «наезжает» наверх */
-.text-block--overlap{ transform: translateY(-270px); }
+
+/* “нахлёст” поверх предыдущего блока — чистым transform, без изменения потока */
+.text-block--overlap{ transform: translateY(-60px); margin-top: -60px; } /* можешь подстроить число */
 
 .text-block h2{ color:#182438; font-size:32px; margin-bottom:10px; font-weight:500; }
 .text-block > p{ font-size:20px; color:#182438; margin-bottom:30px; font-weight:300; line-height:normal; letter-spacing:-.4px; }
 
-@media (max-width:1366px){ .text-block{ margin:40px 40px; } }
-@media (max-width:992px){  .text-block{ margin:30px 20px; margin-top:50px; } }
-@media (max-width:576px){  .text-block{ margin:30px 15px; padding:20px; margin-top:50px; } }
+@media (max-width:1366px){ .text-block{ margin-inline:40px; } }
+@media (max-width:992px){  .text-block{ margin-inline:20px; } }
+@media (max-width:576px){  .text-block{ margin-inline:15px; padding:20px; } }
+
 @media (max-width:768px){
   .text-block h2{ font-size:28px; line-height:30px; }
   .text-block > p{ font-size:18px; }
@@ -183,7 +200,6 @@
 }
 .feature__value{ display:block; font-weight:400; font-size:50px; line-height:1; }
 .feature__label{ display:block; font-weight:700; font-size:16px; line-height:1.2; opacity:.8; }
-
 
 
 
@@ -253,6 +269,7 @@ center; }
   .footer-contacts > div, .footer-contacts a{ font-size:11.5px; }
   .footer-social img{ width:26px; height:26px; }
 }
+
 
 
 

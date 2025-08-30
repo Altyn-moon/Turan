@@ -2,17 +2,26 @@
 
 import Header from "../../layout/header";
 import LogoText from "../../ui/logo-text";
+import NatureText from "@/app/components/ui/text-logo/nature-text";
+import CaveText from "@/app/components/ui/text-logo/cave-text";
+import BirdText from "@/app/components/ui/text-logo/bird-text";
+import KazakhText from "@/app/components/ui/text-logo/kazakh-text";
+import UsefulText from "@/app/components/ui/text-logo/useful-text";
+import SecureText from "@/app/components/ui/text-logo/secure-text";
+import FamilyText from "@/app/components/ui/text-logo/family-text";
+import MenuButton from "@/app/components/ui/menu-button";
+
+import { useRouter } from "next/navigation";
+
 import "./home-mobile.css";
 import { useState } from "react";
 import type React from "react";
 
-/** тип для CSS custom properties */
 type CSSVars = React.CSSProperties & {
   ["--hero-bg"]?: string;
   ["--hero-bg-size"]?: string;
 };
 
-/** константы вне компонента */
 const FEATURES = [
   { value: "15 тыс",   label: "лет возраст источника" },
   { value: "104 м",    label: "глубина водозабора" },
@@ -21,23 +30,38 @@ const FEATURES = [
 ];
 
 export default function HomeMobile() {
-  // словарь «раскрыт/свернут»
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
-  const hero1Style: CSSVars = {
-    "--hero-bg": "url('/hero/bg-hero.webp')",
-    "--hero-bg-size": "contain",
-  };
+  const hero1Style: CSSVars = { "--hero-bg": "url('/hero/bg-hero.webp')", "--hero-bg-size": "contain" };
+  const hero2Style: CSSVars = { "--hero-bg": "url('/nature/bg-nature.webp')" };
+  const hero3Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/cave.webp')" };
+  const hero4Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird.png')" };
+  const hero5Style: CSSVars = { "--hero-bg": "url('/kazakh/kazakh_back.png')" };
+  const hero6Style: CSSVars = { "--hero-bg": "url('/useful/bg-cloud.webp')" };
+  const hero7Style: CSSVars = { "--hero-bg": "url('/secure/bez_back.webp')" };
+  const hero8Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
+  const hero9Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
 
-  const hero2Style: CSSVars = {
-    "--hero-bg": "url('/nature/bg-nature.webp')",
-  };
+  const golds = [
+    { url: "/awards/gold4.png", className: "h-20 w-20" },
+    { url: "/awards/gold5.png", className: "h-20 w-20" },
+    { url: "/awards/gold6.png", className: "h-20 w-20" },
+    { url: "/awards/gold7.png", className: "h-20 w-20" },
+  ];
+  const silvers = [
+    { url: "/awards/silver5.png", className: "h-20 w-20" },
+    { url: "/awards/silver6.png", className: "h-20 w-20" },
+    { url: "/awards/silver1.png", className: "h-20 w-20" },
+    { url: "/awards/silver2.png", className: "h-20 w-20" },
+  ];
+
+  const router = useRouter();
 
   return (
-    <main className="font-rubik">
+    <main className="font-rubik layout-stack">
       <Header />
 
-      {/* HERO #1 — фон из HTML, сначала раскрыт (без кропа), карточка висит у низа */}
+      {/* HERO #1 */}
       <section
         className={`hero hero--with-header ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
         style={hero1Style}
@@ -51,59 +75,38 @@ export default function HomeMobile() {
             <span>ЛЕГКАЯ</span>
             <span>ЖИВАЯ ВОДА</span>
           </h1>
-          <div className="home-hero__brand">
-            <LogoText />
-          </div>
+          <div className="home-hero__brand"><LogoText /></div>
         </div>
       </section>
 
-      {/* HERO #2 «Природная» — как было (разметка не трогаем), но с теми же состояниями высоты */}
-      <section
-        className={`hero ${expanded[1] ? "hero--compact" : "hero--expanded"}`}
-        style={hero2Style}
-      >
-        <h1 className="hero-h1">ПРИРОДНАЯ</h1>
+      {/* HERO #2 */}
+      <section>
+      <section className={`hero ${expanded[1] ? "hero--compact" : "hero--expanded"}`} style={hero2Style}>
+        <div className={`text-hero ${expanded[1] ? "text-hero--centered" : ""}`}> <NatureText /> </div>
       </section>
 
-      {/* TEXT-BLOCK — в «закрытом» состоянии наезжает на фон; после клика опускается */}
+      {/* TEXT-BLOCK #1 */}
       <section className={`text-block ${expanded[1] ? "" : "text-block--overlap"}`}>
-        <div
-          id="water-more-1"
-          className={`text-content ${expanded[1] ? "expanded" : "collapsed"}`}
-        >
+        <div id="water-more-1" className={`text-content ${expanded[1] ? "expanded" : "collapsed"}`}>
           <h2>TURAN — природная минеральная вода, рожденная из глубин веков.</h2>
-
-          <p>
-            Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
-            где на глубине более 100 метров скрыт реликтовый источник,
-            сформированный более 15 000 лет назад талыми водами Валдайского
-            ледника. Проходя через древние породы, возраст которых исчисляется
-            сотнями миллионов лет, вода насыщается природными минералами и
-            сохраняет свою первозданную чистоту. Без искусственных добавок, без
-            внешнего воздействия — только идеальный баланс, созданный самой
-            природой.
-          </p>
-
-          <p>
-            Эта вода не подвергается дополнительной обработке, потому что в ней
-            нет ничего лишнего. Природная минерализация, идеально
-            сбалансированный состав, мягкий, освежающий вкус — TURAN сохраняет
-            всё, что задумано самой природой. Её добыча ведётся в заповедной
-            зоне под строгим государственным контролем, а автоматизированные
-            системы мониторинга следят за каждым этапом, чтобы сохранить её
-            первозданную свежесть и исключительные уникальные свойства.
-          </p>
-
-          <p>
-            TURAN — не просто вода, это символ вечности, заключённой в каждой
-            капле. Её источник — естественный природный резервуар, сформированный
-            ледниковыми водами, которые тысячелетиями проникали вглубь земли,
-            проходя естественную фильтрацию через породы протерозойского периода,
-            возрастом более 800 миллионов лет. Там, на глубине 104 метров,
-            скрывается уникальная экосистема, полностью защищённая от внешних
-            воздействий.
-          </p>
-
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
           <div className="features-grid">
             {FEATURES.map((f) => (
               <div key={f.value} className="feature">
@@ -113,7 +116,6 @@ export default function HomeMobile() {
             ))}
           </div>
         </div>
-
         <button
           type="button"
           className="button-more mt-4"
@@ -124,14 +126,249 @@ export default function HomeMobile() {
           {expanded[1] ? "Скрыть" : "Узнать больше"}
         </button>
       </section>
+      </section>
 
-      {/* footer — как был */}
+      {/* HERO #3 */}
+      <section>
+      <section className={`hero ${expanded[2] ? "hero--compact" : "hero--expanded"}`} style={hero3Style}>
+        <div className={`text-hero ${expanded[2] ? "text-hero--centered" : ""}`}><CaveText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #2 */}
+      <section className={`text-block ${expanded[2] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-2" className={`text-content ${expanded[2] ? "expanded" : "collapsed"}`}>
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
+            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
+            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
+            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
+            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
+            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[2]}
+          aria-controls="water-more-2"
+          onClick={() => setExpanded({ ...expanded, 2: !expanded[2] })}
+        >
+          {expanded[2] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+      {/* HERO #4 */}
+      <section>
+      <section className={`hero ${expanded[3] ? "hero--compact" : "hero--expanded"}`} style={hero4Style}>
+        <div className={`text-hero ${expanded[3] ? "text-hero--centered" : ""}`}><BirdText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #3 */}
+      <section className={`text-block ${expanded[3] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-3" className={`text-content ${expanded[3] ? "expanded" : "collapsed"}`}>
+          <p>...</p>
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[3]}
+          aria-controls="water-more-3"
+          onClick={() => setExpanded({ ...expanded, 3: !expanded[3] })}
+        >
+          {expanded[3] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+      {/* HERO #5 */}
+      <section>
+      <section className={`hero ${expanded[4] ? "hero--compact" : "hero--expanded"}`} style={hero5Style}>
+        <div className={`text-hero ${expanded[4] ? "text-hero--centered" : ""}`}><KazakhText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #4 */}
+      <section className={`text-block ${expanded[4] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-4" className={`text-content ${expanded[4] ? "expanded" : "collapsed"}`}>
+          <p>...</p>
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[4]}
+          aria-controls="water-more-4"
+          onClick={() => setExpanded({ ...expanded, 4: !expanded[4] })}
+        >
+          {expanded[4] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+      {/* HERO #6 */}
+      <section>
+      <section className={`hero ${expanded[5] ? "hero--compact" : "hero--expanded"}`} style={hero6Style}>
+        <div className={`text-hero ${expanded[5] ? "text-hero--centered" : ""}`}><UsefulText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #5 */}
+      <section className={`text-block ${expanded[5] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-5" className={`text-content ${expanded[5] ? "expanded" : "collapsed"}`}>
+          <p>Текстовый блок для секции 6...</p>
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[5]}
+          aria-controls="water-more-5"
+          onClick={() => setExpanded({ ...expanded, 5: !expanded[5] })}
+        >
+          {expanded[5] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+      {/* HERO #7 */}
+      <section>
+      <section className={`hero ${expanded[6] ? "hero--compact" : "hero--expanded"}`} style={hero7Style}>
+        <div className={`text-hero ${expanded[6] ? "text-hero--centered" : ""}`}><SecureText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #6 */}
+      <section className={`text-block ${expanded[6] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-6" className={`text-content ${expanded[6] ? "expanded" : "collapsed"}`}>
+          <p>Текстовый блок для секции 7...</p>
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[6]}
+          aria-controls="water-more-6"
+          onClick={() => setExpanded({ ...expanded, 6: !expanded[6] })}
+        >
+          {expanded[6] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+      {/* HERO #8 */}
+      <section>
+      <section className={`hero ${expanded[7] ? "hero--compact" : "hero--expanded"}`} style={hero8Style}>
+        <div className={`text-hero ${expanded[7] ? "text-hero--centered" : ""}`}><FamilyText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #7 */}
+      <section className={`text-block ${expanded[7] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-7" className={`text-content ${expanded[7] ? "expanded" : "collapsed"}`}>
+          <p>Текстовый блок для секции 8...</p>
+
+          
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[7]}
+          aria-controls="water-more-7"
+          onClick={() => setExpanded({ ...expanded, 7: !expanded[7] })}
+        >
+          {expanded[7] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+
+
+      {/* HERO #9 */}
+      <section>
+      <section className={`hero ${expanded[8] ? "hero--compact" : "hero--expanded"}`} style={hero9Style}>
+        <div className={`text-hero ${expanded[8] ? "text-hero--centered" : ""}`}><FamilyText /></div>
+      </section>
+
+      {/* TEXT-BLOCK #8 */}
+      <section className={`text-block ${expanded[8] ? "" : "text-block--overlap"}`}>
+        <div id="water-more-8" className={`text-content ${expanded[8] ? "expanded" : "collapsed"}`}>
+          <p>Текстовый блок для секции 8...</p>
+
+          
+        </div>
+        <button
+          type="button"
+          className="button-more mt-4"
+          aria-expanded={!!expanded[8]}
+          aria-controls="water-more-8"
+          onClick={() => setExpanded({ ...expanded, 8: !expanded[8] })}
+        >
+          {expanded[8] ? "Скрыть" : "Узнать больше"}
+        </button>
+      </section>
+      </section>
+
+
+
+      <div className="w-full flex flex-col xl:flex-row items-start gap-4 relative z-50"> 
+                  <div className="flex flex-col gap-4 pointer-events-auto">             
+                    <div
+                      onClick={() => router.push("/turan/social")}
+                      className="
+                        group inline-block cursor-pointer
+                        group-hover:[&>div>button]:text-black
+                        group-hover:[&>div>button]:border-black">
+                      <div>
+                        <MenuButton>СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</MenuButton>
+                      </div>
+                    </div>
+      
+                    <div
+                      onClick={() => router.push("/turan/useful")}
+                      className="
+                        group inline-block cursor-pointer
+                        group-hover:[&>div>button]:text-black
+                        group-hover:[&>div>button]:border-black">
+                      <div>
+                        <MenuButton>ПОЛЕЗНО ЗНАТЬ</MenuButton>
+                      </div>
+                    </div>
+      
+                    <div
+                      onClick={() => router.push("/turan/assortiment")}
+                      className="
+                        group inline-block cursor-pointer
+                        group-hover:[&>div>button]:text-black
+                        group-hover:[&>div>button]:border-black">
+                      <div>
+                        <MenuButton>АССОРТИМЕНТ</MenuButton>
+                      </div>
+                    </div>
+      
+      
+                    <div
+                      onClick={() => router.push("/turan/delivery")}
+                      className="
+                        group inline-block cursor-pointer
+                        group-hover:[&>div>button]:text-black
+                        group-hover:[&>div>button]:border-black">
+                      <div>
+                        <MenuButton>ДОСТАВКА</MenuButton>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-top">
           <div className="footer-logo">
             <img src="/images/logo_color.svg fill.svg" alt="TURAN Logo" />
           </div>
-
           <div className="footer-menu">
             <h4>МЕНЮ</h4>
             <ul>
@@ -141,7 +378,6 @@ export default function HomeMobile() {
               <li><a href="/turan/delivery">Доставка</a></li>
             </ul>
           </div>
-
           <div className="footer-contacts">
             <h4>КОНТАКТЫ</h4>
             <div>
@@ -151,7 +387,6 @@ export default function HomeMobile() {
             </div>
           </div>
         </div>
-
         <div className="footer-bottom">
           <div className="footer-social">
             <a href="#"><img src="/images/item.png" alt="Telegram" /></a>
@@ -159,18 +394,6 @@ export default function HomeMobile() {
             <a href="#"><img src="/images/socials (1).png" alt="Facebook" /></a>
             <a href="#"><img src="/images/socials (3).png" alt="WhatsApp" /></a>
           </div>
-
-          <p>© Все права защищены 2025</p>
-          <a href="#">Согласие на обработку персональных данных</a>
-          <a href="#">Политика конфиденциальности</a>
-
-          <div className="footer-rights">
-            <span>Сайт создан <a href="#">OG Group</a></span>
-          </div>
-        </div>
-
-        <div className="footer-brand">
-          <img src="/images/logo_color.svg.png" alt="TURAN" />
         </div>
       </footer>
     </main>
