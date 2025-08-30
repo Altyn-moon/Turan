@@ -10,6 +10,7 @@ import UsefulText from "@/app/components/ui/text-logo/useful-text";
 import SecureText from "@/app/components/ui/text-logo/secure-text";
 import FamilyText from "@/app/components/ui/text-logo/family-text";
 import MenuButton from "@/app/components/ui/menu-button";
+import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 
@@ -297,6 +298,40 @@ export default function HomeMobile() {
       <section className={`text-block ${expanded[8] ? "" : "text-block--overlap"}`}>
         <div id="water-more-8" className={`text-content ${expanded[8] ? "expanded" : "collapsed"}`}>
           <p>Текстовый блок для секции 8...</p>
+
+          <div className="flex gap-4 items-center self-start relative z-50">
+                          {golds.map((gold, i) => (
+                            <Image
+                              key={i}
+                              width={80}
+                              height={80}
+                              src={gold.url}
+                              className={gold.className}
+                              alt="gold"
+                              unoptimized
+                            />
+                          ))}
+                        </div>
+          
+                        <div className="flex gap-6 mt-4 items-center self-start relative z-50">
+                          <Image src="/awards/gold1.png" width={52} height={88} alt="gold1" unoptimized />
+                          <Image src="/awards/gold2.png" width={52} height={88} alt="gold2" unoptimized />
+                          <Image src="/awards/gold3.png" width={52} height={88} alt="gold3" unoptimized />
+                        </div>
+
+            <div className="flex gap-4 items-center self-start relative z-50">
+                            {silvers.map((silver, i) => (
+                              <Image
+                                key={i}
+                                width={80}
+                                height={80}
+                                src={silver.url}
+                                className={silver.className}
+                                alt="silver"
+                                unoptimized
+                              />
+                            ))}
+                          </div>
 
           
         </div>
