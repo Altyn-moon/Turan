@@ -74,7 +74,7 @@
 .home-hero__card {
   position: absolute;
   left: 50%;
-  top: clamp(180px, 75%, calc(var(--hero-h-1) - 40px));
+  top: clamp(120px, 55%, calc(var(--hero-h-1) - 200px));
   transform: translateX(-50%);
   width: min(640px, calc(100% - 24px));
   background: #fff;
@@ -85,6 +85,7 @@
   text-align: center;
   z-index: 2;
 }
+
 
 
 
