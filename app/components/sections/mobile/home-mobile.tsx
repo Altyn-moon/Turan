@@ -4,6 +4,7 @@ import Header from "../../layout/header";
 import LogoText from "../../ui/logo-text";
 import NatureText from "@/app/components/ui/text-logo/nature-text";
 import CaveText from "@/app/components/ui/text-logo/cave-text";
+import WaterText from "@/app/components/ui/text-logo/water-text";
 import BirdText from "@/app/components/ui/text-logo/bird-text";
 import KazakhText from "@/app/components/ui/text-logo/kazakh-text";
 import UsefulText from "@/app/components/ui/text-logo/useful-text";
@@ -36,11 +37,11 @@ export default function HomeMobile() {
   const hero1Style: CSSVars = { "--hero-bg": "url('/hero/bg-hero.webp')", "--hero-bg-size": "contain" };
   const hero2Style: CSSVars = { "--hero-bg": "url('/nature/bg-nature.webp')" };
   const hero3Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/cave.webp')" };
-  const hero4Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird.png')" };
-  const hero5Style: CSSVars = { "--hero-bg": "url('/kazakh/kazakh_back.png')" };
-  const hero6Style: CSSVars = { "--hero-bg": "url('/useful/bg-cloud.webp')" };
-  const hero7Style: CSSVars = { "--hero-bg": "url('/secure/bez_back.webp')" };
-  const hero8Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
+  const hero4Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/water.webp')" };
+  const hero5Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird.png')" };
+  const hero6Style: CSSVars = { "--hero-bg": "url('/kazakh/kazakh_back.png')" };
+  const hero7Style: CSSVars = { "--hero-bg": "url('/useful/bg-cloud.webp')" };
+  const hero8Style: CSSVars = { "--hero-bg": "url('/secure/bez_back.webp')" };
   const hero9Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
 
   const golds = [
@@ -80,7 +81,7 @@ export default function HomeMobile() {
         </div>
       </section>
 
-      {/* HERO #2 */}
+      {/* HERO #2 Природа */}
       <section>
       <section className={`hero ${expanded[1] ? "hero--compact" : "hero--expanded"}`} style={hero2Style}>
         <div className={`text-hero ${expanded[1] ? "text-hero--centered" : ""}`}> <NatureText /> </div>
@@ -96,18 +97,20 @@ export default function HomeMobile() {
             породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
             минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
             без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
-          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
-            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
-            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
-            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
-            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
-            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
-          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
-            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
-            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
-            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
-            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
-            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+           
+          <p>Эта вода не подвергается дополнительной обработке, потому что в ней нет 
+            ничего лишнего. Природная минерализация, идеально сбалансированный состав,
+             мягкий, освежающий вкус — TURAN сохраняет все, что задумано самой природой.
+              Ее добыча ведется в заповедной зоне под строгим государственным контролем,
+               а автоматизированные системы мониторинга следят за каждым этапом, чтобы 
+               сохранить ее первозданную свежесть и исключительные уникальные свойства.</p>
+             
+          <p>TURAN — не просто вода, это символ вечности, заключенной в каждой капле. 
+            Ее источник — естественный природный резервуар, сформированный ледниковыми 
+            водами, которые тысячелетиями проникали вглубь земли, проходя естественную 
+            фильтрацию через породы протерозойского периода, возрастом более 800 
+            миллионов лет. Там, на глубине 104 метров, скрывается уникальная 
+            экосистема, полностью защищенная от внешних воздействий.</p>
           <div className="features-grid">
             {FEATURES.map((f) => (
               <div key={f.value} className="feature">
@@ -129,7 +132,7 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #3 */}
+      {/* HERO #3 Легкая */}
       <section>
       <section className={`hero ${expanded[2] ? "hero--compact" : "hero--expanded"}`} style={hero3Style}>
         <div className={`text-hero ${expanded[2] ? "text-hero--centered" : ""}`}><CaveText /></div>
@@ -138,24 +141,43 @@ export default function HomeMobile() {
       {/* TEXT-BLOCK #2 */}
       <section className={`text-block ${expanded[2] ? "" : "text-block--overlap"}`}>
         <div id="water-more-2" className={`text-content ${expanded[2] ? "expanded" : "collapsed"}`}>
-          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
-            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
-            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
-            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
-            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
-            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
-          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
-            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
-            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
-            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
-            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
-            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
-          <p>Она берет свое начало в заповедной зоне Кокшетауской возвышенности, 
-            где на глубине более 100 метров скрыт реликтовый источник, сформированный 
-            более 15 000 лет назад талыми водами Валдайского ледника. Проходя через древние 
-            породы, возраст которых исчисляется сотнями миллионов лет, вода насыщается природными 
-            минералами и сохраняет свою первозданную чистоту. Без искусственных добавок, 
-            без внешнего воздействия — только идеальный баланс, созданный самой природой.</p>
+          <p>Природная минеральная вода TURAN добывается из источника Бұқпа на 
+            месторождении Кусколь - одном из 5 редких источников легкой воды на 
+            планете. И в этом коротком списке он занимает уверенную вторую позицию. 
+            Легче воды TURAN только талые воды ледников Антарктики. Но в отличие от 
+            лидера списка TURAN доступен всем желающим.</p>
+          <p>Легкая вода — это научный термин, описывающий воду с низким содержанием 
+            дейтерия (тяжелого водорода). Она не создаётся искусственно, а добывается 
+            в местах с особой геологией и экологической чистотой.</p>
+          <p>Исследования доказали её уникальный оздоровительный эффект, 
+            включая омоложение и продление жизни.</p>
+          <p>Венгерский ученый Габор Шомлай подтвердил: лёгкая вода способна замедлить 
+            метастазирование, восстанавливая защитные функции организма. И это не 
+            просто слова, это научно подтвержденная истина, скрытая в самой структуре 
+            воды - легкая вода с уровнем дейтерия ниже 135 ppm, редка и особо ценна, 
+            ведь её структура максимально приближена к межклеточной жидкости нашего 
+            организма.</p>
+
+          <p className="title-clamp mb-0">Легкая вода:</p>
+                <p><span className="blue-dot"></span>Помогает клеткам вырабатывать больше энергии. В митохондриях
+                  снижается &quot;тормозящий эффект&quot; тяжёлых молекул. В результате чего
+                  организм быстрее восстанавливается, дольше остаётся бодрым и
+                  устойчивым к нагрузкам. </p>
+                <p><span className="blue-dot"></span>Помогает активизировать
+                  естественные защитные силы. Организм лучше справляется со
+                  стрессами, вирусами и воспалениями. </p>
+                <p><span className="blue-dot"></span>Улучшает обмен веществ - ускоряет ключевые биохимические процессы. Это
+                  помогает телу эффективнее усваивать питательные вещества,
+                  избавляться от токсинов и поддерживать баланс. </p>
+                <p><span className="blue-dot"></span>Замедляет старение на клеточном уровне. Защищает ДНК и
+                  способствует обновлению клеток. Это помогает дольше сохранять
+                  внутреннюю молодость и стабильность работы органов и систем.
+                </p>
+
+          <p>Лёгкая вода — это не лекарство, а природная поддержка организма. Она 
+            работает мягко, но эффективно, помогая телу включать собственные ресурсы. 
+            Ее регулярное употребление имеет накопительный эффект — улучшение 
+            самочувствия, ясность ума и лёгкость в теле становятся естественной нормой.</p>
         </div>
         <button
           type="button"
@@ -169,10 +191,10 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #4 */}
+      {/* HERO #4 Живая*/}
       <section>
       <section className={`hero ${expanded[3] ? "hero--compact" : "hero--expanded"}`} style={hero4Style}>
-        <div className={`text-hero ${expanded[3] ? "text-hero--centered" : ""}`}><BirdText /></div>
+        <div className={`text-hero ${expanded[3] ? "text-hero--centered" : ""}`}><WaterText /></div>
       </section>
 
       {/* TEXT-BLOCK #3 */}
@@ -192,10 +214,10 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #5 */}
+      {/* HERO #5 Сбалансированная */}
       <section>
       <section className={`hero ${expanded[4] ? "hero--compact" : "hero--expanded"}`} style={hero5Style}>
-        <div className={`text-hero ${expanded[4] ? "text-hero--centered" : ""}`}><KazakhText /></div>
+        <div className={`text-hero ${expanded[4] ? "text-hero--centered" : ""}`}><BirdText /></div>
       </section>
 
       {/* TEXT-BLOCK #4 */}
@@ -215,10 +237,10 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #6 */}
+      {/* HERO #6 Казакстанская*/}
       <section>
       <section className={`hero ${expanded[5] ? "hero--compact" : "hero--expanded"}`} style={hero6Style}>
-        <div className={`text-hero ${expanded[5] ? "text-hero--centered" : ""}`}><UsefulText /></div>
+        <div className={`text-hero ${expanded[5] ? "text-hero--centered" : ""}`}><KazakhText /></div>
       </section>
 
       {/* TEXT-BLOCK #5 */}
@@ -238,10 +260,10 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #7 */}
+      {/* HERO #7 Полезная*/}
       <section>
       <section className={`hero ${expanded[6] ? "hero--compact" : "hero--expanded"}`} style={hero7Style}>
-        <div className={`text-hero ${expanded[6] ? "text-hero--centered" : ""}`}><SecureText /></div>
+        <div className={`text-hero ${expanded[6] ? "text-hero--centered" : ""}`}><UsefulText /></div>
       </section>
 
       {/* TEXT-BLOCK #6 */}
@@ -261,10 +283,10 @@ export default function HomeMobile() {
       </section>
       </section>
 
-      {/* HERO #8 */}
+      {/* HERO #8 Безопасная*/}
       <section>
       <section className={`hero ${expanded[7] ? "hero--compact" : "hero--expanded"}`} style={hero8Style}>
-        <div className={`text-hero ${expanded[7] ? "text-hero--centered" : ""}`}><FamilyText /></div>
+        <div className={`text-hero ${expanded[7] ? "text-hero--centered" : ""}`}><SecureText /></div>
       </section>
 
       {/* TEXT-BLOCK #7 */}
@@ -288,7 +310,7 @@ export default function HomeMobile() {
 
 
 
-      {/* HERO #9 */}
+      {/* HERO #9 Сертифицированная*/}
       <section>
       <section className={`hero ${expanded[8] ? "hero--compact" : "hero--expanded"}`} style={hero9Style}>
         <div className={`text-hero ${expanded[8] ? "text-hero--centered" : ""}`}><FamilyText /></div>
