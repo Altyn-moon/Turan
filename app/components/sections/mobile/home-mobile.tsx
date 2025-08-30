@@ -40,9 +40,9 @@ export default function HomeMobile() {
   const hero4Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/water.webp')" };
   const hero5Style: CSSVars = { "--hero-bg": "url('/cave-water-bird/bird-mobile.png')" };
   const hero6Style: CSSVars = { "--hero-bg": "url('/kazakh/kazakh_back.png')" };
-  const hero7Style: CSSVars = { "--hero-bg": "url('/useful/bg-cloud.webp')" };
-  const hero8Style: CSSVars = { "--hero-bg": "url('/secure/bez_back.webp')" };
-  const hero9Style: CSSVars = { "--hero-bg": "url('/awards/bg-family.webp')" };
+  const hero7Style: CSSVars = { "--hero-bg": "url('/useful/useful-mobile.png')" };
+  const hero8Style: CSSVars = { "--hero-bg": "url('/secure/secure-mobile.png')" };
+  const hero9Style: CSSVars = { "--hero-bg": "url('/awards/award-mobile.png')" };
 
   const golds = [
     { url: "/awards/gold4.png", className: "h-15 w-15" },
